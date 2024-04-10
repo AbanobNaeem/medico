@@ -1,0 +1,17 @@
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/logo1024.png
+  branding: assets/images/branding.png
+
+  android_12:
+    image: assets/images/logo.png
+    color: "#FFFFFF"
+    branding: assets/images/branding.png
+# assets\images\test.png
+  
+  fullscreen: true #To hide the notification bar // not effect android 12
+  # android_screen_orientation: sensorLandscape
+  android: true
+  ios: true
+  web: false
+   
