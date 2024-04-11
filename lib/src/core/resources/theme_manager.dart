@@ -76,8 +76,14 @@ mixin AppTheme implements ThemeData {
         ),
 
         //!TextTheme
-        // textTheme: TextTheme(
-        //     headlineLarge: StyleManager.getSemiBoldStyle(fontSize: 18)),
+        textTheme: TextTheme(
+          headlineLarge: StyleManager.getSemiBoldStyle(fontSize: FontSize.s20),
+          labelLarge: StyleManager.getSemiBoldStyle(
+              fontSize: FontSize.s18, color: ColorManager.white),
+          labelMedium: StyleManager.getMediumStyle(fontSize: FontSize.s20),
+          labelSmall: StyleManager.getRegularStyle(
+              fontSize: FontSize.s18, color: ColorManager.white),
+        ),
 
         //! TFF Theme
         inputDecorationTheme: InputDecorationTheme(
@@ -142,6 +148,25 @@ mixin AppTheme implements ThemeData {
         ),
         radioTheme: const RadioThemeData(
           fillColor: MaterialStatePropertyAll<Color?>(Colors.black),
+        ),
+
+        //! search bar
+        searchBarTheme: SearchBarThemeData(
+          backgroundColor: MaterialStateProperty.all(
+            ColorManager.paleSilver,
+          ),
+          elevation: const MaterialStatePropertyAll(0),
+          shape: MaterialStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+          ),
+          hintStyle: MaterialStatePropertyAll(
+            StyleManager.getRegularStyle(
+              color: ColorManager.mediumGray,
+              fontSize: FontSize.s16,
+            ),
+          ),
         ),
 
         //! Bottom Nav Bar Theme

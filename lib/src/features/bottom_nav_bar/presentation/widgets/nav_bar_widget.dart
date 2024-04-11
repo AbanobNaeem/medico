@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/values_manager.dart';
 import 'package:xpert/src/features/bottom_nav_bar/constants/nav_bar_constants.dart';
 
@@ -39,27 +39,28 @@ class NavBarWidget extends StatelessWidget {
             itemBuilder: (context, index) =>
                 _barItem(currentIndex: _currentIndex, index: index),
             separatorBuilder: (context, index) {
-              if (index == 0) {
-                return 36.horizontalSpace;
-              } else if (index == 1) {
-                return 111.horizontalSpace;
-              } else if (index == 2) {
-                return 36.horizontalSpace;
-              } else {
-                return 111.horizontalSpace;
+              switch (index) {
+                case 0:
+                  return 36.horizontalSpace;
+                case 1:
+                  return 111.horizontalSpace;
+                case 2:
+                  return 36.horizontalSpace;
+                default:
+                  return 111.horizontalSpace;
               }
             },
             itemCount: navBarItems.length,
           ),
         ),
-        _buildRobotIcon(),
+        _buildRobotIcon(context),
       ],
     );
   }
 
-  Widget _buildRobotIcon() {
-    return Positioned(
-      bottom: 32.h,
+  Widget _buildRobotIcon(context) {
+    return InkWell(
+      onTap: () => Navigator.pushNamed(context, Routes.chatBotLockScreen),
       child: Stack(
         alignment: Alignment.center,
         children: [

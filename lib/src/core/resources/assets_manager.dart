@@ -8,6 +8,9 @@ class AssetsManager {
   static const AssetsManager _instance = AssetsManager._internal(); // singleton
   factory AssetsManager() => _instance;
 
+  //!temp
+  static const String temp1 = '$tempPath/Ellipse 30.png';
+  static const String temp2 = '$tempPath/temp2.png';
   //!OnBoarding images
   static const String onBoardingIc1 = '$svgPath/onboarding1.svg';
   static const String onBoardingIc2 = '$svgPath/onboarding2.svg';
@@ -36,6 +39,16 @@ class AssetsManager {
   //!initial settings
   static const String lang = '$svgPath/lang.svg';
   static const String location = '$svgPath/location.svg';
+
+  //!home
+  static const String searchIc = '$svgPath/search_ic.svg';
+  static const String doctorPic = '$imagePath/doctor.png';
+
+  //!chat bot
+  static const String chatBot = '$imagePath/chatbot.png';
+  static const String chatBubbles = '$imagePath/chatbubbles.png';
+  static const String threeArrows = '$imagePath/three_arrows.png';
+  static const String send = '$svgPath/send.svg';
 
   //!common
   static const String arrowBack = '$svgPath/arrow_back.svg';

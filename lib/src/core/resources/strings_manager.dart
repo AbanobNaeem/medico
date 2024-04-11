@@ -62,8 +62,37 @@ class StringsManager {
   static const String country = 'country';
   static const String language = 'Language';
 
+  //!home
+  static const String specialist = "Specialist";
+  static const String categories = "Categories";
+  static const String topDoctors = "Top Doctors";
+
+  static const String specialistDesc1 =
+      "looking For Your Desire Specialist Doctor?";
+  static const String specialistDrName1 = "Dr. Ahmed Mohamed";
+  static const String specialist1 = "Orthopedist";
+
+  static const String category1 = "Diseases";
+  static const String category2 = "Doctors";
+  static const String category3 = "Health \ncare";
+
+  static const String topDoctorsTitle1 = "Dr. Alaa";
+  static const String topDoctorsTitle2 = "Dr. Alaa";
+  static const String topDoctorsTitle3 = "Dr. Alaa";
+
+  static const String topDoctorsSubTitle1 = "Orthopedist";
+  static const String topDoctorsSubTitle2 = "Orthopedist";
+  static const String topDoctorsSubTitle3 = "Orthopedist";
+
+  //!chat bot
+  static const String meetThe = "Meet the";
+  static const String chatbot = "Chatbot!";
+  static const String needOurHelpNow = "Need  Our Help\n now?";
+  static const String massage = "Massage...";
+
   //!common
   static const String send = 'SEND';
+  static const String getStarted = 'Get Started';
   static const String english = 'English';
   static const String arabic = 'العربية';
   static const String search = 'search';

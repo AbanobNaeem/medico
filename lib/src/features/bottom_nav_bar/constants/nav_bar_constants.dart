@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
+import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
 
 class PlaceHolder extends StatefulWidget {
   const PlaceHolder({
@@ -23,9 +24,7 @@ class _PlaceHolderState extends State<PlaceHolder> {
 }
 
 List<Widget> navBarPages = const [
-  PlaceHolder(
-    title: "Home",
-  ),
+  HomeScreen(),
   PlaceHolder(
     title: "Chat",
   ),
