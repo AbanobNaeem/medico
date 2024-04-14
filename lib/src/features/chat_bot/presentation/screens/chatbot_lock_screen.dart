@@ -19,29 +19,20 @@ class ChatBotLockScreen extends StatefulWidget {
 
 class _ChatBotLockScreenState extends State<ChatBotLockScreen> {
   @override
-  void initState() {
-    super.initState();
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        systemNavigationBarColor: ColorManager.midnightBlue,
-      ),
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        systemNavigationBarColor: ColorManager.midnightBlue,
-      ),
-    );
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          systemNavigationBarColor: ColorManager.midnightBlue,
+        ),
+      ),
       backgroundColor: ColorManager.midnightBlue,
-      body: AppPaddingWidgetAll(
+      body: AppPaddingWidgetOnly(
+        top: 0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            40.verticalSpace,
             Text(
               StringsManager.meetThe,
               textAlign: TextAlign.center,
