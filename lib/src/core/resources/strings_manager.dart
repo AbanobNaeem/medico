@@ -57,11 +57,6 @@ class StringsManager {
   static const String verify = 'VERIFY';
   static const String doNotReceiveCode = 'I don\'t receive code';
 
-  //!initial settings
-  static const String startShopping = 'START SHOPPING';
-  static const String country = 'country';
-  static const String language = 'Language';
-
   //!home
   static const String specialist = "Specialist";
   static const String categories = "Categories";
@@ -89,6 +84,25 @@ class StringsManager {
   static const String chatbot = "Chatbot!";
   static const String needOurHelpNow = "Need  Our Help\n now?";
   static const String massage = "Massage...";
+
+  //!profile
+  static const String profile = "Profile";
+  static const String yourEmail = 'your email';
+  static const String yourPassword = 'your password';
+  static const String city = 'city';
+  static const String yourPhone = 'your phone';
+  static const String country = 'country';
+
+  //!setting
+  static const String setting = 'Setting';
+  static const String editProfile = 'Edit Profile';
+  static const String notifications = 'Notifications';
+  static const String language = 'Language';
+  static const String editEmail = 'Edit email';
+  static const String facebook = 'Facebook';
+  static const String logout = 'Logout';
+ 
+
 
   //!common
   static const String send = 'SEND';

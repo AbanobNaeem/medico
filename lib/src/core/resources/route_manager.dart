@@ -20,6 +20,9 @@ import 'package:xpert/src/features/chat_bot/presentation/screens/chatbot_screen.
 import 'package:xpert/src/features/home/business_logic/cubit/home_cubit.dart';
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
 import 'package:xpert/src/features/onboarding/presentation/screens/on_boarding_view.dart';
+import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
+import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
+import 'package:xpert/src/features/setting/presentation/setting_screen.dart';
 
 class Routes {
   static const String onboarding = '/onboarding';
@@ -37,9 +40,11 @@ class Routes {
   static const String chatBotScreen = '/chatBotScreen';
   static const String favorites = '/favorites';
   static const String cart = '/cart';
-  static const String profile = '/profile';
+  static const String profileScreen = '/profileScreen';
 
   static const String navigationViewRoute = '/navigationView';
+
+  static const String setting = '/setting';
 }
 
 class RouteGenerator {
@@ -47,12 +52,14 @@ class RouteGenerator {
   static late NavBarCubit navBarCubit;
   static late HomeCubit homeCubit;
   static late ChatBotCubit chatBotCubit;
+  static late ProfileCubit profileCubit;
 
   RouteGenerator() {
     otpTimerCubit = getIt<OtpTimerCubit>();
     navBarCubit = getIt<NavBarCubit>();
     homeCubit = getIt<HomeCubit>();
     chatBotCubit = getIt<ChatBotCubit>();
+    profileCubit = getIt<ProfileCubit>();
   }
   Route? getRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -106,12 +113,26 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const ChatBotLockScreen(),
         );
+
       case Routes.chatBotScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: chatBotCubit,
             child: const ChatBotScreen(),
           ),
+        );
+
+      case Routes.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: profileCubit,
+            child: const ProfileScreen(),
+          ),
+        );
+
+      case Routes.setting:
+        return MaterialPageRoute(
+          builder: (_) => const SettingScreen(),
         );
 
       default:

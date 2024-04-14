@@ -50,6 +50,9 @@ class AssetsManager {
   static const String threeArrows = '$imagePath/three_arrows.png';
   static const String send = '$svgPath/send.svg';
 
+  //!profile
+  static const String setting = '$svgPath/setting.svg';
+
   //!common
   static const String arrowBack = '$svgPath/arrow_back.svg';
   static const String arrowForward = '$svgPath/arrow_forward.svg';

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
+import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
+import 'package:xpert/src/features/setting/presentation/setting_screen.dart';
 
 class PlaceHolder extends StatefulWidget {
   const PlaceHolder({
@@ -28,12 +30,8 @@ List<Widget> navBarPages = const [
   PlaceHolder(
     title: "Chat",
   ),
-  PlaceHolder(
-    title: "Settings",
-  ),
-  PlaceHolder(
-    title: "profile",
-  ),
+  SettingScreen(),
+  ProfileScreen(),
 ];
 
 class MenuItemModel {

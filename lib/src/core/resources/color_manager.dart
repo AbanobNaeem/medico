@@ -50,12 +50,14 @@ class ColorManager {
 
   static const Color midnightBlue = Color(0xff21254F);
 
-  static const Color darkMidnightBlue = Color(0xff1A1D3E );
+  static const Color darkMidnightBlue = Color(0xff1A1D3E);
+
+  static const Color blushRed = Color(0xff5961BD);
 
   static const LinearGradient chatBotGradient = LinearGradient(
     colors: [
       Color(0xff969EFC),
-      Color(0xff5961BD),
+      blushRed,
     ],
   );
 }

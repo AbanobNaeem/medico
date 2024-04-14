@@ -27,7 +27,12 @@ mixin AppTheme implements ThemeData {
         // splashColor: ,  //ripple effect
 
         //!Divider
-        dividerTheme: const DividerThemeData(color: ColorManager.black),
+        dividerTheme: DividerThemeData(
+          color: ColorManager.paleSilver,
+          indent: 10.w,
+          endIndent: 10.w,
+          thickness: 2,
+        ),
 
         //!App bar
         appBarTheme: AppBarTheme(
