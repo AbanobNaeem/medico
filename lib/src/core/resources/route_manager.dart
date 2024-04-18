@@ -18,6 +18,8 @@ import 'package:xpert/src/features/chat_bot/business_logic/cubit/chat_bot_cubit.
 import 'package:xpert/src/features/chat_bot/presentation/screens/chatbot_lock_screen.dart';
 import 'package:xpert/src/features/chat_bot/presentation/screens/chatbot_screen.dart';
 import 'package:xpert/src/features/home/business_logic/cubit/home_cubit.dart';
+import 'package:xpert/src/features/home/presentation/screens/diseases_details_screen.dart';
+import 'package:xpert/src/features/home/presentation/screens/diseases_screen.dart';
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
 import 'package:xpert/src/features/onboarding/presentation/screens/on_boarding_view.dart';
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
@@ -36,6 +38,9 @@ class Routes {
   static const String gender = '/Gender';
 
   static const String home = '/home';
+  static const String diseases = '/diseasesScreen';
+  static const String diseasesDetails = '/diseasesDetails';
+
   static const String chatBotLockScreen = '/chatBotLockScreen';
   static const String chatBotScreen = '/chatBotScreen';
   static const String favorites = '/favorites';
@@ -133,6 +138,19 @@ class RouteGenerator {
       case Routes.setting:
         return MaterialPageRoute(
           builder: (_) => const SettingScreen(),
+        );
+
+      case Routes.diseases:
+        return MaterialPageRoute(
+          builder: (_) => const DiseasesScreen(),
+        );
+
+      case Routes.diseasesDetails:
+        var args = settings.arguments as Map;
+        return MaterialPageRoute(
+          builder: (_) => DiseasesDetailsScreen(
+            title: args["title"],
+          ),
         );
 
       default:

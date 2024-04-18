@@ -88,6 +88,8 @@ mixin AppTheme implements ThemeData {
           labelMedium: StyleManager.getMediumStyle(fontSize: FontSize.s20),
           labelSmall: StyleManager.getRegularStyle(
               fontSize: FontSize.s18, color: ColorManager.white),
+          bodyMedium: StyleManager.getMediumStyle(fontSize: FontSize.s18),
+          bodySmall: StyleManager.getRegularStyle(fontSize: FontSize.s16),
         ),
 
         //! TFF Theme

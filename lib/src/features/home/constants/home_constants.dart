@@ -1,9 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:xpert/src/app/app.dart';
+import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 
 class CategoriesModel {
   final String title;
+  final void Function()? onTap;
 
-  CategoriesModel({required this.title});
+  CategoriesModel({
+    required this.title,
+    this.onTap,
+  });
 }
 
 class TopDoctorsModel {
@@ -14,9 +21,14 @@ class TopDoctorsModel {
 }
 
 List<CategoriesModel> categoriesList = [
-  CategoriesModel(title: StringsManager.category1),
-  CategoriesModel(title: StringsManager.category2),
-  CategoriesModel(title: StringsManager.category3),
+  CategoriesModel(
+    title: StringsManager.diseases,
+    onTap: () {
+      Navigator.pushNamed(navigatorKey.currentContext!, Routes.diseases);
+    },
+  ),
+  CategoriesModel(title: StringsManager.doctors),
+  CategoriesModel(title: StringsManager.healthCare),
 ];
 
 List<TopDoctorsModel> topDoctorsList = [

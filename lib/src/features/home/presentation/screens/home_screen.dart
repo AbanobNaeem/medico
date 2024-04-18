@@ -140,22 +140,25 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _categoriesContainer(context, {required CategoriesModel model}) {
-    return Container(
-      clipBehavior: Clip.antiAlias,
-      width: 109.w,
-      height: 112.h,
-      decoration: BoxDecoration(
-        color: ColorManager.royalBlue,
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Center(
-        child: Text(
-          model.title,
-          style: StyleManager.getMediumStyle(
-            color: ColorManager.white,
-            fontSize: FontSize.s20,
+    return InkWell(
+      onTap: model.onTap,
+      child: Container(
+        clipBehavior: Clip.antiAlias,
+        width: 109.w,
+        height: 112.h,
+        decoration: BoxDecoration(
+          color: ColorManager.royalBlue,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: Center(
+          child: Text(
+            model.title,
+            style: StyleManager.getMediumStyle(
+              color: ColorManager.white,
+              fontSize: FontSize.s20,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
       ),
     );

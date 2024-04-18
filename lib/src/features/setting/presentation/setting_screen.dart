@@ -83,7 +83,7 @@ class SettingScreen extends StatelessWidget {
               const Divider(),
               _listTile(
                 title: StringsManager.editProfile,
-                icon: AssetsManager.setting,
+                icon: AssetsManager.editProfileIc,
                 trailing: true,
               ),
             ],
@@ -101,17 +101,17 @@ class SettingScreen extends StatelessWidget {
             children: [
               _listTile(
                 title: StringsManager.notifications,
-                icon: AssetsManager.setting,
+                icon: AssetsManager.notificationsIc,
               ),
               const Divider(),
               _listTile(
                 title: StringsManager.password,
-                icon: AssetsManager.setting,
+                icon: AssetsManager.keyIc,
               ),
               const Divider(),
               _listTile(
                 title: StringsManager.language,
-                icon: AssetsManager.setting,
+                icon: AssetsManager.lang,
               ),
             ],
           ),
@@ -128,17 +128,17 @@ class SettingScreen extends StatelessWidget {
             children: [
               _listTile(
                 title: StringsManager.country,
-                icon: AssetsManager.setting,
+                icon: AssetsManager.location,
               ),
               const Divider(),
               _listTile(
                 title: StringsManager.editEmail,
-                icon: AssetsManager.setting,
+                icon: AssetsManager.email,
               ),
               const Divider(),
               _listTile(
                 title: StringsManager.facebook,
-                icon: AssetsManager.setting,
+                icon: AssetsManager.unfilledFacebookIc,
               ),
             ],
           ),
