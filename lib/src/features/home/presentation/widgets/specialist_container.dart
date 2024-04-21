@@ -20,7 +20,7 @@ class SpecialistContainer extends StatelessWidget {
       height: 158.h,
       padding: EdgeInsets.only(bottom: 9.h),
       decoration: BoxDecoration(
-        color: ColorManager.royalBlue,
+        color: ColorManager.primary,
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: Column(

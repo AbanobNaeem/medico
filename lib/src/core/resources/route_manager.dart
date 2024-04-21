@@ -14,17 +14,23 @@ import 'package:xpert/src/features/auth/presentation/reset_password/reset_passwo
 import 'package:xpert/src/features/auth/presentation/tab_bar/auth_tab_bar.dart';
 import 'package:xpert/src/features/bottom_nav_bar/business_logic/nav_bar_cubit/nav_bar_cubit.dart';
 import 'package:xpert/src/features/bottom_nav_bar/presentation/screens/bottom_nav_bar.dart';
-import 'package:xpert/src/features/chat_bot/business_logic/cubit/chat_bot_cubit.dart';
+import 'package:xpert/src/features/chat_bot/business_logic/chat_bot_cubit.dart';
 import 'package:xpert/src/features/chat_bot/presentation/screens/chatbot_lock_screen.dart';
 import 'package:xpert/src/features/chat_bot/presentation/screens/chatbot_screen.dart';
-import 'package:xpert/src/features/home/business_logic/cubit/home_cubit.dart';
+import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
+import 'package:xpert/src/features/home/business_logic/temp_cubit/doctor_chat_cubit.dart';
 import 'package:xpert/src/features/home/presentation/screens/diseases_details_screen.dart';
 import 'package:xpert/src/features/home/presentation/screens/diseases_screen.dart';
+import 'package:xpert/src/features/home/presentation/screens/doctors_list_screen.dart';
+import 'package:xpert/src/features/home/presentation/screens/health_care_screen.dart';
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
+import 'package:xpert/src/features/home/presentation/screens/temp1.dart';
+import 'package:xpert/src/features/home/presentation/screens/temp2.dart';
+import 'package:xpert/src/features/home/presentation/screens/appointment_screen.dart';
 import 'package:xpert/src/features/onboarding/presentation/screens/on_boarding_view.dart';
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
 import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
-import 'package:xpert/src/features/setting/presentation/setting_screen.dart';
+import 'package:xpert/src/features/setting/presentation/screen/setting_screen.dart';
 
 class Routes {
   static const String onboarding = '/onboarding';
@@ -40,6 +46,11 @@ class Routes {
   static const String home = '/home';
   static const String diseases = '/diseasesScreen';
   static const String diseasesDetails = '/diseasesDetails';
+  static const String doctorsListScreen = '/doctorsListScreen';
+  static const String healthCareScreen = '/healthCareScreen';
+  static const String appointmentScreen = '/appointmentScreen';
+  static const String messagesScreen = '/messagesScreen';
+  static const String doctorChat = '/doctorChat';
 
   static const String chatBotLockScreen = '/chatBotLockScreen';
   static const String chatBotScreen = '/chatBotScreen';
@@ -58,6 +69,7 @@ class RouteGenerator {
   static late HomeCubit homeCubit;
   static late ChatBotCubit chatBotCubit;
   static late ProfileCubit profileCubit;
+  static late DoctorChatCubit doctorChatCubit;
 
   RouteGenerator() {
     otpTimerCubit = getIt<OtpTimerCubit>();
@@ -65,6 +77,7 @@ class RouteGenerator {
     homeCubit = getIt<HomeCubit>();
     chatBotCubit = getIt<ChatBotCubit>();
     profileCubit = getIt<ProfileCubit>();
+    doctorChatCubit = getIt<DoctorChatCubit>();
   }
   Route? getRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -150,6 +163,41 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => DiseasesDetailsScreen(
             title: args["title"],
+          ),
+        );
+
+      case Routes.doctorsListScreen:
+        return MaterialPageRoute(
+          builder: (_) => const DoctorsListScreen(),
+          // builder: (_) => const MessagesScreen(),
+        );
+
+      case Routes.healthCareScreen:
+        return MaterialPageRoute(
+          builder: (_) => const HealthCareScreen(),
+        );
+
+      case Routes.appointmentScreen:
+        var args = settings.arguments as Map;
+        return MaterialPageRoute(
+          builder: (_) => AppointmentScreen(
+            model: args["model"],
+          ),
+        );
+
+      case Routes.messagesScreen:
+        return MaterialPageRoute(
+          builder: (_) => const MessagesScreen(),
+        );
+
+      case Routes.doctorChat:
+        var args = settings.arguments as Map;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: doctorChatCubit,
+            child: DoctorChat(
+              model: args["model"],
+            ),
           ),
         );
 

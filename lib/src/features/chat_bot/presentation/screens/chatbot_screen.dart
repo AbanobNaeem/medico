@@ -6,10 +6,10 @@ import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
-import 'package:xpert/src/features/chat_bot/business_logic/cubit/chat_bot_cubit.dart';
+import 'package:xpert/src/features/chat_bot/business_logic/chat_bot_cubit.dart';
 import 'package:xpert/src/features/chat_bot/constants/temp_model.dart';
 import 'package:xpert/src/features/chat_bot/presentation/widgets/chatbot_app_bar.dart';
-import 'package:xpert/src/features/chat_bot/presentation/widgets/chatbot_text_field.dart';
+import 'package:xpert/src/core/widgets/chat_text_field.dart';
 
 class ChatBotScreen extends StatefulWidget {
   const ChatBotScreen({super.key});
@@ -89,7 +89,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
       width: 255.w,
       height: 48.h,
       decoration: BoxDecoration(
-        color: fromUser ? ColorManager.royalBlue : ColorManager.white,
+        color: fromUser ? ColorManager.primary : ColorManager.white,
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: Center(
@@ -106,7 +106,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
   }
 
   Widget _chatTextField() {
-    return ChatBotTextField(
+    return ChatTextField(
       controller: controller,
       onSubmitted: (message) {
         if (message.isNotEmpty) {

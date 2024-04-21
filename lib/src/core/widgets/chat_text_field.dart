@@ -8,14 +8,23 @@ import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 
-class ChatBotTextField extends StatelessWidget {
-  const ChatBotTextField({
+class ChatTextField extends StatelessWidget {
+  const ChatTextField({
     super.key,
     this.controller,
     this.onSubmitted,
+    this.suffixIcon,
+    this.onTapOutside,
+    this.focusNode,
+    this.onSendWithPrefixIcon,
   });
   final TextEditingController? controller;
   final void Function(String)? onSubmitted;
+  final Widget? suffixIcon;
+  final void Function(PointerDownEvent)? onTapOutside;
+  final void Function()? onSendWithPrefixIcon;
+
+  final FocusNode? focusNode;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +37,12 @@ class ChatBotTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.r),
       ),
       child: TextField(
+        focusNode: focusNode,
         controller: controller,
-        onTapOutside: (event) =>
-            FocusScope.of(navigatorKey.currentContext!).unfocus(),
+        onTapOutside: onTapOutside ??
+            (event) {
+             FocusScope.of(navigatorKey.currentContext!).unfocus();
+            },
         onSubmitted: onSubmitted,
         textInputAction: TextInputAction.send,
         style: StyleManager.getLightStyle(
@@ -46,10 +58,15 @@ class ChatBotTextField extends StatelessWidget {
             fontSize: FontSize.s16,
             color: ColorManager.white,
           ),
+          suffixIconConstraints: BoxConstraints.loose(Size(67.w, 56.h)),
+          suffixIcon: suffixIcon,
           prefixIconConstraints: BoxConstraints.loose(Size(56.w, 56.h)),
-          prefixIcon: Padding(
-            padding: EdgeInsetsDirectional.only(start: 10.w, end: 10.w),
-            child: SvgPicture.asset(AssetsManager.send),
+          prefixIcon: InkWell(
+            onTap: onSendWithPrefixIcon,
+            child: Padding(
+              padding: EdgeInsetsDirectional.only(start: 10.w, end: 10.w),
+              child: SvgPicture.asset(AssetsManager.send),
+            ),
           ),
           icon: const SizedBox(),
           border: _borderStyle,

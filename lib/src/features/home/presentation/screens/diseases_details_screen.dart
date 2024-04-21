@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
@@ -24,10 +27,13 @@ class DiseasesDetailsScreen extends StatefulWidget {
 
 class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
   late List<DiseasesDetailsModel> listOfContent;
+  late ImagePicker _imagePicker;
+
   @override
   void initState() {
     super.initState();
     listOfContent = _listType();
+    _imagePicker = ImagePicker();
   }
 
   List<DiseasesDetailsModel> _listType() {
@@ -103,46 +109,48 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _blueBox(
-          StringsManager.takePhoto,
-          AssetsManager.cameraIc,
-        ),
+        _blueBox(StringsManager.takePhoto, AssetsManager.cameraIc,
+            onTap: _openCamera),
         _blueBox(
           StringsManager.fromGallery,
           AssetsManager.galleryIc,
+          onTap: _openGallery,
         ),
       ],
     );
   }
 
-  Widget _blueBox(String title, String icon) {
-    return Container(
-      clipBehavior: Clip.antiAlias,
-      width: 151.w,
-      height: 140.h,
-      decoration: BoxDecoration(
-        color: ColorManager.primary,
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 4,
-            child: SvgPicture.asset(icon),
-          ),
-          Expanded(
-            flex: 2,
-            child: Text(
-              title,
-              style: StyleManager.getLightStyle(
-                fontSize: FontSize.s18,
-                color: ColorManager.white,
-              ),
+  Widget _blueBox(String title, String icon, {void Function()? onTap}) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        clipBehavior: Clip.antiAlias,
+        width: 151.w,
+        height: 140.h,
+        decoration: BoxDecoration(
+          color: ColorManager.primary,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              flex: 4,
+              child: SvgPicture.asset(icon),
             ),
-          )
-        ],
+            Expanded(
+              flex: 2,
+              child: Text(
+                title,
+                style: StyleManager.getLightStyle(
+                  fontSize: FontSize.s18,
+                  color: ColorManager.white,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -173,5 +181,22 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
         color: ColorManager.black,
       ),
     );
+  }
+
+  Future _openGallery() async {
+    final returnImage =
+        await _imagePicker.pickImage(source: ImageSource.gallery);
+    if (returnImage == null) return;
+    // ignore: unused_local_variable
+    final image = File(returnImage.path);
+  }
+
+  Future _openCamera() async {
+    final returnImage =
+        await _imagePicker.pickImage(source: ImageSource.camera);
+
+    if (returnImage == null) return;
+    // ignore: unused_local_variable
+    final image = File(returnImage.path);
   }
 }

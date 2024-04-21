@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
 import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
-import 'package:xpert/src/features/setting/presentation/setting_screen.dart';
+import 'package:xpert/src/features/setting/presentation/screen/setting_screen.dart';
 
 class PlaceHolder extends StatefulWidget {
   const PlaceHolder({

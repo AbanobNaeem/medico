@@ -31,7 +31,7 @@ class NavBarWidget extends StatelessWidget {
           height: 58.h,
           decoration: BoxDecoration(
               color: ColorManager.white,
-              border: Border.all(color: ColorManager.royalBlue),
+              border: Border.all(color: ColorManager.primary),
               borderRadius: BorderRadius.all(Radius.circular(20.r))),
           child: ListView.separated(
             padding: EdgeInsetsDirectional.only(start: 39.w, end: 28.w),

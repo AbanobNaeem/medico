@@ -151,6 +151,21 @@ class StringsManager {
   static const String breastCancerBodyText4 =
       'Breast cancer is always caused by \na mistake in genetic \nmaterial (called a genetic abnormality).\nStill, only 5% to 10% of cancers are \nlinked to genetic abnormalities';
 
+  //! Doctors List
+  static const String doctorsList = 'Doctors List';
+  static const String drAillaAhmed = 'Dr. Ailla Ahmed';
+  static const String drAhmed = 'Dr.  Ahmed ';
+  static const String orthopedist = 'Orthopedist';
+  static const String appointment = 'Appointment';
+  //! Health Care
+  static const String healthCareTitle = 'Health Care';
+  static const String schedule = 'Schedule';
+  static const String workingTime = 'Working time';
+  static const String aboutDoctors = 'About Doctors';
+  static const String people = 'people';
+  static const String experience = 'Experience';
+  static const String rating = 'Rating';
+
   //!common
   static const String send = 'SEND';
   static const String getStarted = 'Get Started';
@@ -160,4 +175,9 @@ class StringsManager {
   static const String details = 'Details';
   static const String takePhoto = 'Take photo';
   static const String fromGallery = 'From Gallery';
+  static const String message = 'Message';
+  static const String online = 'Online';
+  static const String reviews = 'reviews';
+  static const String seeMore = 'See more';
+  static const String seeLess = 'See less';
 }

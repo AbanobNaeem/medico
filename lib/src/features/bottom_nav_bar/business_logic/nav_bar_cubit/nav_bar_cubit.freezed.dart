@@ -16,43 +16,42 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NavBarState {
+  int get index => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
     required TResult Function(int index) currentIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
     TResult? Function(int index)? currentIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
     TResult Function(int index)? currentIndex,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
     required TResult Function(_CurrentIndex value) currentIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
     TResult? Function(_CurrentIndex value)? currentIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
     TResult Function(_CurrentIndex value)? currentIndex,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $NavBarStateCopyWith<NavBarState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -61,6 +60,8 @@ abstract class $NavBarStateCopyWith<$Res> {
   factory $NavBarStateCopyWith(
           NavBarState value, $Res Function(NavBarState) then) =
       _$NavBarStateCopyWithImpl<$Res, NavBarState>;
+  @useResult
+  $Res call({int index});
 }
 
 /// @nodoc
@@ -72,115 +73,28 @@ class _$NavBarStateCopyWithImpl<$Res, $Val extends NavBarState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_value.copyWith(
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$NavBarStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'NavBarState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(int index) currentIndex,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(int index)? currentIndex,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(int index)? currentIndex,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CurrentIndex value) currentIndex,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CurrentIndex value)? currentIndex,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CurrentIndex value)? currentIndex,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements NavBarState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$CurrentIndexImplCopyWith<$Res> {
+abstract class _$$CurrentIndexImplCopyWith<$Res>
+    implements $NavBarStateCopyWith<$Res> {
   factory _$$CurrentIndexImplCopyWith(
           _$CurrentIndexImpl value, $Res Function(_$CurrentIndexImpl) then) =
       __$$CurrentIndexImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({int index});
 }
@@ -240,7 +154,6 @@ class _$CurrentIndexImpl implements _CurrentIndex {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
     required TResult Function(int index) currentIndex,
   }) {
     return currentIndex(index);
@@ -249,7 +162,6 @@ class _$CurrentIndexImpl implements _CurrentIndex {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
     TResult? Function(int index)? currentIndex,
   }) {
     return currentIndex?.call(index);
@@ -258,7 +170,6 @@ class _$CurrentIndexImpl implements _CurrentIndex {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
     TResult Function(int index)? currentIndex,
     required TResult orElse(),
   }) {
@@ -271,7 +182,6 @@ class _$CurrentIndexImpl implements _CurrentIndex {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
     required TResult Function(_CurrentIndex value) currentIndex,
   }) {
     return currentIndex(this);
@@ -280,7 +190,6 @@ class _$CurrentIndexImpl implements _CurrentIndex {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
     TResult? Function(_CurrentIndex value)? currentIndex,
   }) {
     return currentIndex?.call(this);
@@ -289,7 +198,6 @@ class _$CurrentIndexImpl implements _CurrentIndex {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
     TResult Function(_CurrentIndex value)? currentIndex,
     required TResult orElse(),
   }) {
@@ -303,7 +211,9 @@ class _$CurrentIndexImpl implements _CurrentIndex {
 abstract class _CurrentIndex implements NavBarState {
   const factory _CurrentIndex({required final int index}) = _$CurrentIndexImpl;
 
+  @override
   int get index;
+  @override
   @JsonKey(ignore: true)
   _$$CurrentIndexImplCopyWith<_$CurrentIndexImpl> get copyWith =>
       throw _privateConstructorUsedError;

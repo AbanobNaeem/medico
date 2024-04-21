@@ -44,15 +44,17 @@ class ColorManager {
 
   static const Color periwinkleBlue = Color(0xff99A1FF);
 
-  static const Color royalBlue = Color(0xff535CC1);
-
   static const Color bluishPurple = Color(0xff6971CD);
 
   static const Color midnightBlue = Color(0xff21254F);
 
   static const Color darkMidnightBlue = Color(0xff1A1D3E);
 
+  static const Color offWhite = Color(0xffF7F7F7);
+
   static const Color blushRed = Color(0xff5961BD);
+
+  static const Color vividGreen = Color(0xff24FF00);
 
   static const LinearGradient chatBotGradient = LinearGradient(
     colors: [

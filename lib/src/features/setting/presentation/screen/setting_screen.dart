@@ -191,7 +191,7 @@ class SettingScreen extends StatelessWidget {
         foregroundColor: ColorManager.black,
         shape: const OvalBorder(
           side: BorderSide(
-            color: ColorManager.royalBlue,
+            color: ColorManager.primary,
           ),
         ),
       ),

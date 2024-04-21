@@ -27,8 +27,20 @@ List<CategoriesModel> categoriesList = [
       Navigator.pushNamed(navigatorKey.currentContext!, Routes.diseases);
     },
   ),
-  CategoriesModel(title: StringsManager.doctors),
-  CategoriesModel(title: StringsManager.healthCare),
+  CategoriesModel(
+    title: StringsManager.doctors,
+    onTap: () {
+      Navigator.pushNamed(
+          navigatorKey.currentContext!, Routes.doctorsListScreen);
+    },
+  ),
+  CategoriesModel(
+    title: StringsManager.healthCare,
+    onTap: () {
+      Navigator.pushNamed(
+          navigatorKey.currentContext!, Routes.healthCareScreen);
+    },
+  ),
 ];
 
 List<TopDoctorsModel> topDoctorsList = [

@@ -9,8 +9,11 @@ class AssetsManager {
   factory AssetsManager() => _instance;
 
   //!temp
-  static const String temp1 = '$tempPath/Ellipse 30.png';
+  static const String temp1 = '$tempPath/Ellipse 9.png';
   static const String temp2 = '$tempPath/temp2.png';
+  static const String temp3 = '$tempPath/Ellipse 34.png';
+  static const String temp4 = '$tempPath/Ellipse 35.png';
+  static const String temp5 = '$tempPath/Rectangle 92.png';
   //!OnBoarding images
   static const String onBoardingIc1 = '$svgPath/onboarding1.svg';
   static const String onBoardingIc2 = '$svgPath/onboarding2.svg';
@@ -71,4 +74,10 @@ class AssetsManager {
   static const String unfilledCartIc = '$svgPath/unfilled_cart_ic.svg';
   static const String cameraIc = '$svgPath/camera_ic.svg';
   static const String galleryIc = '$svgPath/gallery_ic.svg';
+  static const String documentIc = '$svgPath/document.svg';
+  static const String emojiIc = '$svgPath/emoji.svg';
+  static const String star = '$svgPath/star.svg';
+  static const String yellowStar = '$svgPath/yellow_star.svg';
+  static const String experience = '$svgPath/experience.svg';
+  static const String people = '$svgPath/people.svg';
 }
