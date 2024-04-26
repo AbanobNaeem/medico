@@ -3,7 +3,7 @@ import 'package:xpert/src/features/auth/business_logic/cubit/otp_timer_cubit.dar
 import 'package:xpert/src/features/bottom_nav_bar/business_logic/nav_bar_cubit/nav_bar_cubit.dart';
 import 'package:xpert/src/features/chat_bot/business_logic/chat_bot_cubit.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
-import 'package:xpert/src/features/home/business_logic/temp_cubit/doctor_chat_cubit.dart';
+import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
 
 final getIt = GetIt.instance;

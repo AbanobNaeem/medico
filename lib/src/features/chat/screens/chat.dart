@@ -15,8 +15,8 @@ import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
 import 'package:xpert/src/core/widgets/chat_text_field.dart';
-import 'package:xpert/src/features/home/presentation/screens/temp1.dart';
-import 'package:xpert/src/features/home/business_logic/temp_cubit/doctor_chat_cubit.dart';
+import 'package:xpert/src/features/chat/screens/messages_screen.dart';
+import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class DoctorChat extends StatefulWidget {

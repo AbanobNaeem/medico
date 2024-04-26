@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
+import 'package:xpert/src/features/chat/screens/messages_screen.dart';
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
 import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
 import 'package:xpert/src/features/setting/presentation/screen/setting_screen.dart';
@@ -27,9 +28,7 @@ class _PlaceHolderState extends State<PlaceHolder> {
 
 List<Widget> navBarPages = const [
   HomeScreen(),
-  PlaceHolder(
-    title: "Chat",
-  ),
+  MessagesScreen(),
   SettingScreen(),
   ProfileScreen(),
 ];

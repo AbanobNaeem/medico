@@ -22,6 +22,7 @@ class MessagesScreen extends StatelessWidget {
 
   PreferredSizeWidget _appBar(context) {
     return AppBar(
+      forceMaterialTransparency: true,
       leading: IconButton(
         onPressed: () {
           Navigator.of(context).pop();
@@ -52,7 +53,9 @@ class MessagesScreen extends StatelessWidget {
 
   Widget _body() {
     return ListView.builder(
-      padding: EdgeInsets.symmetric(vertical: 35.h),
+      padding: EdgeInsets.only(
+        bottom: kBottomNavigationBarHeight.h,
+      ),
       itemCount: 15,
       itemBuilder: (context, index) => _listTile(
         model: messagesList[0],

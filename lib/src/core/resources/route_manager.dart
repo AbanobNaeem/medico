@@ -18,14 +18,13 @@ import 'package:xpert/src/features/chat_bot/business_logic/chat_bot_cubit.dart';
 import 'package:xpert/src/features/chat_bot/presentation/screens/chatbot_lock_screen.dart';
 import 'package:xpert/src/features/chat_bot/presentation/screens/chatbot_screen.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
-import 'package:xpert/src/features/home/business_logic/temp_cubit/doctor_chat_cubit.dart';
+import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
 import 'package:xpert/src/features/home/presentation/screens/diseases_details_screen.dart';
 import 'package:xpert/src/features/home/presentation/screens/diseases_screen.dart';
 import 'package:xpert/src/features/home/presentation/screens/doctors_list_screen.dart';
 import 'package:xpert/src/features/home/presentation/screens/health_care_screen.dart';
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
-import 'package:xpert/src/features/home/presentation/screens/temp1.dart';
-import 'package:xpert/src/features/home/presentation/screens/temp2.dart';
+import 'package:xpert/src/features/chat/screens/chat.dart';
 import 'package:xpert/src/features/home/presentation/screens/appointment_screen.dart';
 import 'package:xpert/src/features/onboarding/presentation/screens/on_boarding_view.dart';
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
@@ -183,11 +182,6 @@ class RouteGenerator {
           builder: (_) => AppointmentScreen(
             model: args["model"],
           ),
-        );
-
-      case Routes.messagesScreen:
-        return MaterialPageRoute(
-          builder: (_) => const MessagesScreen(),
         );
 
       case Routes.doctorChat:
