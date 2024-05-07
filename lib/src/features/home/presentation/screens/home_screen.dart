@@ -6,7 +6,7 @@ import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
-import 'package:xpert/src/features/home/constants/home_constants.dart';
+import 'package:xpert/src/features/home/data/constants/home_constants.dart';
 import 'package:xpert/src/features/home/presentation/widgets/specialist_container.dart';
 
 class HomeScreen extends StatefulWidget {

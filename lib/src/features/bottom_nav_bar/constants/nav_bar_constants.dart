@@ -52,7 +52,7 @@ final List<MenuItemModel> navBarItems = [
     index: 0,
   ),
   MenuItemModel(
-    selectedAsset: AssetsManager.unfilledChatIc,
+    selectedAsset: AssetsManager.filledChatIc,
     unselectedAsset: AssetsManager.unfilledChatIc,
     index: 1,
   ),
@@ -62,7 +62,7 @@ final List<MenuItemModel> navBarItems = [
     index: 2,
   ),
   MenuItemModel(
-    selectedAsset: AssetsManager.unfilledProfileIc,
+    selectedAsset: AssetsManager.filledProfileIc,
     unselectedAsset: AssetsManager.unfilledProfileIc,
     index: 3,
   ),

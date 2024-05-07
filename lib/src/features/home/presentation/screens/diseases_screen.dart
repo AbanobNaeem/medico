@@ -9,7 +9,7 @@ import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/resources/values_manager.dart';
 import 'package:xpert/src/core/widgets/bottom_extend_app_bar.dart';
 import 'package:xpert/src/core/widgets/default_app_bar.dart';
-import 'package:xpert/src/features/home/constants/diseases_constants.dart';
+import 'package:xpert/src/features/home/data/constants/diseases_constants.dart';
 
 class DiseasesScreen extends StatefulWidget {
   const DiseasesScreen({super.key});

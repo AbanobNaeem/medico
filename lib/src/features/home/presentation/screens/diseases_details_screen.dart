@@ -1,18 +1,25 @@
 import 'dart:io';
 
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
+import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
 import 'package:xpert/src/core/widgets/bottom_extend_app_bar.dart';
 import 'package:xpert/src/core/widgets/default_app_bar.dart';
-import 'package:xpert/src/features/home/constants/diseases_constants.dart';
+import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
+import 'package:xpert/src/features/home/data/constants/diseases_constants.dart';
 
 class DiseasesDetailsScreen extends StatefulWidget {
   final String title;
@@ -28,6 +35,7 @@ class DiseasesDetailsScreen extends StatefulWidget {
 class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
   late List<DiseasesDetailsModel> listOfContent;
   late ImagePicker _imagePicker;
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -55,7 +63,7 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(),
-      body: _body(context),
+      body: _bodyBloc(),
     );
   }
 
@@ -72,37 +80,90 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     );
   }
 
+  Widget _bodyBloc() {
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {
+        state.mapOrNull(
+          uploadImageLoading: (state) {
+            _isLoading = true;
+            showSuccessToast(StringsManager.loading, context);
+          },
+          uploadBonefracturesResult: (state) async {
+            _isLoading = false;
+            Fluttertoast.cancel;
+            _dialog();
+          },
+          uploadBrainTumorResult: (state) {
+            _isLoading = false;
+            Fluttertoast.cancel;
+            _dialog();
+          },
+          uploadImageError: (state) {
+            _isLoading = false;
+            showErrorToast(state.networkExceptions.toString(), context);
+          },
+        );
+      },
+      builder: (context, state) {
+        return _body(context);
+      },
+    );
+  }
+
   Widget _body(context) {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
+        alignment: Alignment.center,
         children: [
-          _bottomExtendAppBar(),
-          18.verticalSpace,
-          AppPaddingWidgetHorizontal(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _cameraAndGalleryRow(),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                  child: Text(
-                    StringsManager.details,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _bottomExtendAppBar(),
+              18.verticalSpace,
+              AppPaddingWidgetHorizontal(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _cameraAndGalleryRow(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 16.w, vertical: 16.h),
+                      child: Text(
+                        StringsManager.details,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ),
+                    ...List.generate(
+                      listOfContent.length,
+                      (index) =>
+                          _bodyText(context, title: listOfContent[index].body),
+                    )
+                  ],
                 ),
-                ...List.generate(
-                  listOfContent.length,
-                  (index) =>
-                      _bodyText(context, title: listOfContent[index].body),
-                )
-              ],
-            ),
+              ),
+            ],
           ),
+          if (_isLoading)
+            Center(
+              child: LoadingAnimationWidget.twistingDots(
+                leftDotColor: ColorManager.black,
+                rightDotColor: ColorManager.primary,
+                size: 100,
+              ),
+            )
         ],
       ),
     );
+  }
+
+  AwesomeDialog _dialog() {
+    return AwesomeDialog(
+      context: context,
+      dialogType: DialogType.info,
+      animType: AnimType.rightSlide,
+      title: 'Dialog Title',
+      desc: 'Dialog description here.............',
+    )..show();
   }
 
   Widget _cameraAndGalleryRow() {
@@ -183,12 +244,27 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     );
   }
 
+  void _send(image) {
+    switch (widget.title) {
+      case StringsManager.boneFractures:
+        return RouteGenerator.homeCubit.uploadOfBonefractures(image);
+      case StringsManager.brainTumor:
+        return RouteGenerator.homeCubit.uploadOfBrainTumor(image);
+      case StringsManager.cancer:
+        return;
+      case StringsManager.breastCancer:
+        return;
+      default:
+        return;
+    }
+  }
+
   Future _openGallery() async {
     final returnImage =
         await _imagePicker.pickImage(source: ImageSource.gallery);
     if (returnImage == null) return;
-    // ignore: unused_local_variable
     final image = File(returnImage.path);
+    _send(image);
   }
 
   Future _openCamera() async {

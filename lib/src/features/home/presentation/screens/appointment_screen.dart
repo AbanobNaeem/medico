@@ -7,7 +7,7 @@ import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
-import 'package:xpert/src/features/home/constants/doctors_list_constants.dart';
+import 'package:xpert/src/features/home/data/constants/doctors_list_constants.dart';
 import 'package:xpert/src/features/home/presentation/widgets/calendar_lib/table_calendar.dart';
 import 'package:xpert/src/features/home/presentation/widgets/gradient_button.dart';
 import 'package:readmore/readmore.dart';

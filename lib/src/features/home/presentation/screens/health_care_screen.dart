@@ -7,7 +7,7 @@ import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
-import 'package:xpert/src/features/home/constants/doctors_list_constants.dart';
+import 'package:xpert/src/features/home/data/constants/doctors_list_constants.dart';
 
 class HealthCareScreen extends StatelessWidget {
   const HealthCareScreen({super.key});

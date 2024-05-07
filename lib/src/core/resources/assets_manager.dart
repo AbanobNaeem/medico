@@ -25,10 +25,12 @@ class AssetsManager {
 
   static const String unfilledSettingsIc = '$svgPath/unfilled_settings_ic.svg';
   static const String unfilledChatIc = '$svgPath/unfilled_chat_ic.svg';
+  static const String filledChatIc = '$svgPath/chat_filled.svg';
 
   static const String robotIc = '$svgPath/robot_ic.svg';
 
   static const String unfilledProfileIc = '$svgPath/unfilled_profile_ic.svg';
+  static const String filledProfileIc = '$svgPath/profile_filled.svg';
 
   //!Auth
   static const String loginBackGround = '$svgPath/login.svg';

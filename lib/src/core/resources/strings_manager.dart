@@ -30,6 +30,7 @@ class StringsManager {
   static const String signUp = 'SIGN UP';
   static const String socialMediaAuth = 'Or sign up with';
   static const String email = 'Email';
+  static const String anErrorOccurred = 'An Error Occurred';
   static const String password = 'Password';
   static const String fullName = 'Full Name';
   static const String phoneNumber = 'Phone Number';
@@ -180,4 +181,5 @@ class StringsManager {
   static const String reviews = 'reviews';
   static const String seeMore = 'See more';
   static const String seeLess = 'See less';
+  static const String loading = 'Loading';
 }

@@ -160,8 +160,11 @@ class RouteGenerator {
       case Routes.diseasesDetails:
         var args = settings.arguments as Map;
         return MaterialPageRoute(
-          builder: (_) => DiseasesDetailsScreen(
-            title: args["title"],
+          builder: (_) => BlocProvider.value(
+            value: homeCubit,
+            child: DiseasesDetailsScreen(
+              title: args["title"],
+            ),
           ),
         );
 
