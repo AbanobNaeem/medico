@@ -48,12 +48,12 @@ mixin AppTheme implements ThemeData {
         ),
 
         //! Page Transition
-        pageTransitionsTheme: const PageTransitionsTheme(
-          builders: {
-            TargetPlatform.android: ZoomPageTransitionsBuilder(),
-            TargetPlatform.iOS: ZoomPageTransitionsBuilder(),
-          },
-        ),
+        // pageTransitionsTheme: const PageTransitionsTheme(
+        //   builders: {
+        //     TargetPlatform.android: ZoomPageTransitionsBuilder(),
+        //     TargetPlatform.iOS: ZoomPageTransitionsBuilder(),
+        //   },
+        // ),
 
         //! Action Icon
         actionIconTheme: ActionIconThemeData(

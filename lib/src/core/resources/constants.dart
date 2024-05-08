@@ -3,7 +3,7 @@ class AppConstants {
   static const AppConstants _instance = AppConstants._internal(); // singleton
   factory AppConstants() => _instance;
 
-  static const appName = 'Xpert';
+  static const appName = 'Medico';
 
   static const domain = 'https://classify.roboflow.com/';
 
