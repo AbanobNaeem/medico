@@ -1,6 +1,4 @@
-import 'dart:developer';
 import 'dart:io';
-
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,13 +7,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:xpert/src/app/app.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
-import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
-import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/resources/utils.dart';
@@ -44,23 +38,8 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
   @override
   void initState() {
     super.initState();
-    listOfContent = _listType();
+    listOfContent = listType(widget.title);
     _imagePicker = ImagePicker();
-  }
-
-  List<DiseasesDetailsModel> _listType() {
-    switch (widget.title) {
-      case StringsManager.boneFractures:
-        return boneFracturesList;
-      case StringsManager.brainTumor:
-        return brainTumorList;
-      case StringsManager.cancer:
-        return cancerList;
-      case StringsManager.breastCancer:
-        return breastCancerList;
-      default:
-        return boneFracturesList;
-    }
   }
 
   @override
@@ -101,10 +80,10 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
           uploadBrainTumorResult: (state) {
             _isLoading = false;
             Fluttertoast.cancel;
-            log("${state.data.predictedClasses?.first}");
             _dialog(title: state.data.predictedClasses?.first);
           },
           uploadImageError: (state) {
+            Fluttertoast.cancel;
             _isLoading = false;
             showErrorToast(state.networkExceptions.toString(), context);
           },
@@ -131,45 +110,44 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _cameraAndGalleryRow(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 16.w, vertical: 16.h),
-                      child: Text(
-                        StringsManager.details,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                    ),
-                    ...List.generate(
-                      listOfContent.length,
-                      (index) =>
-                          _bodyText(context, title: listOfContent[index].body),
-                    )
+                    _details(),
+                    ..._generateDetails(),
                   ],
                 ),
               ),
             ],
           ),
-          if (_isLoading)
-            Center(
-              child: LoadingAnimationWidget.twistingDots(
-                leftDotColor: ColorManager.black,
-                rightDotColor: ColorManager.primary,
-                size: 100,
-              ),
-            )
+          if (_isLoading) _twistingDots(),
         ],
       ),
     );
   }
 
-  Color _color(double condition) {
-    if (condition >= 1 && condition < 30) {
-      return ColorManager.yellow;
-    } else if (condition >= 30 && condition < 70) {
-      return ColorManager.green;
-    } else {
-      return ColorManager.brightRed;
-    }
+  Widget _details() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      child: Text(
+        StringsManager.details,
+        style: Theme.of(context).textTheme.bodyMedium,
+      ),
+    );
+  }
+
+  List _generateDetails() {
+    return List.generate(
+      listOfContent.length,
+      (index) => _bodyText(context, title: listOfContent[index].body),
+    );
+  }
+
+  Widget _twistingDots() {
+    return Center(
+      child: LoadingAnimationWidget.twistingDots(
+        leftDotColor: ColorManager.black,
+        rightDotColor: ColorManager.primary,
+        size: 100,
+      ),
+    );
   }
 
   AwesomeDialog _dialog({String? title, String? desc}) {
@@ -192,7 +170,7 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
               "$desc%",
               style: StyleManager.getMediumStyle(
                 fontSize: FontSize.s16,
-                color: _color(double.parse(desc)),
+                color: color(double.parse(desc)),
               ),
             ),
           _brief(title),
@@ -202,54 +180,12 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     )..show();
   }
 
-  void _launchUrl(url) async {
-
-    if (!await launchUrl(Uri.parse(url))) {
-      showErrorToast('${StringsManager.couldNotLaunch} $url',
-          navigatorKey.currentContext!);
-    }
-  }
-
-  String? _briefCondition(String? title) {
-    switch (title) {
-      case "Comminuted fracture":
-        return AppConstants.comminutedFracture;
-      case "Greenstick fracture":
-        return AppConstants.greenstickFracture;
-      case "Fracture Dislocation":
-        return AppConstants.fractureDislocation;
-      case "Compression-Crush fracture":
-        return null;
-      case "Hairline Fracture":
-        return null;
-      case "Impacted fracture":
-        return null;
-      case "Intra-articular fracture":
-        return null;
-      case "Longitudinal fracture":
-        return null;
-      case "Spiral Fracture":
-        return null;
-      case "Avulsion fracture":
-        return null;
-      case "Oblique fracture":
-        return null;
-      default:
-        return null;
-    }
-  }
-
   Widget _brief(String? title) {
-    return TextButton(
-      onPressed: () {
-        _launchUrl(AppConstants.comminutedFractureUrl);
-      },
-      child: Text(
-        _briefCondition(title) ?? '',
-        style: StyleManager.getRegularStyle(
-          fontSize: FontSize.s16,
-          color: ColorManager.black,
-        ),
+    return Text(
+      briefCondition(title) ?? '',
+      style: StyleManager.getRegularStyle(
+        fontSize: FontSize.s16,
+        color: ColorManager.black,
       ),
     );
   }
@@ -257,35 +193,7 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
   Widget _moreAbout(String? title) {
     return TextButton(
       onPressed: () {
-        _launchUrl(AppConstants.comminutedFractureUrl);
-        switch (title) {
-          case "Comminuted fracture":
-            return _launchUrl(AppConstants.comminutedFractureUrl);
-          case "Greenstick fracture":
-            return _launchUrl(AppConstants.greenstickFractureUrl);
-
-          case "Fracture Dislocation":
-            return _launchUrl(AppConstants.fractureDislocationUrl);
-
-          case "Compression-Crush fracture":
-            return;
-          case "Hairline Fracture":
-            return;
-          case "Impacted fracture":
-            return;
-          case "Intra-articular fracture":
-            return;
-          case "Longitudinal fracture":
-            return;
-          case "Spiral Fracture":
-            return;
-          case "Avulsion fracture":
-            return;
-          case "Oblique fracture":
-            return;
-          default:
-            return;
-        }
+        launchUrlCondition(title);
       },
       child: const Text(
         StringsManager.moreAbout,
@@ -375,27 +283,12 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     );
   }
 
-  void _send(image) {
-    switch (widget.title) {
-      case StringsManager.boneFractures:
-        return RouteGenerator.homeCubit.uploadOfBonefractures(image);
-      case StringsManager.brainTumor:
-        return RouteGenerator.homeCubit.uploadOfBrainTumor(image);
-      case StringsManager.cancer:
-        return;
-      case StringsManager.breastCancer:
-        return;
-      default:
-        return;
-    }
-  }
-
   Future _openGallery() async {
     final returnImage =
         await _imagePicker.pickImage(source: ImageSource.gallery);
     if (returnImage == null) return;
     final image = File(returnImage.path);
-    _send(image);
+    sendImage(widget.title, image);
   }
 
   Future _openCamera() async {
