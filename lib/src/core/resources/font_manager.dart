@@ -16,7 +16,7 @@ class FontWeightManager {
   static const FontWeightManager _instance =
       FontWeightManager._internal(); // singleton
   factory FontWeightManager() => _instance;
-  
+
   static const FontWeight light = FontWeight.w300;
   static const FontWeight regular = FontWeight.w400;
   static const FontWeight medium = FontWeight.w500;
@@ -37,6 +37,8 @@ class FontSize {
 
   static double s14 = 14.spMin;
 
+  static double s15 = 15.spMin;
+
   static double s16 = 16.spMin;
 
   static double s18 = 18.spMin;
@@ -48,6 +50,8 @@ class FontSize {
   static double s30 = 30.spMin;
 
   static double s35 = 35.spMin;
+  
+  static double s36 = 36.spMin;
 
   static double s40 = 40.spMin;
 

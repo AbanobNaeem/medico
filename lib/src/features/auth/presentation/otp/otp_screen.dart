@@ -8,9 +8,10 @@ import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
+import 'package:xpert/src/core/widgets/bottom_extend_app_bar.dart';
+import 'package:xpert/src/core/widgets/default_app_bar.dart';
 import 'package:xpert/src/core/widgets/default_button.dart';
 import 'package:xpert/src/features/auth/business_logic/cubit/otp_timer_cubit.dart';
-import 'package:xpert/src/features/auth/widgets/auth_app_bar.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({super.key});
@@ -28,7 +29,7 @@ class _OTPScreenState extends State<OTPScreen> {
   @override
   void initState() {
     super.initState();
-    otpController = List.generate(6, (index) => TextEditingController());
+    otpController = List.generate(4, (index) => TextEditingController());
     otpTimerCubit.startTimer();
   }
 
@@ -41,8 +42,9 @@ class _OTPScreenState extends State<OTPScreen> {
   }
 
   PreferredSizeWidget? _appBar() {
-    return const AuthAppBar(
+    return DefaultAppBar(
       title: StringsManager.enter4Digits,
+      fontSize: FontSize.s14,
     );
   }
 
@@ -72,19 +74,14 @@ class _OTPScreenState extends State<OTPScreen> {
   }
 
   Widget _buildHeader() {
-    return Container(
+    return BottomExtendAppBar(
       height: 0.1.sh,
-      decoration: BoxDecoration(
-          color: ColorManager.primary,
-          borderRadius: BorderRadiusDirectional.only(
-            bottomStart: Radius.circular(50.r),
-          )),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              65.horizontalSpace,
+              50.horizontalSpace,
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

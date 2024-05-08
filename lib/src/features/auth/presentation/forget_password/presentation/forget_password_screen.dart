@@ -10,8 +10,9 @@ import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
+import 'package:xpert/src/core/widgets/bottom_extend_app_bar.dart';
+import 'package:xpert/src/core/widgets/default_app_bar.dart';
 import 'package:xpert/src/core/widgets/default_button.dart';
-import 'package:xpert/src/features/auth/widgets/auth_app_bar.dart';
 
 import '../widgets/custom_forget_card.dart';
 
@@ -42,8 +43,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   }
 
   PreferredSizeWidget? _appBar() {
-    return const AuthAppBar(
+    return DefaultAppBar(
       title: StringsManager.forgetPassword,
+      fontSize: FontSize.s14,
     );
   }
 
@@ -93,19 +95,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   }
 
   Widget _buildForgetPasswordImage() {
-    return Container(
-      height: 0.3.sh,
-      decoration: BoxDecoration(
-          color: ColorManager.primary,
-          borderRadius: BorderRadiusDirectional.only(
-            bottomStart: Radius.circular(50.r),
-          )),
+    return BottomExtendAppBar(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              65.horizontalSpace,
+              50.horizontalSpace,
               Text(
                 StringsManager.forgetPasswordDesc,
                 style: StyleManager.getRegularStyle(

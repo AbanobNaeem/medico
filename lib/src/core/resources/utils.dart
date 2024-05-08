@@ -39,7 +39,7 @@ void showErrorToast(String errorMessage, BuildContext context) {
 void showWarningToast(String warringMessage, BuildContext context) {
   Fluttertoast.showToast(
     msg: warringMessage,
-    toastLength: Toast.LENGTH_LONG,
+    toastLength: Toast.LENGTH_SHORT,
     gravity: ToastGravity.BOTTOM,
     backgroundColor: ColorManager.brightRed,
   );
@@ -48,9 +48,9 @@ void showWarningToast(String warringMessage, BuildContext context) {
 void showSuccessToast(String doneMessage, BuildContext context) {
   Fluttertoast.showToast(
     msg: doneMessage,
-    toastLength: Toast.LENGTH_LONG,
+    toastLength: Toast.LENGTH_SHORT,
     gravity: ToastGravity.BOTTOM,
-    backgroundColor: ColorManager.brightRed,
+    backgroundColor: Colors.green,
   );
 }
 
@@ -94,7 +94,7 @@ String obscureText({String? text, String? countryCode}) {
     } else {
       // Mask all digits except the last two
       return updatedText =
-          '${countryCode??''} ${text.substring(0, text.length - 2).replaceAll(RegExp(r'\d'), '*') + text.substring(text.length - 2)}';
+          '${countryCode ?? ''} ${text.substring(0, text.length - 2).replaceAll(RegExp(r'\d'), '*') + text.substring(text.length - 2)}';
     }
   } else {
     return '';

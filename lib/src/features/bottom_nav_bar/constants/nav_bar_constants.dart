@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
+import 'package:xpert/src/features/chat/screens/messages_screen.dart';
+import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
+import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
+import 'package:xpert/src/features/setting/presentation/screen/setting_screen.dart';
 
 class PlaceHolder extends StatefulWidget {
   const PlaceHolder({
@@ -23,18 +27,10 @@ class _PlaceHolderState extends State<PlaceHolder> {
 }
 
 List<Widget> navBarPages = const [
-  PlaceHolder(
-    title: "Home",
-  ),
-  PlaceHolder(
-    title: "Chat",
-  ),
-  PlaceHolder(
-    title: "Settings",
-  ),
-  PlaceHolder(
-    title: "profile",
-  ),
+  HomeScreen(),
+  MessagesScreen(),
+  SettingScreen(),
+  ProfileScreen(),
 ];
 
 class MenuItemModel {
@@ -56,7 +52,7 @@ final List<MenuItemModel> navBarItems = [
     index: 0,
   ),
   MenuItemModel(
-    selectedAsset: AssetsManager.unfilledChatIc,
+    selectedAsset: AssetsManager.filledChatIc,
     unselectedAsset: AssetsManager.unfilledChatIc,
     index: 1,
   ),
@@ -66,7 +62,7 @@ final List<MenuItemModel> navBarItems = [
     index: 2,
   ),
   MenuItemModel(
-    selectedAsset: AssetsManager.unfilledProfileIc,
+    selectedAsset: AssetsManager.filledProfileIc,
     unselectedAsset: AssetsManager.unfilledProfileIc,
     index: 3,
   ),
