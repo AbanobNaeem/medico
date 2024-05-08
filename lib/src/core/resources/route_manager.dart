@@ -30,6 +30,7 @@ import 'package:xpert/src/features/onboarding/presentation/screens/on_boarding_v
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
 import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
 import 'package:xpert/src/features/setting/presentation/screen/setting_screen.dart';
+import 'package:xpert/src/features/splash/presentation/screen/splash_screen.dart';
 
 class Routes {
   static const String onboarding = '/onboarding';
@@ -41,6 +42,7 @@ class Routes {
   static const String resetPassword = '/resetPassword';
   static const String otp = '/otp';
   static const String gender = '/Gender';
+  static const String splashScreen = '/splashScreen';
 
   static const String home = '/home';
   static const String diseases = '/diseasesScreen';
@@ -80,6 +82,9 @@ class RouteGenerator {
   }
   Route? getRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.splashScreen:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
+
       case Routes.onboarding:
         return MaterialPageRoute(builder: (_) => const OnBoardingView());
 

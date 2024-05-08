@@ -49,7 +49,7 @@ Widget _buildMaterialApp(RouteGenerator routeGenerator) {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.kLightTheme,
         onGenerateRoute: routeGenerator.getRoute,
-        initialRoute: Routes.onboarding,
+        initialRoute: Routes.splashScreen,
       );
     },
   );

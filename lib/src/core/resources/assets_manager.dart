@@ -68,6 +68,7 @@ class AssetsManager {
   static const String unfilledFacebookIc = '$svgPath/unfilled_facebook_ic.svg';
 
   //!common
+  static const String logo = '$imagePath/logo.png';
   static const String arrowBack = '$svgPath/arrow_back.svg';
   static const String arrowForward = '$svgPath/arrow_forward.svg';
   static const String loadingShimmer = '$imagePath/loading.gif';
