@@ -6,8 +6,11 @@ import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 
 class SpecialistContainer extends StatelessWidget {
-  const SpecialistContainer({super.key});
-
+  const SpecialistContainer({
+    super.key,
+    required this.index,
+  });
+  final int index;
   @override
   Widget build(BuildContext context) {
     return _specialistContainer(context);
@@ -69,7 +72,7 @@ class SpecialistContainer extends StatelessWidget {
       child: DotsIndicator(
         mainAxisSize: MainAxisSize.min,
         dotsCount: 3,
-        position: 0,
+        position: index,
         decorator: DotsDecorator(
           spacing: EdgeInsets.symmetric(horizontal: 7.w),
           activeColor: ColorManager.white,

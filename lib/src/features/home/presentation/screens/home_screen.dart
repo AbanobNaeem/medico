@@ -86,13 +86,28 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Widget _pageView() {
+    return SizedBox(
+      height: 0.2.sh,
+      child: PageView.builder(
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: EdgeInsets.symmetric(horizontal: 2.w),
+            child: SpecialistContainer(index: index),
+          );
+        },
+      ),
+    );
+  }
+
   Widget _buildSpecialist(context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _label(context, text: StringsManager.specialist),
         8.verticalSpace,
-        const SpecialistContainer(),
+        _pageView(),
       ],
     );
   }

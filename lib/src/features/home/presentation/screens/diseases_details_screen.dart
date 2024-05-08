@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:awesome_dialog/awesome_dialog.dart';
@@ -8,8 +9,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:xpert/src/app/app.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
@@ -91,12 +95,14 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
           uploadBonefracturesResult: (state) async {
             _isLoading = false;
             Fluttertoast.cancel;
-            _dialog();
+            _dialog(
+                title: state.data.top, desc: "${state.data.confidence * 100}");
           },
           uploadBrainTumorResult: (state) {
             _isLoading = false;
             Fluttertoast.cancel;
-            _dialog();
+            log("${state.data.predictedClasses?.first}");
+            _dialog(title: state.data.predictedClasses?.first);
           },
           uploadImageError: (state) {
             _isLoading = false;
@@ -156,14 +162,139 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     );
   }
 
-  AwesomeDialog _dialog() {
+  Color _color(double condition) {
+    if (condition >= 1 && condition < 30) {
+      return ColorManager.yellow;
+    } else if (condition >= 30 && condition < 70) {
+      return ColorManager.green;
+    } else {
+      return ColorManager.brightRed;
+    }
+  }
+
+  AwesomeDialog _dialog({String? title, String? desc}) {
     return AwesomeDialog(
       context: context,
       dialogType: DialogType.info,
       animType: AnimType.rightSlide,
-      title: 'Dialog Title',
-      desc: 'Dialog description here.............',
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+      body: Column(
+        children: [
+          Text(
+            '$title',
+            style: StyleManager.getSemiBoldStyle(
+              fontSize: FontSize.s16,
+              color: ColorManager.brightRed,
+            ),
+          ),
+          if (desc != null)
+            Text(
+              "$desc%",
+              style: StyleManager.getMediumStyle(
+                fontSize: FontSize.s16,
+                color: _color(double.parse(desc)),
+              ),
+            ),
+          _brief(title),
+          _moreAbout(title),
+        ],
+      ),
     )..show();
+  }
+
+  void _launchUrl(url) async {
+
+    if (!await launchUrl(Uri.parse(url))) {
+      showErrorToast('${StringsManager.couldNotLaunch} $url',
+          navigatorKey.currentContext!);
+    }
+  }
+
+  String? _briefCondition(String? title) {
+    switch (title) {
+      case "Comminuted fracture":
+        return AppConstants.comminutedFracture;
+      case "Greenstick fracture":
+        return AppConstants.greenstickFracture;
+      case "Fracture Dislocation":
+        return AppConstants.fractureDislocation;
+      case "Compression-Crush fracture":
+        return null;
+      case "Hairline Fracture":
+        return null;
+      case "Impacted fracture":
+        return null;
+      case "Intra-articular fracture":
+        return null;
+      case "Longitudinal fracture":
+        return null;
+      case "Spiral Fracture":
+        return null;
+      case "Avulsion fracture":
+        return null;
+      case "Oblique fracture":
+        return null;
+      default:
+        return null;
+    }
+  }
+
+  Widget _brief(String? title) {
+    return TextButton(
+      onPressed: () {
+        _launchUrl(AppConstants.comminutedFractureUrl);
+      },
+      child: Text(
+        _briefCondition(title) ?? '',
+        style: StyleManager.getRegularStyle(
+          fontSize: FontSize.s16,
+          color: ColorManager.black,
+        ),
+      ),
+    );
+  }
+
+  Widget _moreAbout(String? title) {
+    return TextButton(
+      onPressed: () {
+        _launchUrl(AppConstants.comminutedFractureUrl);
+        switch (title) {
+          case "Comminuted fracture":
+            return _launchUrl(AppConstants.comminutedFractureUrl);
+          case "Greenstick fracture":
+            return _launchUrl(AppConstants.greenstickFractureUrl);
+
+          case "Fracture Dislocation":
+            return _launchUrl(AppConstants.fractureDislocationUrl);
+
+          case "Compression-Crush fracture":
+            return;
+          case "Hairline Fracture":
+            return;
+          case "Impacted fracture":
+            return;
+          case "Intra-articular fracture":
+            return;
+          case "Longitudinal fracture":
+            return;
+          case "Spiral Fracture":
+            return;
+          case "Avulsion fracture":
+            return;
+          case "Oblique fracture":
+            return;
+          default:
+            return;
+        }
+      },
+      child: const Text(
+        StringsManager.moreAbout,
+        style: TextStyle(
+          color: ColorManager.primary,
+          decoration: TextDecoration.underline,
+        ),
+      ),
+    );
   }
 
   Widget _cameraAndGalleryRow() {

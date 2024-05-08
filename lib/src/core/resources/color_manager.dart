@@ -56,6 +56,8 @@ class ColorManager {
 
   static const Color vividGreen = Color(0xff24FF00);
 
+  static const Color green = Color.fromARGB(255, 28, 161, 7);
+
   static const LinearGradient chatBotGradient = LinearGradient(
     colors: [
       Color(0xff969EFC),

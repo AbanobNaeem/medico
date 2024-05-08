@@ -152,6 +152,10 @@ class StringsManager {
   static const String breastCancerBodyText4 =
       'Breast cancer is always caused by \na mistake in genetic \nmaterial (called a genetic abnormality).\nStill, only 5% to 10% of cancers are \nlinked to genetic abnormalities';
 
+  static const String moreAbout = "More About";
+
+  static const String couldNotLaunch = "Could not launch";
+
   //! Doctors List
   static const String doctorsList = 'Doctors List';
   static const String drAillaAhmed = 'Dr. Ailla Ahmed';
