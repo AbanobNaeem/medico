@@ -6,6 +6,8 @@ import 'package:xpert/src/core/web_services/token_interceptor.dart';
 import 'package:xpert/src/core/web_services/web_services.dart';
 import 'package:xpert/src/features/auth/business_logic/cubit/otp_timer_cubit.dart';
 import 'package:xpert/src/features/bottom_nav_bar/business_logic/nav_bar_cubit/nav_bar_cubit.dart';
+import 'package:xpert/src/features/chat/data/chat_repo.dart';
+import 'package:xpert/src/features/chat/web_services/chat_web_services.dart';
 import 'package:xpert/src/features/chat_bot/business_logic/chat_bot_cubit.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
 import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
@@ -19,15 +21,21 @@ void initGetIt() {
   getIt.registerLazySingleton<WebServices>(
       () => WebServices(createAndSetupDio()));
 
+  getIt.registerLazySingleton<ChatWebServices>(
+      () => ChatWebServices(createAndSetupDio()));
+
   getIt.registerLazySingleton<DiseasesRepo>(() => DiseasesRepo(getIt()));
 
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
-  
+
   getIt.registerLazySingleton<OtpTimerCubit>(() => OtpTimerCubit());
   getIt.registerLazySingleton<NavBarCubit>(() => NavBarCubit());
   getIt.registerLazySingleton<ChatBotCubit>(() => ChatBotCubit());
   getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit());
-  getIt.registerLazySingleton<DoctorChatCubit>(() => DoctorChatCubit());
+
+  getIt.registerLazySingleton<ChatRepo>(() => ChatRepo(getIt()));
+
+  getIt.registerLazySingleton<DoctorChatCubit>(() => DoctorChatCubit(getIt()));
 }
 
 Dio createAndSetupDio() {

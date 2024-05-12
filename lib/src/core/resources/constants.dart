@@ -6,11 +6,16 @@ class AppConstants {
   static const appName = 'Medico';
 
   static const domain = 'https://classify.roboflow.com/';
+  static const chatDomain = 'https://ertdemo.azurewebsites.net/api/';
 
   // ignore: constant_identifier_names
   static const ACCESS_TOKEN_KEY = '';
   static const tokenType = '';
   static const jsonAccept = '';
+
+  static const String pusherApiKey = 'b47f998137c2c1d1e983';
+  static const String pusherCluster = 'eu';
+  static const String pusherPrefixChannelName = "my-channel";
 
   static const String onBoarding = 'on_boarding_skip';
   static const String tempImageUrl =

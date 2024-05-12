@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
@@ -6,15 +7,19 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
 import 'package:xpert/src/core/widgets/chat_text_field.dart';
+import 'package:xpert/src/features/chat/data/models/chat_model.dart';
 import 'package:xpert/src/features/chat/screens/messages_screen.dart';
 import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -38,16 +43,14 @@ class _DoctorChatState extends State<DoctorChat> {
   bool _isKeyboardVisible = false;
   late FocusNode _focusNode;
 
+  List<ChatModel>? chat;
+
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      // Scroll to the last message after the frame has been rendered
-      _scrollList.jumpTo(index: 0);
-    });
+    _scrollList = ItemScrollController();
     _controller = TextEditingController();
     _scrollController = ScrollController();
-    _scrollList = ItemScrollController();
 
     _focusNode = FocusNode();
 
@@ -64,6 +67,20 @@ class _DoctorChatState extends State<DoctorChat> {
         });
       }
     });
+
+    RouteGenerator.doctorChatCubit.getMessageData();
+
+    _loadChatData();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Scroll to the last message after the frame has been rendered
+      _scrollList.jumpTo(index: 0);
+    });
+  }
+
+  Future<void> _loadChatData() async {
+    await RouteGenerator.doctorChatCubit
+        .pusherInit(channelName: AppConstants.pusherPrefixChannelName);
   }
 
   @override
@@ -94,17 +111,36 @@ class _DoctorChatState extends State<DoctorChat> {
 
   Widget _buildBloc() {
     return BlocConsumer<DoctorChatCubit, DoctorChatState>(
-      listener: (context, state) {},
-      builder: (context, state) => _buildBody(),
+      listener: (context, state) {
+        state.mapOrNull(
+          chatLoading: (state) {},
+          chatLoaded: (state) {
+            chat = state.listOfChat;
+            log("+++$chat");
+          },
+          chatError: (state) {
+            showErrorToast(state.error, context);
+          },
+        );
+      },
+      builder: (context, state) {
+        if (chat != null) {
+          return _buildBody(chat!);
+        } else if (state == const DoctorChatState.chatLoading()) {
+          return _twistingDots();
+        } else {
+          return const SizedBox();
+        }
+      },
     );
   }
 
-  Widget _buildBody() {
+  Widget _buildBody(List<ChatModel> chat) {
     return Column(
       children: [
         _onlineWidget(),
         Expanded(
-          child: AppPaddingWidgetHorizontal(child: _buildChatMessageBox()),
+          child: AppPaddingWidgetHorizontal(child: _buildChatMessageBox(chat)),
         ),
         _chatTextField(),
         Offstage(
@@ -134,21 +170,31 @@ class _DoctorChatState extends State<DoctorChat> {
     );
   }
 
-  Widget _buildChatMessageBox() {
+  Widget _twistingDots() {
+    return Center(
+      child: LoadingAnimationWidget.twistingDots(
+        leftDotColor: ColorManager.black,
+        rightDotColor: ColorManager.primary,
+        size: 100,
+      ),
+    );
+  }
+
+  Widget _buildChatMessageBox(List<ChatModel> chat) {
     return SizedBox(
       width: 1.sw,
       child: ScrollablePositionedList.separated(
         reverse: true,
         itemScrollController: _scrollList,
         separatorBuilder: (context, index) => 16.verticalSpace,
-        itemCount: tempChatList.length,
-        itemBuilder: (context, index) => _message(model: tempChatList[index]),
+        itemCount: chat.length,
+        itemBuilder: (context, index) => _message(model: chat[index]),
       ),
     );
   }
 
-  Widget _message({required TempChatModel model}) {
-    bool fromUser = (model.from == "user");
+  Widget _message({required ChatModel model}) {
+    bool fromUser = (model.senderID == 2);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment:
@@ -170,7 +216,7 @@ class _DoctorChatState extends State<DoctorChat> {
           ),
           child: Center(
             child: Text(
-              model.message,
+              model.content ?? '',
               textAlign: TextAlign.center,
               style: StyleManager.getLightStyle(
                 fontSize: FontSize.s16,
@@ -211,7 +257,7 @@ class _DoctorChatState extends State<DoctorChat> {
     return ChatTextField(
       onSendWithPrefixIcon: () {
         if (_controller.text.isNotEmpty) {
-          RouteGenerator.doctorChatCubit.sendMessage(_controller.text);
+          RouteGenerator.doctorChatCubit.sendMessage(message: _controller.text);
         }
         _controller.clear();
       },
@@ -237,7 +283,7 @@ class _DoctorChatState extends State<DoctorChat> {
       focusNode: _focusNode,
       onSubmitted: (message) {
         if (message.isNotEmpty) {
-          RouteGenerator.doctorChatCubit.sendMessage(message);
+          RouteGenerator.doctorChatCubit.sendMessage(message: message);
           _scrollList.jumpTo(index: 0);
         }
         _controller.clear();
@@ -261,27 +307,7 @@ class _DoctorChatState extends State<DoctorChat> {
   @override
   void dispose() {
     _controller.dispose();
+    RouteGenerator.doctorChatCubit.disposePusher(channelName: AppConstants.pusherPrefixChannelName);
     super.dispose();
   }
 }
-
-class TempChatModel {
-  final String message;
-  final String from;
-
-  TempChatModel({
-    required this.message,
-    required this.from,
-  });
-}
-
-List<TempChatModel> tempChatList = [
-  TempChatModel(
-    message: "Hello, How can help you?",
-    from: "doctor",
-  ),
-  TempChatModel(
-    message: "I don't feel good today",
-    from: "user",
-  ),
-];
