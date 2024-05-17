@@ -8,6 +8,10 @@ class AppConstants {
   static const domain = 'https://classify.roboflow.com/';
   static const chatDomain = 'https://ertdemo.azurewebsites.net/api/';
 
+  static const chatBotToken = "AIzaSyDDMeYkvPbE4zUOnOG5cNQ0Aiowo2MpSiw";
+  static const chatBotModel = 'gemini-pro';
+
+
   // ignore: constant_identifier_names
   static const ACCESS_TOKEN_KEY = '';
   static const tokenType = '';

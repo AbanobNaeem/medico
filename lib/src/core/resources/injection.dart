@@ -16,10 +16,13 @@ import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.
 
 final getIt = GetIt.instance;
 Dio dio = Dio();
+Dio dioChatGpt = Dio();
 
 void initGetIt() {
   getIt.registerLazySingleton<WebServices>(
       () => WebServices(createAndSetupDio()));
+
+  getIt.registerLazySingleton<ChatBotCubit>(() => ChatBotCubit());
 
   getIt.registerLazySingleton<ChatWebServices>(
       () => ChatWebServices(createAndSetupDio()));
@@ -30,7 +33,6 @@ void initGetIt() {
 
   getIt.registerLazySingleton<OtpTimerCubit>(() => OtpTimerCubit());
   getIt.registerLazySingleton<NavBarCubit>(() => NavBarCubit());
-  getIt.registerLazySingleton<ChatBotCubit>(() => ChatBotCubit());
   getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit());
 
   getIt.registerLazySingleton<ChatRepo>(() => ChatRepo(getIt()));
