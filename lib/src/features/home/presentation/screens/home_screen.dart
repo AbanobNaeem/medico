@@ -73,18 +73,18 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _searchBar() {
-    return SearchBar(
-      controller: controller,
-      padding:
-          MaterialStatePropertyAll(EdgeInsetsDirectional.only(start: 14.w)),
-      leading: const Icon(
-        Icons.search,
-        color: ColorManager.mediumGray,
-      ),
-      hintText: StringsManager.search,
-    );
-  }
+  // Widget _searchBar() {
+  //   return SearchBar(
+  //     controller: controller,
+  //     padding:
+  //         MaterialStatePropertyAll(EdgeInsetsDirectional.only(start: 14.w)),
+  //     leading: const Icon(
+  //       Icons.search,
+  //       color: ColorManager.mediumGray,
+  //     ),
+  //     hintText: StringsManager.search,
+  //   );
+  // }
 
   Widget _pageView() {
     return SizedBox(

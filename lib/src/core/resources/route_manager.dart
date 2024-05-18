@@ -190,7 +190,10 @@ class RouteGenerator {
 
       case Routes.doctorsListScreen:
         return MaterialPageRoute(
-          builder: (_) => const DoctorsListScreen(),
+          builder: (_) => BlocProvider.value(
+            value: homeCubit,
+            child: const DoctorsListScreen(),
+          ),
           // builder: (_) => const MessagesScreen(),
         );
 

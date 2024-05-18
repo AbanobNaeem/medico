@@ -15,6 +15,7 @@ import 'package:xpert/src/features/chat_bot/business_logic/chat_bot_cubit.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
 import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
 import 'package:xpert/src/features/home/data/repo/diseases_repo.dart';
+import 'package:xpert/src/features/home/home_web_services/home_web_services.dart';
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
 
 final getIt = GetIt.instance;
@@ -33,12 +34,16 @@ void initGetIt() {
   getIt.registerLazySingleton<AuthWebServices>(
       () => AuthWebServices(createAndSetupDio()));
 
-  getIt.registerLazySingleton<AuthRepo>(
-      () => AuthRepo(getIt()));
+  getIt.registerLazySingleton<HomeWebServices>(
+      () => HomeWebServices(createAndSetupDio()));
+
+  getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
 
   getIt.registerLazySingleton<AuthLogicCubit>(() => AuthLogicCubit(getIt()));
 
-  getIt.registerLazySingleton<DiseasesRepo>(() => DiseasesRepo(getIt()));
+  getIt.registerLazySingleton<HomeRepo>(
+    () => HomeRepo(getIt(), getIt()),
+  );
 
   getIt.registerLazySingleton<HomeCubit>(() => HomeCubit(getIt()));
 

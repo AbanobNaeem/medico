@@ -24,6 +24,12 @@ mixin _$HomeState {
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
     required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +39,12 @@ mixin _$HomeState {
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +54,12 @@ mixin _$HomeState {
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +73,12 @@ mixin _$HomeState {
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +89,12 @@ mixin _$HomeState {
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +105,12 @@ mixin _$HomeState {
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,6 +177,12 @@ class _$InitialImpl implements _Initial {
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
     required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
   }) {
     return initial();
   }
@@ -153,6 +195,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
   }) {
     return initial?.call();
   }
@@ -165,6 +213,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -184,6 +238,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
   }) {
     return initial(this);
   }
@@ -197,6 +257,12 @@ class _$InitialImpl implements _Initial {
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
   }) {
     return initial?.call(this);
   }
@@ -210,6 +276,12 @@ class _$InitialImpl implements _Initial {
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -270,6 +342,12 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
     required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
   }) {
     return uploadImageLoading();
   }
@@ -282,6 +360,12 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
   }) {
     return uploadImageLoading?.call();
   }
@@ -294,6 +378,12 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
     required TResult orElse(),
   }) {
     if (uploadImageLoading != null) {
@@ -313,6 +403,12 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
   }) {
     return uploadImageLoading(this);
   }
@@ -326,6 +422,12 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
   }) {
     return uploadImageLoading?.call(this);
   }
@@ -339,6 +441,12 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
     required TResult orElse(),
   }) {
     if (uploadImageLoading != null) {
@@ -426,6 +534,12 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
     required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
   }) {
     return uploadBonefracturesResult(data);
   }
@@ -438,6 +552,12 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
   }) {
     return uploadBonefracturesResult?.call(data);
   }
@@ -450,6 +570,12 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
     required TResult orElse(),
   }) {
     if (uploadBonefracturesResult != null) {
@@ -469,6 +595,12 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
   }) {
     return uploadBonefracturesResult(this);
   }
@@ -482,6 +614,12 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
   }) {
     return uploadBonefracturesResult?.call(this);
   }
@@ -495,6 +633,12 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
     required TResult orElse(),
   }) {
     if (uploadBonefracturesResult != null) {
@@ -587,6 +731,12 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
     required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
   }) {
     return uploadBrainTumorResult(data);
   }
@@ -599,6 +749,12 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
   }) {
     return uploadBrainTumorResult?.call(data);
   }
@@ -611,6 +767,12 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
     required TResult orElse(),
   }) {
     if (uploadBrainTumorResult != null) {
@@ -630,6 +792,12 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
   }) {
     return uploadBrainTumorResult(this);
   }
@@ -643,6 +811,12 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
   }) {
     return uploadBrainTumorResult?.call(this);
   }
@@ -656,6 +830,12 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
     required TResult orElse(),
   }) {
     if (uploadBrainTumorResult != null) {
@@ -749,6 +929,12 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
     required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
   }) {
     return uploadImageError(networkExceptions);
   }
@@ -761,6 +947,12 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
   }) {
     return uploadImageError?.call(networkExceptions);
   }
@@ -773,6 +965,12 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
     TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
     required TResult orElse(),
   }) {
     if (uploadImageError != null) {
@@ -792,6 +990,12 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
   }) {
     return uploadImageError(this);
   }
@@ -805,6 +1009,12 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
   }) {
     return uploadImageError?.call(this);
   }
@@ -818,6 +1028,12 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
     required TResult orElse(),
   }) {
     if (uploadImageError != null) {
@@ -835,4 +1051,1109 @@ abstract class _UploadBonefracturesError implements HomeState {
   @JsonKey(ignore: true)
   _$$UploadBonefracturesErrorImplCopyWith<_$UploadBonefracturesErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetDoctorLoadingImplCopyWith<$Res> {
+  factory _$$GetDoctorLoadingImplCopyWith(_$GetDoctorLoadingImpl value,
+          $Res Function(_$GetDoctorLoadingImpl) then) =
+      __$$GetDoctorLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetDoctorLoadingImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetDoctorLoadingImpl>
+    implements _$$GetDoctorLoadingImplCopyWith<$Res> {
+  __$$GetDoctorLoadingImplCopyWithImpl(_$GetDoctorLoadingImpl _value,
+      $Res Function(_$GetDoctorLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
+  const _$GetDoctorLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.getDoctorLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetDoctorLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+  }) {
+    return getDoctorLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+  }) {
+    return getDoctorLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getDoctorLoading != null) {
+      return getDoctorLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+  }) {
+    return getDoctorLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+  }) {
+    return getDoctorLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getDoctorLoading != null) {
+      return getDoctorLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetDoctorLoading implements HomeState {
+  const factory _GetDoctorLoading() = _$GetDoctorLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetDoctorSuccessImplCopyWith<$Res> {
+  factory _$$GetDoctorSuccessImplCopyWith(_$GetDoctorSuccessImpl value,
+          $Res Function(_$GetDoctorSuccessImpl) then) =
+      __$$GetDoctorSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GetDoctorOrNurse data});
+}
+
+/// @nodoc
+class __$$GetDoctorSuccessImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetDoctorSuccessImpl>
+    implements _$$GetDoctorSuccessImplCopyWith<$Res> {
+  __$$GetDoctorSuccessImplCopyWithImpl(_$GetDoctorSuccessImpl _value,
+      $Res Function(_$GetDoctorSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GetDoctorSuccessImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as GetDoctorOrNurse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
+  const _$GetDoctorSuccessImpl({required this.data});
+
+  @override
+  final GetDoctorOrNurse data;
+
+  @override
+  String toString() {
+    return 'HomeState.getDoctorSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetDoctorSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDoctorSuccessImplCopyWith<_$GetDoctorSuccessImpl> get copyWith =>
+      __$$GetDoctorSuccessImplCopyWithImpl<_$GetDoctorSuccessImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+  }) {
+    return getDoctorSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+  }) {
+    return getDoctorSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getDoctorSuccess != null) {
+      return getDoctorSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+  }) {
+    return getDoctorSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+  }) {
+    return getDoctorSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getDoctorSuccess != null) {
+      return getDoctorSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetDoctorSuccess implements HomeState {
+  const factory _GetDoctorSuccess({required final GetDoctorOrNurse data}) =
+      _$GetDoctorSuccessImpl;
+
+  GetDoctorOrNurse get data;
+  @JsonKey(ignore: true)
+  _$$GetDoctorSuccessImplCopyWith<_$GetDoctorSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetDoctorErrorImplCopyWith<$Res> {
+  factory _$$GetDoctorErrorImplCopyWith(_$GetDoctorErrorImpl value,
+          $Res Function(_$GetDoctorErrorImpl) then) =
+      __$$GetDoctorErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String networkExceptions});
+}
+
+/// @nodoc
+class __$$GetDoctorErrorImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetDoctorErrorImpl>
+    implements _$$GetDoctorErrorImplCopyWith<$Res> {
+  __$$GetDoctorErrorImplCopyWithImpl(
+      _$GetDoctorErrorImpl _value, $Res Function(_$GetDoctorErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$GetDoctorErrorImpl(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetDoctorErrorImpl implements _GetDoctorError {
+  const _$GetDoctorErrorImpl(this.networkExceptions);
+
+  @override
+  final String networkExceptions;
+
+  @override
+  String toString() {
+    return 'HomeState.getDoctorError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetDoctorErrorImpl &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetDoctorErrorImplCopyWith<_$GetDoctorErrorImpl> get copyWith =>
+      __$$GetDoctorErrorImplCopyWithImpl<_$GetDoctorErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+  }) {
+    return getDoctorError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+  }) {
+    return getDoctorError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getDoctorError != null) {
+      return getDoctorError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+  }) {
+    return getDoctorError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+  }) {
+    return getDoctorError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getDoctorError != null) {
+      return getDoctorError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetDoctorError implements HomeState {
+  const factory _GetDoctorError(final String networkExceptions) =
+      _$GetDoctorErrorImpl;
+
+  String get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$GetDoctorErrorImplCopyWith<_$GetDoctorErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetNurseLoadingImplCopyWith<$Res> {
+  factory _$$GetNurseLoadingImplCopyWith(_$GetNurseLoadingImpl value,
+          $Res Function(_$GetNurseLoadingImpl) then) =
+      __$$GetNurseLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetNurseLoadingImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetNurseLoadingImpl>
+    implements _$$GetNurseLoadingImplCopyWith<$Res> {
+  __$$GetNurseLoadingImplCopyWithImpl(
+      _$GetNurseLoadingImpl _value, $Res Function(_$GetNurseLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetNurseLoadingImpl implements _GetNurseLoading {
+  const _$GetNurseLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.getNurseLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetNurseLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+  }) {
+    return getNurseLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+  }) {
+    return getNurseLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getNurseLoading != null) {
+      return getNurseLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+  }) {
+    return getNurseLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+  }) {
+    return getNurseLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getNurseLoading != null) {
+      return getNurseLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetNurseLoading implements HomeState {
+  const factory _GetNurseLoading() = _$GetNurseLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetNurseSuccessImplCopyWith<$Res> {
+  factory _$$GetNurseSuccessImplCopyWith(_$GetNurseSuccessImpl value,
+          $Res Function(_$GetNurseSuccessImpl) then) =
+      __$$GetNurseSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GetDoctorOrNurse data});
+}
+
+/// @nodoc
+class __$$GetNurseSuccessImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetNurseSuccessImpl>
+    implements _$$GetNurseSuccessImplCopyWith<$Res> {
+  __$$GetNurseSuccessImplCopyWithImpl(
+      _$GetNurseSuccessImpl _value, $Res Function(_$GetNurseSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GetNurseSuccessImpl(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as GetDoctorOrNurse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetNurseSuccessImpl implements _GetNurseSuccess {
+  const _$GetNurseSuccessImpl({required this.data});
+
+  @override
+  final GetDoctorOrNurse data;
+
+  @override
+  String toString() {
+    return 'HomeState.getNurseSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetNurseSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetNurseSuccessImplCopyWith<_$GetNurseSuccessImpl> get copyWith =>
+      __$$GetNurseSuccessImplCopyWithImpl<_$GetNurseSuccessImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+  }) {
+    return getNurseSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+  }) {
+    return getNurseSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getNurseSuccess != null) {
+      return getNurseSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+  }) {
+    return getNurseSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+  }) {
+    return getNurseSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getNurseSuccess != null) {
+      return getNurseSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetNurseSuccess implements HomeState {
+  const factory _GetNurseSuccess({required final GetDoctorOrNurse data}) =
+      _$GetNurseSuccessImpl;
+
+  GetDoctorOrNurse get data;
+  @JsonKey(ignore: true)
+  _$$GetNurseSuccessImplCopyWith<_$GetNurseSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetNurseErrorImplCopyWith<$Res> {
+  factory _$$GetNurseErrorImplCopyWith(
+          _$GetNurseErrorImpl value, $Res Function(_$GetNurseErrorImpl) then) =
+      __$$GetNurseErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String networkExceptions});
+}
+
+/// @nodoc
+class __$$GetNurseErrorImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetNurseErrorImpl>
+    implements _$$GetNurseErrorImplCopyWith<$Res> {
+  __$$GetNurseErrorImplCopyWithImpl(
+      _$GetNurseErrorImpl _value, $Res Function(_$GetNurseErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$GetNurseErrorImpl(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetNurseErrorImpl implements _GetNurseError {
+  const _$GetNurseErrorImpl(this.networkExceptions);
+
+  @override
+  final String networkExceptions;
+
+  @override
+  String toString() {
+    return 'HomeState.getNurseError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetNurseErrorImpl &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetNurseErrorImplCopyWith<_$GetNurseErrorImpl> get copyWith =>
+      __$$GetNurseErrorImplCopyWithImpl<_$GetNurseErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+  }) {
+    return getNurseError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+  }) {
+    return getNurseError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getNurseError != null) {
+      return getNurseError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+  }) {
+    return getNurseError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+  }) {
+    return getNurseError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    required TResult orElse(),
+  }) {
+    if (getNurseError != null) {
+      return getNurseError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetNurseError implements HomeState {
+  const factory _GetNurseError(final String networkExceptions) =
+      _$GetNurseErrorImpl;
+
+  String get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$GetNurseErrorImplCopyWith<_$GetNurseErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

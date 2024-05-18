@@ -19,7 +19,6 @@ class AppConstants {
   static const myUserName = "myUserName";
   static const myType = "myType";
 
-
   // ignore: constant_identifier_names
   static const ACCESS_TOKEN_KEY = '';
   static const tokenType = '';
@@ -50,4 +49,47 @@ class AppConstants {
 
   static const String fractureDislocationUrl =
       "https://www.healthline.com/health/dislocation";
+
+  static const List<String> governorate = [
+    "Cairo",
+    "Alexandria",
+    "Port Said",
+    "Suez",
+    "Damietta",
+    "Dakahlia",
+    "Beheira",
+    "Gharbia",
+    "Kafr El Sheikh",
+    "Sharkia",
+    "Monufia",
+    "Qalyubia",
+    "Minya",
+    "Giza",
+    "Faiyum",
+    "Beni Suef",
+    "Asyut",
+    "Sohag",
+    "Qena",
+    "Luxor",
+    "Aswan",
+    "Red Sea",
+    "New Valley",
+    "Matrouh",
+    "North Sinai",
+    "South Sinai",
+    "Ismailia",
+  ];
+
+  static const List<String> speciality = [
+    "Pediatrics",
+    "Cardiology",
+    "Oncology",
+    "Neurology",
+    "Orthopedics",
+    "Dermatology",
+    "Gynecology",
+    "Psychiatry",
+    "Ophthalmology",
+    "Urology",
+  ];
 }
