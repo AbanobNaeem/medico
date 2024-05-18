@@ -16,6 +16,18 @@ String convertDateFormat(String iso8601Date) {
   }
 }
 
+String convertTimestampFormat(String timestamp) {
+  try {
+    DateTime dateTime = DateTime.parse(timestamp);
+    String formattedTime = DateFormat('hh:mm a').format(dateTime);
+    return formattedTime;
+  } catch (e) {
+    return timestamp;
+  }
+}
+
+// Output: 06:54 PM
+
 bool validateAndSave(final GlobalKey<FormState> formKey) {
   final form = formKey.currentState;
   if (form!.validate()) {

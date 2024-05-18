@@ -7,12 +7,13 @@ import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
+import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
 import 'package:xpert/src/core/widgets/chat_text_field.dart';
 import 'package:xpert/src/features/chat/data/models/chat_model.dart';
-import 'package:xpert/src/features/chat/screens/messages_screen.dart';
+import 'package:xpert/src/features/chat/data/models/messages_model.dart';
 import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
 
 class DoctorChat extends StatefulWidget {
@@ -20,7 +21,7 @@ class DoctorChat extends StatefulWidget {
     super.key,
     required this.model,
   });
-  final MessagesListModel model;
+  final MessagesModel model;
 
   @override
   State<DoctorChat> createState() => _DoctorChatState();
@@ -35,9 +36,12 @@ class _DoctorChatState extends State<DoctorChat> {
   @override
   void initState() {
     super.initState();
+
+    final int getMyId = CacheHelper.getData(key: AppConstants.myId);
+
     RouteGenerator.doctorChatCubit.getMessageData(
-      senderID: 1,
-      receiverID: 2,
+      senderID: getMyId,
+      receiverID: widget.model.userId ?? 0,
     );
     _loadChatData();
     _scrollList = ItemScrollController();
@@ -71,7 +75,7 @@ class _DoctorChatState extends State<DoctorChat> {
         iconSize: 20.h,
         color: ColorManager.black,
       ),
-      title: Text(widget.model.name),
+      title: Text(widget.model.username ?? ''),
     );
   }
 
@@ -143,7 +147,7 @@ class _DoctorChatState extends State<DoctorChat> {
         if (!fromUser)
           CircleAvatar(
             radius: 25.r,
-            backgroundImage: AssetImage(widget.model.image),
+            backgroundImage: AssetImage(widget.model.profileImage ?? ''),
           ),
         if (!fromUser) 7.horizontalSpace,
         Container(
@@ -173,9 +177,10 @@ class _DoctorChatState extends State<DoctorChat> {
     return ChatTextField(
       onSendWithPrefixIcon: () {
         if (_controller.text.isNotEmpty) {
+          final int getMyId = CacheHelper.getData(key: AppConstants.myId);
           RouteGenerator.doctorChatCubit.sendMessage(
-            senderID: 1,
-            receiverID: 2,
+            senderID: getMyId,
+            receiverID: widget.model.userId ?? 0,
             message: _controller.text,
           );
         }
@@ -203,9 +208,11 @@ class _DoctorChatState extends State<DoctorChat> {
       // focusNode: _focusNode,
       onSubmitted: (message) {
         if (message.isNotEmpty) {
+          final int getMyId = CacheHelper.getData(key: AppConstants.myId);
+
           RouteGenerator.doctorChatCubit.sendMessage(
-            senderID: 1,
-            receiverID: 2,
+            senderID: getMyId,
+              receiverID: widget.model.userId ?? 0,
             message: message,
           );
           _scrollList.jumpTo(index: 0);

@@ -8,6 +8,7 @@ import 'package:pusher_channels_flutter/pusher_channels_flutter.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/features/chat/data/chat_repo.dart';
 import 'package:xpert/src/features/chat/data/models/chat_model.dart';
+import 'package:xpert/src/features/chat/data/models/messages_model.dart';
 import 'package:xpert/src/features/chat/data/models/pusher_model/pusher_model.dart';
 
 part 'doctor_chat_state.dart';
@@ -130,5 +131,24 @@ class DoctorChatCubit extends Cubit<DoctorChatState> {
         },
       );
     });
+  }
+
+  Future<void> getMessages({required int id}) async {
+    emit(const DoctorChatState.getMessagesLoading());
+
+    final result = await chatRepo.getMessage(id: id);
+
+    try {
+      result.when(
+        success: (data) {
+          emit(DoctorChatState.gerMessagesLoaded(list: data));
+        },
+        failure: (error) {
+          emit(DoctorChatState.gerMessagesError(error: error.toString()));
+        },
+      );
+    } catch (error) {
+      emit(DoctorChatState.gerMessagesError(error: error.toString()));
+    }
   }
 }

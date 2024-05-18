@@ -125,8 +125,15 @@ class RouteGenerator {
 
       case Routes.navigationViewRoute:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: navBarCubit,
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(
+                value: navBarCubit,
+              ),
+              BlocProvider.value(
+                value: doctorChatCubit,
+              ),
+            ],
             child: const BottomNav(),
           ),
         );

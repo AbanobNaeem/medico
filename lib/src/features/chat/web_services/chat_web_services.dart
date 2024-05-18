@@ -2,6 +2,7 @@ import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/retrofit.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/features/chat/data/models/chat_model.dart';
+import 'package:xpert/src/features/chat/data/models/messages_model.dart';
 import 'package:xpert/src/features/chat/data/models/send_chat_model.dart';
 
 part 'chat_web_services.g.dart';
@@ -26,4 +27,9 @@ abstract class ChatWebServices {
   });
 
   //\\\\\\\\\\\\\\\\\\\\\\\\\ chat \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+  @GET("Chat/usernames1")
+  Future<List<MessagesModel>> getMessages({
+    @Field() required int id,
+  });
 }

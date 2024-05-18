@@ -11,4 +11,12 @@ class DoctorChatState with _$DoctorChatState {
   const factory DoctorChatState.chatError({required String error}) = _ChatError;
   const factory DoctorChatState.onPusherEvent({required ChatModel model}) =
       _OnPusherEvent;
+
+  const factory DoctorChatState.getMessagesLoading() = _GetMessagesLoading;
+  
+  const factory DoctorChatState.gerMessagesLoaded(
+      {required List<MessagesModel> list}) = _GetMessagesLoaded;
+
+  const factory DoctorChatState.gerMessagesError({required String error}) =
+      _GerMessagesError;
 }

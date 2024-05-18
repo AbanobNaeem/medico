@@ -1,38 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:xpert/src/app/app.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
+import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/core/resources/utils.dart';
+import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
+import 'package:xpert/src/features/chat/data/models/messages_model.dart';
 
-class MessagesScreen extends StatelessWidget {
+class MessagesScreen extends StatefulWidget {
   const MessagesScreen({super.key});
+
+  @override
+  State<MessagesScreen> createState() => _MessagesScreenState();
+}
+
+class _MessagesScreenState extends State<MessagesScreen> {
+  List<MessagesModel>? lisOfModels;
+  @override
+  void initState() {
+    super.initState();
+    final int id = CacheHelper.getData(key: AppConstants.myId);
+    RouteGenerator.doctorChatCubit.getMessages(id: id);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(context),
-      body: _body(),
+      body: _bodyBloc(),
     );
   }
 
   PreferredSizeWidget _appBar(context) {
     return AppBar(
       forceMaterialTransparency: true,
-      leading: IconButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        icon: const Icon(
-          Icons.arrow_back_ios_new_rounded,
-        ),
-        iconSize: 20.h,
-        color: ColorManager.black,
-      ),
       title: const Text(StringsManager.message),
       actions: [
         Padding(
@@ -51,19 +61,53 @@ class MessagesScreen extends StatelessWidget {
     );
   }
 
-  Widget _body() {
-    return ListView.builder(
-      padding: EdgeInsets.only(
-        bottom: kBottomNavigationBarHeight.h,
-      ),
-      itemCount: 1,
-      itemBuilder: (context, index) => _listTile(
-        model: messagesList[0],
+  Widget _bodyBloc() {
+    return BlocConsumer<DoctorChatCubit, DoctorChatState>(
+      listener: (context, state) {
+        state.mapOrNull(
+          gerMessagesLoaded: (state) {
+            lisOfModels = state.list;
+          },
+          gerMessagesError: (state) {
+            showErrorToast(state.error, context);
+          },
+        );
+      },
+      builder: (context, state) {
+        if (state == const DoctorChatState.getMessagesLoading()) {
+          return _twistingDots();
+        } else if (lisOfModels != null) {
+          return _body(list: lisOfModels!);
+        } else {
+          return const SizedBox();
+        }
+      },
+    );
+  }
+
+  Widget _twistingDots() {
+    return Center(
+      child: LoadingAnimationWidget.twistingDots(
+        leftDotColor: ColorManager.black,
+        rightDotColor: ColorManager.primary,
+        size: 100,
       ),
     );
   }
 
-  Widget _listTile({required MessagesListModel model}) {
+  Widget _body({required List<MessagesModel> list}) {
+    return ListView.builder(
+      padding: EdgeInsets.only(
+        bottom: kBottomNavigationBarHeight.h,
+      ),
+      itemCount: list.length,
+      itemBuilder: (context, index) => _listTile(
+        model: list[index],
+      ),
+    );
+  }
+
+  Widget _listTile({required MessagesModel model}) {
     return ListTile(
       onTap: () {
         Navigator.pushNamed(
@@ -84,16 +128,16 @@ class MessagesScreen extends StatelessWidget {
         height: 68.w,
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage(model.image),
+          image: AssetImage(model.profileImage ?? ''),
         )),
       ),
-      title: Text(model.name),
+      title: Text(model.username ?? ''),
       titleTextStyle: StyleManager.getMediumStyle(fontSize: FontSize.s18),
-      subtitle: Text(model.lastMessage),
+      subtitle: Text(model.lastMessage?.content ?? ''),
       subtitleTextStyle: StyleManager.getLightStyle(
           fontSize: FontSize.s16, color: ColorManager.mediumGray),
       trailing: Text(
-        model.timeOfMessage,
+        convertTimestampFormat(model.lastMessage?.timestamp ?? ''),
         style: StyleManager.getSemiBoldStyle(
           fontSize: FontSize.s15,
           color: ColorManager.mediumGray,
@@ -102,29 +146,3 @@ class MessagesScreen extends StatelessWidget {
     );
   }
 }
-
-class MessagesListModel {
-  final int id;
-  final String image;
-  final String name;
-  final String lastMessage;
-  final String timeOfMessage;
-
-  MessagesListModel({
-    required this.id,
-    required this.image,
-    required this.name,
-    required this.lastMessage,
-    required this.timeOfMessage,
-  });
-}
-
-List<MessagesListModel> messagesList = [
-  MessagesListModel(
-    id: 1,
-    image: AssetsManager.temp5,
-    name: "Dr. Aya Mohamed",
-    lastMessage: "I don't feel good today",
-    timeOfMessage: "04:30PM",
-  ),
-];

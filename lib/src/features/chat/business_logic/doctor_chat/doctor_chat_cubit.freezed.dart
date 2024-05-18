@@ -24,6 +24,9 @@ mixin _$DoctorChatState {
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
     required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +37,9 @@ mixin _$DoctorChatState {
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
     TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +50,9 @@ mixin _$DoctorChatState {
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
     TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +64,9 @@ mixin _$DoctorChatState {
     required TResult Function(_ChatLoaded value) chatLoaded,
     required TResult Function(_ChatError value) chatError,
     required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +77,9 @@ mixin _$DoctorChatState {
     TResult? Function(_ChatLoaded value)? chatLoaded,
     TResult? Function(_ChatError value)? chatError,
     TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +90,9 @@ mixin _$DoctorChatState {
     TResult Function(_ChatLoaded value)? chatLoaded,
     TResult Function(_ChatError value)? chatError,
     TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,6 +160,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
     required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
   }) {
     return initial();
   }
@@ -155,6 +176,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
     TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
   }) {
     return initial?.call();
   }
@@ -168,6 +192,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
     TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -185,6 +212,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_ChatLoaded value) chatLoaded,
     required TResult Function(_ChatError value) chatError,
     required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
   }) {
     return initial(this);
   }
@@ -198,6 +228,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_ChatLoaded value)? chatLoaded,
     TResult? Function(_ChatError value)? chatError,
     TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
   }) {
     return initial?.call(this);
   }
@@ -211,6 +244,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(_ChatLoaded value)? chatLoaded,
     TResult Function(_ChatError value)? chatError,
     TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -294,6 +330,9 @@ class _$SendMessageImpl implements _SendMessage {
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
     required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
   }) {
     return sendMessage(message);
   }
@@ -307,6 +346,9 @@ class _$SendMessageImpl implements _SendMessage {
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
     TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
   }) {
     return sendMessage?.call(message);
   }
@@ -320,6 +362,9 @@ class _$SendMessageImpl implements _SendMessage {
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
     TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (sendMessage != null) {
@@ -337,6 +382,9 @@ class _$SendMessageImpl implements _SendMessage {
     required TResult Function(_ChatLoaded value) chatLoaded,
     required TResult Function(_ChatError value) chatError,
     required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
   }) {
     return sendMessage(this);
   }
@@ -350,6 +398,9 @@ class _$SendMessageImpl implements _SendMessage {
     TResult? Function(_ChatLoaded value)? chatLoaded,
     TResult? Function(_ChatError value)? chatError,
     TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
   }) {
     return sendMessage?.call(this);
   }
@@ -363,6 +414,9 @@ class _$SendMessageImpl implements _SendMessage {
     TResult Function(_ChatLoaded value)? chatLoaded,
     TResult Function(_ChatError value)? chatError,
     TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (sendMessage != null) {
@@ -426,6 +480,9 @@ class _$ChatLoadingImpl implements _ChatLoading {
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
     required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
   }) {
     return chatLoading();
   }
@@ -439,6 +496,9 @@ class _$ChatLoadingImpl implements _ChatLoading {
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
     TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
   }) {
     return chatLoading?.call();
   }
@@ -452,6 +512,9 @@ class _$ChatLoadingImpl implements _ChatLoading {
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
     TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (chatLoading != null) {
@@ -469,6 +532,9 @@ class _$ChatLoadingImpl implements _ChatLoading {
     required TResult Function(_ChatLoaded value) chatLoaded,
     required TResult Function(_ChatError value) chatError,
     required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
   }) {
     return chatLoading(this);
   }
@@ -482,6 +548,9 @@ class _$ChatLoadingImpl implements _ChatLoading {
     TResult? Function(_ChatLoaded value)? chatLoaded,
     TResult? Function(_ChatError value)? chatError,
     TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
   }) {
     return chatLoading?.call(this);
   }
@@ -495,6 +564,9 @@ class _$ChatLoadingImpl implements _ChatLoading {
     TResult Function(_ChatLoaded value)? chatLoaded,
     TResult Function(_ChatError value)? chatError,
     TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (chatLoading != null) {
@@ -586,6 +658,9 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
     required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
   }) {
     return chatLoaded(listOfChat);
   }
@@ -599,6 +674,9 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
     TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
   }) {
     return chatLoaded?.call(listOfChat);
   }
@@ -612,6 +690,9 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
     TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (chatLoaded != null) {
@@ -629,6 +710,9 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     required TResult Function(_ChatLoaded value) chatLoaded,
     required TResult Function(_ChatError value) chatError,
     required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
   }) {
     return chatLoaded(this);
   }
@@ -642,6 +726,9 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     TResult? Function(_ChatLoaded value)? chatLoaded,
     TResult? Function(_ChatError value)? chatError,
     TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
   }) {
     return chatLoaded?.call(this);
   }
@@ -655,6 +742,9 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     TResult Function(_ChatLoaded value)? chatLoaded,
     TResult Function(_ChatError value)? chatError,
     TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (chatLoaded != null) {
@@ -744,6 +834,9 @@ class _$ChatErrorImpl implements _ChatError {
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
     required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
   }) {
     return chatError(error);
   }
@@ -757,6 +850,9 @@ class _$ChatErrorImpl implements _ChatError {
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
     TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
   }) {
     return chatError?.call(error);
   }
@@ -770,6 +866,9 @@ class _$ChatErrorImpl implements _ChatError {
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
     TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (chatError != null) {
@@ -787,6 +886,9 @@ class _$ChatErrorImpl implements _ChatError {
     required TResult Function(_ChatLoaded value) chatLoaded,
     required TResult Function(_ChatError value) chatError,
     required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
   }) {
     return chatError(this);
   }
@@ -800,6 +902,9 @@ class _$ChatErrorImpl implements _ChatError {
     TResult? Function(_ChatLoaded value)? chatLoaded,
     TResult? Function(_ChatError value)? chatError,
     TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
   }) {
     return chatError?.call(this);
   }
@@ -813,6 +918,9 @@ class _$ChatErrorImpl implements _ChatError {
     TResult Function(_ChatLoaded value)? chatLoaded,
     TResult Function(_ChatError value)? chatError,
     TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (chatError != null) {
@@ -901,6 +1009,9 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
     required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
   }) {
     return onPusherEvent(model);
   }
@@ -914,6 +1025,9 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
     TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
   }) {
     return onPusherEvent?.call(model);
   }
@@ -927,6 +1041,9 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
     TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (onPusherEvent != null) {
@@ -944,6 +1061,9 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     required TResult Function(_ChatLoaded value) chatLoaded,
     required TResult Function(_ChatError value) chatError,
     required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
   }) {
     return onPusherEvent(this);
   }
@@ -957,6 +1077,9 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     TResult? Function(_ChatLoaded value)? chatLoaded,
     TResult? Function(_ChatError value)? chatError,
     TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
   }) {
     return onPusherEvent?.call(this);
   }
@@ -970,6 +1093,9 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     TResult Function(_ChatLoaded value)? chatLoaded,
     TResult Function(_ChatError value)? chatError,
     TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
     required TResult orElse(),
   }) {
     if (onPusherEvent != null) {
@@ -986,5 +1112,510 @@ abstract class _OnPusherEvent implements DoctorChatState {
   ChatModel get model;
   @JsonKey(ignore: true)
   _$$OnPusherEventImplCopyWith<_$OnPusherEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetMessagesLoadingImplCopyWith<$Res> {
+  factory _$$GetMessagesLoadingImplCopyWith(_$GetMessagesLoadingImpl value,
+          $Res Function(_$GetMessagesLoadingImpl) then) =
+      __$$GetMessagesLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetMessagesLoadingImplCopyWithImpl<$Res>
+    extends _$DoctorChatStateCopyWithImpl<$Res, _$GetMessagesLoadingImpl>
+    implements _$$GetMessagesLoadingImplCopyWith<$Res> {
+  __$$GetMessagesLoadingImplCopyWithImpl(_$GetMessagesLoadingImpl _value,
+      $Res Function(_$GetMessagesLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetMessagesLoadingImpl implements _GetMessagesLoading {
+  const _$GetMessagesLoadingImpl();
+
+  @override
+  String toString() {
+    return 'DoctorChatState.getMessagesLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetMessagesLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) sendMessage,
+    required TResult Function() chatLoading,
+    required TResult Function(List<ChatModel> listOfChat) chatLoaded,
+    required TResult Function(String error) chatError,
+    required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
+  }) {
+    return getMessagesLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? sendMessage,
+    TResult? Function()? chatLoading,
+    TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
+    TResult? Function(String error)? chatError,
+    TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
+  }) {
+    return getMessagesLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? sendMessage,
+    TResult Function()? chatLoading,
+    TResult Function(List<ChatModel> listOfChat)? chatLoaded,
+    TResult Function(String error)? chatError,
+    TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
+    required TResult orElse(),
+  }) {
+    if (getMessagesLoading != null) {
+      return getMessagesLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_ChatLoading value) chatLoading,
+    required TResult Function(_ChatLoaded value) chatLoaded,
+    required TResult Function(_ChatError value) chatError,
+    required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
+  }) {
+    return getMessagesLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_ChatLoading value)? chatLoading,
+    TResult? Function(_ChatLoaded value)? chatLoaded,
+    TResult? Function(_ChatError value)? chatError,
+    TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
+  }) {
+    return getMessagesLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_ChatLoading value)? chatLoading,
+    TResult Function(_ChatLoaded value)? chatLoaded,
+    TResult Function(_ChatError value)? chatError,
+    TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
+    required TResult orElse(),
+  }) {
+    if (getMessagesLoading != null) {
+      return getMessagesLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetMessagesLoading implements DoctorChatState {
+  const factory _GetMessagesLoading() = _$GetMessagesLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetMessagesLoadedImplCopyWith<$Res> {
+  factory _$$GetMessagesLoadedImplCopyWith(_$GetMessagesLoadedImpl value,
+          $Res Function(_$GetMessagesLoadedImpl) then) =
+      __$$GetMessagesLoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<MessagesModel> list});
+}
+
+/// @nodoc
+class __$$GetMessagesLoadedImplCopyWithImpl<$Res>
+    extends _$DoctorChatStateCopyWithImpl<$Res, _$GetMessagesLoadedImpl>
+    implements _$$GetMessagesLoadedImplCopyWith<$Res> {
+  __$$GetMessagesLoadedImplCopyWithImpl(_$GetMessagesLoadedImpl _value,
+      $Res Function(_$GetMessagesLoadedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? list = null,
+  }) {
+    return _then(_$GetMessagesLoadedImpl(
+      list: null == list
+          ? _value._list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<MessagesModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetMessagesLoadedImpl implements _GetMessagesLoaded {
+  const _$GetMessagesLoadedImpl({required final List<MessagesModel> list})
+      : _list = list;
+
+  final List<MessagesModel> _list;
+  @override
+  List<MessagesModel> get list {
+    if (_list is EqualUnmodifiableListView) return _list;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_list);
+  }
+
+  @override
+  String toString() {
+    return 'DoctorChatState.gerMessagesLoaded(list: $list)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetMessagesLoadedImpl &&
+            const DeepCollectionEquality().equals(other._list, _list));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetMessagesLoadedImplCopyWith<_$GetMessagesLoadedImpl> get copyWith =>
+      __$$GetMessagesLoadedImplCopyWithImpl<_$GetMessagesLoadedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) sendMessage,
+    required TResult Function() chatLoading,
+    required TResult Function(List<ChatModel> listOfChat) chatLoaded,
+    required TResult Function(String error) chatError,
+    required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
+  }) {
+    return gerMessagesLoaded(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? sendMessage,
+    TResult? Function()? chatLoading,
+    TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
+    TResult? Function(String error)? chatError,
+    TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
+  }) {
+    return gerMessagesLoaded?.call(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? sendMessage,
+    TResult Function()? chatLoading,
+    TResult Function(List<ChatModel> listOfChat)? chatLoaded,
+    TResult Function(String error)? chatError,
+    TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
+    required TResult orElse(),
+  }) {
+    if (gerMessagesLoaded != null) {
+      return gerMessagesLoaded(list);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_ChatLoading value) chatLoading,
+    required TResult Function(_ChatLoaded value) chatLoaded,
+    required TResult Function(_ChatError value) chatError,
+    required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
+  }) {
+    return gerMessagesLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_ChatLoading value)? chatLoading,
+    TResult? Function(_ChatLoaded value)? chatLoaded,
+    TResult? Function(_ChatError value)? chatError,
+    TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
+  }) {
+    return gerMessagesLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_ChatLoading value)? chatLoading,
+    TResult Function(_ChatLoaded value)? chatLoaded,
+    TResult Function(_ChatError value)? chatError,
+    TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
+    required TResult orElse(),
+  }) {
+    if (gerMessagesLoaded != null) {
+      return gerMessagesLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetMessagesLoaded implements DoctorChatState {
+  const factory _GetMessagesLoaded({required final List<MessagesModel> list}) =
+      _$GetMessagesLoadedImpl;
+
+  List<MessagesModel> get list;
+  @JsonKey(ignore: true)
+  _$$GetMessagesLoadedImplCopyWith<_$GetMessagesLoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GerMessagesErrorImplCopyWith<$Res> {
+  factory _$$GerMessagesErrorImplCopyWith(_$GerMessagesErrorImpl value,
+          $Res Function(_$GerMessagesErrorImpl) then) =
+      __$$GerMessagesErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GerMessagesErrorImplCopyWithImpl<$Res>
+    extends _$DoctorChatStateCopyWithImpl<$Res, _$GerMessagesErrorImpl>
+    implements _$$GerMessagesErrorImplCopyWith<$Res> {
+  __$$GerMessagesErrorImplCopyWithImpl(_$GerMessagesErrorImpl _value,
+      $Res Function(_$GerMessagesErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GerMessagesErrorImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GerMessagesErrorImpl implements _GerMessagesError {
+  const _$GerMessagesErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'DoctorChatState.gerMessagesError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GerMessagesErrorImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GerMessagesErrorImplCopyWith<_$GerMessagesErrorImpl> get copyWith =>
+      __$$GerMessagesErrorImplCopyWithImpl<_$GerMessagesErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String message) sendMessage,
+    required TResult Function() chatLoading,
+    required TResult Function(List<ChatModel> listOfChat) chatLoaded,
+    required TResult Function(String error) chatError,
+    required TResult Function(ChatModel model) onPusherEvent,
+    required TResult Function() getMessagesLoading,
+    required TResult Function(List<MessagesModel> list) gerMessagesLoaded,
+    required TResult Function(String error) gerMessagesError,
+  }) {
+    return gerMessagesError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String message)? sendMessage,
+    TResult? Function()? chatLoading,
+    TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
+    TResult? Function(String error)? chatError,
+    TResult? Function(ChatModel model)? onPusherEvent,
+    TResult? Function()? getMessagesLoading,
+    TResult? Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult? Function(String error)? gerMessagesError,
+  }) {
+    return gerMessagesError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String message)? sendMessage,
+    TResult Function()? chatLoading,
+    TResult Function(List<ChatModel> listOfChat)? chatLoaded,
+    TResult Function(String error)? chatError,
+    TResult Function(ChatModel model)? onPusherEvent,
+    TResult Function()? getMessagesLoading,
+    TResult Function(List<MessagesModel> list)? gerMessagesLoaded,
+    TResult Function(String error)? gerMessagesError,
+    required TResult orElse(),
+  }) {
+    if (gerMessagesError != null) {
+      return gerMessagesError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_SendMessage value) sendMessage,
+    required TResult Function(_ChatLoading value) chatLoading,
+    required TResult Function(_ChatLoaded value) chatLoaded,
+    required TResult Function(_ChatError value) chatError,
+    required TResult Function(_OnPusherEvent value) onPusherEvent,
+    required TResult Function(_GetMessagesLoading value) getMessagesLoading,
+    required TResult Function(_GetMessagesLoaded value) gerMessagesLoaded,
+    required TResult Function(_GerMessagesError value) gerMessagesError,
+  }) {
+    return gerMessagesError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_SendMessage value)? sendMessage,
+    TResult? Function(_ChatLoading value)? chatLoading,
+    TResult? Function(_ChatLoaded value)? chatLoaded,
+    TResult? Function(_ChatError value)? chatError,
+    TResult? Function(_OnPusherEvent value)? onPusherEvent,
+    TResult? Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult? Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult? Function(_GerMessagesError value)? gerMessagesError,
+  }) {
+    return gerMessagesError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_SendMessage value)? sendMessage,
+    TResult Function(_ChatLoading value)? chatLoading,
+    TResult Function(_ChatLoaded value)? chatLoaded,
+    TResult Function(_ChatError value)? chatError,
+    TResult Function(_OnPusherEvent value)? onPusherEvent,
+    TResult Function(_GetMessagesLoading value)? getMessagesLoading,
+    TResult Function(_GetMessagesLoaded value)? gerMessagesLoaded,
+    TResult Function(_GerMessagesError value)? gerMessagesError,
+    required TResult orElse(),
+  }) {
+    if (gerMessagesError != null) {
+      return gerMessagesError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GerMessagesError implements DoctorChatState {
+  const factory _GerMessagesError({required final String error}) =
+      _$GerMessagesErrorImpl;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GerMessagesErrorImplCopyWith<_$GerMessagesErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
