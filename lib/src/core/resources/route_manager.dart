@@ -7,6 +7,7 @@ import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/injection.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/features/auth/business_logic/auth_logic/cubit/auth_logic_cubit.dart';
 import 'package:xpert/src/features/auth/business_logic/cubit/otp_timer_cubit.dart';
 import 'package:xpert/src/features/auth/presentation/forget_password/presentation/forget_password_screen.dart';
 import 'package:xpert/src/features/auth/presentation/otp/otp_screen.dart';
@@ -71,6 +72,7 @@ class RouteGenerator {
   static late ChatBotCubit chatBotCubit;
   static late ProfileCubit profileCubit;
   static late DoctorChatCubit doctorChatCubit;
+  static late AuthLogicCubit authLogicCubit;
 
   RouteGenerator() {
     otpTimerCubit = getIt<OtpTimerCubit>();
@@ -79,6 +81,7 @@ class RouteGenerator {
     chatBotCubit = getIt<ChatBotCubit>();
     profileCubit = getIt<ProfileCubit>();
     doctorChatCubit = getIt<DoctorChatCubit>();
+    authLogicCubit = getIt<AuthLogicCubit>();
   }
   Route? getRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -89,7 +92,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const OnBoardingView());
 
       case Routes.authTapBar:
-        return MaterialPageRoute(builder: (_) => const AuthTabBar());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: authLogicCubit,
+            child: const AuthTabBar(),
+          ),
+        );
 
       case Routes.forgotPassword:
         Map? args = settings.arguments as Map;

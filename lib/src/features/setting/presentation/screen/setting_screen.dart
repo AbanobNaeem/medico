@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
+import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
@@ -179,11 +181,19 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
+  Future<void> _deleteUserDataBeforeLogOut() async {
+    CacheHelper.removeData(key: AppConstants.myId);
+    CacheHelper.removeData(key: AppConstants.myUserName);
+    CacheHelper.removeData(key: AppConstants.myType);
+  }
+
   Widget _logOut(context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.pushNamedAndRemoveUntil(
-            context, Routes.authTapBar, (route) => false);
+        _deleteUserDataBeforeLogOut().then((value) {
+          Navigator.pushNamedAndRemoveUntil(
+              context, Routes.authTapBar, (route) => false);
+        });
       },
       style: ElevatedButton.styleFrom(
         fixedSize: Size(140.w, 60.h),

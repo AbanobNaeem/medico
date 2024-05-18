@@ -11,6 +11,14 @@ class AppConstants {
   static const chatBotToken = "AIzaSyDDMeYkvPbE4zUOnOG5cNQ0Aiowo2MpSiw";
   static const chatBotModel = 'gemini-pro';
 
+  static const userTypeDoctor = "D";
+  static const userTypeNurse = "N";
+  static const userTypeUser = "U";
+
+  static const myId = "myId";
+  static const myUserName = "myUserName";
+  static const myType = "myType";
+
 
   // ignore: constant_identifier_names
   static const ACCESS_TOKEN_KEY = '';

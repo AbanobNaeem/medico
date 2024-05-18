@@ -4,7 +4,10 @@ import 'package:get_it/get_it.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/web_services/token_interceptor.dart';
 import 'package:xpert/src/core/web_services/web_services.dart';
+import 'package:xpert/src/features/auth/business_logic/auth_logic/cubit/auth_logic_cubit.dart';
 import 'package:xpert/src/features/auth/business_logic/cubit/otp_timer_cubit.dart';
+import 'package:xpert/src/features/auth/data/auth_repo.dart';
+import 'package:xpert/src/features/auth/web_services/auth_web_services.dart';
 import 'package:xpert/src/features/bottom_nav_bar/business_logic/nav_bar_cubit/nav_bar_cubit.dart';
 import 'package:xpert/src/features/chat/data/chat_repo.dart';
 import 'package:xpert/src/features/chat/web_services/chat_web_services.dart';
@@ -26,6 +29,14 @@ void initGetIt() {
 
   getIt.registerLazySingleton<ChatWebServices>(
       () => ChatWebServices(createAndSetupDio()));
+
+  getIt.registerLazySingleton<AuthWebServices>(
+      () => AuthWebServices(createAndSetupDio()));
+
+  getIt.registerLazySingleton<AuthRepo>(
+      () => AuthRepo(getIt()));
+
+  getIt.registerLazySingleton<AuthLogicCubit>(() => AuthLogicCubit(getIt()));
 
   getIt.registerLazySingleton<DiseasesRepo>(() => DiseasesRepo(getIt()));
 
