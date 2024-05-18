@@ -13,16 +13,15 @@ import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
 
-class DropDownMenuWidget extends StatefulWidget {
-  const DropDownMenuWidget({super.key});
+class NurseDropDownMenuWidget extends StatefulWidget {
+  const NurseDropDownMenuWidget({super.key});
 
   @override
-  State<DropDownMenuWidget> createState() => _DropDownMenuWidgetState();
+  State<NurseDropDownMenuWidget> createState() => _DropDownMenuWidgetState();
 }
 
-class _DropDownMenuWidgetState extends State<DropDownMenuWidget> {
+class _DropDownMenuWidgetState extends State<NurseDropDownMenuWidget> {
   String? gov;
-  String? speciality;
   @override
   Widget build(BuildContext context) {
     return _buildBloc();
@@ -32,11 +31,9 @@ class _DropDownMenuWidgetState extends State<DropDownMenuWidget> {
     return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {
         state.mapOrNull(
-          getDoctorError: (state) {
+          getNurseError: (state) {
             if (gov == null) {
               showErrorToast(StringsManager.pleaseEnterGovernorate, context);
-            } else if (speciality == null) {
-              showErrorToast(StringsManager.pleaseEnterSpeciality, context);
             } else {
               showErrorToast(state.networkExceptions, context);
             }
@@ -78,23 +75,10 @@ class _DropDownMenuWidgetState extends State<DropDownMenuWidget> {
               ),
             ),
           ),
-          PopupMenuItem<int>(
-            padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 20.h),
-            value: 1,
-            child: Text(
-              StringsManager.specialty,
-              style: StyleManager.getMediumStyle(
-                fontSize: FontSize.s16,
-                color: Colors.white,
-              ),
-            ),
-          ),
         ],
         onSelected: (value) {
           if (value == 0) {
             _governorate();
-          } else if (value == 1) {
-            _speciality();
           }
         },
       ),
@@ -115,40 +99,11 @@ class _DropDownMenuWidgetState extends State<DropDownMenuWidget> {
               setState(() {
                 gov = AppConstants.governorate[index];
               });
-              RouteGenerator.homeCubit.getDoctor(
-                  speciality: speciality ?? 'null', governorate: gov ?? 'null');
+              RouteGenerator.homeCubit.getNurse(governorate: gov ?? 'null');
               Navigator.pop(context);
             },
             title: Text(
               AppConstants.governorate[index],
-            ),
-          ),
-        ),
-      ),
-    )..show();
-  }
-
-  AwesomeDialog _speciality() {
-    return AwesomeDialog(
-      context: context,
-      dialogType: DialogType.noHeader,
-      animType: AnimType.rightSlide,
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-      body: Column(
-        children: List.generate(
-          AppConstants.speciality.length,
-          (index) => ListTile(
-            onTap: () {
-              setState(() {
-                speciality = AppConstants.speciality[index];
-              });
-              RouteGenerator.homeCubit.getDoctor(
-                  speciality: speciality ?? 'null', governorate: gov ?? 'null');
-
-              Navigator.pop(context);
-            },
-            title: Text(
-              AppConstants.speciality[index],
             ),
           ),
         ),

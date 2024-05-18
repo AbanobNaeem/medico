@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
+import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
+import 'package:xpert/src/features/home/data/constants/doctors_list_constants.dart';
 import 'package:xpert/src/features/home/data/models/get_doctor.dart';
 import 'package:xpert/src/features/home/presentation/widgets/drop_down_menu.dart';
 
@@ -80,7 +82,7 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
     return Center(
       child: Text(
         textAlign: TextAlign.center,
-        'Please enter\n Governorate & Speciality\nto search',
+        StringsManager.pleaseSpecialtyGovernorate,
         style: StyleManager.getMediumStyle(
           fontSize: FontSize.s20,
         ),
@@ -130,7 +132,16 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
           ),
           9.verticalSpace,
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.appointmentScreen,
+                  arguments: {
+                    "model": DoctorsListModel(
+                      image: image,
+                      drName: drName,
+                      drSpecialty: drSpecialty,
+                    )
+                  });
+            },
             style: ElevatedButton.styleFrom(
               fixedSize: Size(132.w, 38.h),
               shape: RoundedRectangleBorder(

@@ -162,9 +162,16 @@ class StringsManager {
   static const String drAhmed = 'Dr.  Ahmed ';
   static const String orthopedist = 'Orthopedist';
   static const String appointment = 'Appointment';
-  
+
   static const String governorate = 'Governorate';
   static const String specialty = 'Specialty';
+  static const String pleaseSpecialtyGovernorate =
+      'Please enter\n governorate & speciality\nto search';
+  static const String pleaseGovernorate = 'Please enter governorate\nto search';
+
+  static const String pleaseEnterGovernorate = "Please Enter Governorate";
+  static const String pleaseEnterSpeciality = "Enter Speciality";
+
   //! Health Care
   static const String healthCareTitle = 'Health Care';
   static const String schedule = 'Schedule';
