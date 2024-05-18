@@ -56,7 +56,7 @@ class MessagesScreen extends StatelessWidget {
       padding: EdgeInsets.only(
         bottom: kBottomNavigationBarHeight.h,
       ),
-      itemCount: 15,
+      itemCount: 1,
       itemBuilder: (context, index) => _listTile(
         model: messagesList[0],
       ),

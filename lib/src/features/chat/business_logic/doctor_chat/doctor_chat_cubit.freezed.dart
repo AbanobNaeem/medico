@@ -23,7 +23,7 @@ mixin _$DoctorChatState {
     required TResult Function() chatLoading,
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
-    required TResult Function(String? message) onPusherEvent,
+    required TResult Function(ChatModel model) onPusherEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,7 +33,7 @@ mixin _$DoctorChatState {
     TResult? Function()? chatLoading,
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
-    TResult? Function(String? message)? onPusherEvent,
+    TResult? Function(ChatModel model)? onPusherEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,7 +43,7 @@ mixin _$DoctorChatState {
     TResult Function()? chatLoading,
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
-    TResult Function(String? message)? onPusherEvent,
+    TResult Function(ChatModel model)? onPusherEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -141,7 +141,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() chatLoading,
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
-    required TResult Function(String? message) onPusherEvent,
+    required TResult Function(ChatModel model) onPusherEvent,
   }) {
     return initial();
   }
@@ -154,7 +154,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? chatLoading,
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
-    TResult? Function(String? message)? onPusherEvent,
+    TResult? Function(ChatModel model)? onPusherEvent,
   }) {
     return initial?.call();
   }
@@ -167,7 +167,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? chatLoading,
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
-    TResult Function(String? message)? onPusherEvent,
+    TResult Function(ChatModel model)? onPusherEvent,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -293,7 +293,7 @@ class _$SendMessageImpl implements _SendMessage {
     required TResult Function() chatLoading,
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
-    required TResult Function(String? message) onPusherEvent,
+    required TResult Function(ChatModel model) onPusherEvent,
   }) {
     return sendMessage(message);
   }
@@ -306,7 +306,7 @@ class _$SendMessageImpl implements _SendMessage {
     TResult? Function()? chatLoading,
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
-    TResult? Function(String? message)? onPusherEvent,
+    TResult? Function(ChatModel model)? onPusherEvent,
   }) {
     return sendMessage?.call(message);
   }
@@ -319,7 +319,7 @@ class _$SendMessageImpl implements _SendMessage {
     TResult Function()? chatLoading,
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
-    TResult Function(String? message)? onPusherEvent,
+    TResult Function(ChatModel model)? onPusherEvent,
     required TResult orElse(),
   }) {
     if (sendMessage != null) {
@@ -425,7 +425,7 @@ class _$ChatLoadingImpl implements _ChatLoading {
     required TResult Function() chatLoading,
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
-    required TResult Function(String? message) onPusherEvent,
+    required TResult Function(ChatModel model) onPusherEvent,
   }) {
     return chatLoading();
   }
@@ -438,7 +438,7 @@ class _$ChatLoadingImpl implements _ChatLoading {
     TResult? Function()? chatLoading,
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
-    TResult? Function(String? message)? onPusherEvent,
+    TResult? Function(ChatModel model)? onPusherEvent,
   }) {
     return chatLoading?.call();
   }
@@ -451,7 +451,7 @@ class _$ChatLoadingImpl implements _ChatLoading {
     TResult Function()? chatLoading,
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
-    TResult Function(String? message)? onPusherEvent,
+    TResult Function(ChatModel model)? onPusherEvent,
     required TResult orElse(),
   }) {
     if (chatLoading != null) {
@@ -585,7 +585,7 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     required TResult Function() chatLoading,
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
-    required TResult Function(String? message) onPusherEvent,
+    required TResult Function(ChatModel model) onPusherEvent,
   }) {
     return chatLoaded(listOfChat);
   }
@@ -598,7 +598,7 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     TResult? Function()? chatLoading,
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
-    TResult? Function(String? message)? onPusherEvent,
+    TResult? Function(ChatModel model)? onPusherEvent,
   }) {
     return chatLoaded?.call(listOfChat);
   }
@@ -611,7 +611,7 @@ class _$ChatLoadedImpl implements _ChatLoaded {
     TResult Function()? chatLoading,
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
-    TResult Function(String? message)? onPusherEvent,
+    TResult Function(ChatModel model)? onPusherEvent,
     required TResult orElse(),
   }) {
     if (chatLoaded != null) {
@@ -743,7 +743,7 @@ class _$ChatErrorImpl implements _ChatError {
     required TResult Function() chatLoading,
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
-    required TResult Function(String? message) onPusherEvent,
+    required TResult Function(ChatModel model) onPusherEvent,
   }) {
     return chatError(error);
   }
@@ -756,7 +756,7 @@ class _$ChatErrorImpl implements _ChatError {
     TResult? Function()? chatLoading,
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
-    TResult? Function(String? message)? onPusherEvent,
+    TResult? Function(ChatModel model)? onPusherEvent,
   }) {
     return chatError?.call(error);
   }
@@ -769,7 +769,7 @@ class _$ChatErrorImpl implements _ChatError {
     TResult Function()? chatLoading,
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
-    TResult Function(String? message)? onPusherEvent,
+    TResult Function(ChatModel model)? onPusherEvent,
     required TResult orElse(),
   }) {
     if (chatError != null) {
@@ -837,7 +837,7 @@ abstract class _$$OnPusherEventImplCopyWith<$Res> {
           _$OnPusherEventImpl value, $Res Function(_$OnPusherEventImpl) then) =
       __$$OnPusherEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String? message});
+  $Res call({ChatModel model});
 }
 
 /// @nodoc
@@ -851,13 +851,13 @@ class __$$OnPusherEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? model = null,
   }) {
     return _then(_$OnPusherEventImpl(
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as ChatModel,
     ));
   }
 }
@@ -865,14 +865,14 @@ class __$$OnPusherEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnPusherEventImpl implements _OnPusherEvent {
-  const _$OnPusherEventImpl({this.message});
+  const _$OnPusherEventImpl({required this.model});
 
   @override
-  final String? message;
+  final ChatModel model;
 
   @override
   String toString() {
-    return 'DoctorChatState.onPusherEvent(message: $message)';
+    return 'DoctorChatState.onPusherEvent(model: $model)';
   }
 
   @override
@@ -880,11 +880,11 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnPusherEventImpl &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.model, model) || other.model == model));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, model);
 
   @JsonKey(ignore: true)
   @override
@@ -900,9 +900,9 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     required TResult Function() chatLoading,
     required TResult Function(List<ChatModel> listOfChat) chatLoaded,
     required TResult Function(String error) chatError,
-    required TResult Function(String? message) onPusherEvent,
+    required TResult Function(ChatModel model) onPusherEvent,
   }) {
-    return onPusherEvent(message);
+    return onPusherEvent(model);
   }
 
   @override
@@ -913,9 +913,9 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     TResult? Function()? chatLoading,
     TResult? Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult? Function(String error)? chatError,
-    TResult? Function(String? message)? onPusherEvent,
+    TResult? Function(ChatModel model)? onPusherEvent,
   }) {
-    return onPusherEvent?.call(message);
+    return onPusherEvent?.call(model);
   }
 
   @override
@@ -926,11 +926,11 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
     TResult Function()? chatLoading,
     TResult Function(List<ChatModel> listOfChat)? chatLoaded,
     TResult Function(String error)? chatError,
-    TResult Function(String? message)? onPusherEvent,
+    TResult Function(ChatModel model)? onPusherEvent,
     required TResult orElse(),
   }) {
     if (onPusherEvent != null) {
-      return onPusherEvent(message);
+      return onPusherEvent(model);
     }
     return orElse();
   }
@@ -980,9 +980,10 @@ class _$OnPusherEventImpl implements _OnPusherEvent {
 }
 
 abstract class _OnPusherEvent implements DoctorChatState {
-  const factory _OnPusherEvent({final String? message}) = _$OnPusherEventImpl;
+  const factory _OnPusherEvent({required final ChatModel model}) =
+      _$OnPusherEventImpl;
 
-  String? get message;
+  ChatModel get model;
   @JsonKey(ignore: true)
   _$$OnPusherEventImplCopyWith<_$OnPusherEventImpl> get copyWith =>
       throw _privateConstructorUsedError;

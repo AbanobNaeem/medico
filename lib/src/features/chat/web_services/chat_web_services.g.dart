@@ -21,11 +21,11 @@ class _ChatWebServices implements ChatWebServices {
   String? baseUrl;
 
   @override
-  Future<Map<String, String>> sendChatMessage(
-    String senderID,
-    String receiverID,
-    String content,
-  ) async {
+  Future<SendChatModel> sendChatMessage({
+    required int senderID,
+    required int receiverID,
+    required String content,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -34,8 +34,8 @@ class _ChatWebServices implements ChatWebServices {
       'receiverID': receiverID,
       'content': content,
     };
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<Map<String, String>>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<SendChatModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -51,15 +51,15 @@ class _ChatWebServices implements ChatWebServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = _result.data!.cast<String, String>();
+    final value = SendChatModel.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<List<ChatModel>> getChatMessages(
-    String senderID,
-    String receiverID,
-  ) async {
+  Future<List<ChatModel>> getChatMessages({
+    required int senderID,
+    required int receiverID,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

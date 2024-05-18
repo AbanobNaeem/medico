@@ -4,13 +4,18 @@ class ChatModel {
   String? content;
   String? timestamp;
 
-  ChatModel({this.senderID, this.receiverID, this.content, this.timestamp});
+  ChatModel({
+    this.senderID,
+    this.receiverID,
+    this.content,
+    this.timestamp,
+  });
 
-  ChatModel.fromJson(Map<String, dynamic> json) {
-    senderID = json['senderID'];
-    receiverID = json['receiverID'];
-    content = json['content'];
-    timestamp = json['timestamp'];
+  ChatModel.fromJson(Map<String, dynamic>? json) {
+    senderID = json?['senderID'] ?? 0;
+    receiverID = json?['receiverID'] ?? 0;
+    content = json?['content'] ?? "";
+    timestamp = json?['timestamp'] ?? "";
   }
 
   Map<String, dynamic> toJson() {

@@ -8,6 +8,7 @@ import 'package:pusher_channels_flutter/pusher_channels_flutter.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/features/chat/data/chat_repo.dart';
 import 'package:xpert/src/features/chat/data/models/chat_model.dart';
+import 'package:xpert/src/features/chat/data/models/pusher_model/pusher_model.dart';
 
 part 'doctor_chat_state.dart';
 part 'doctor_chat_cubit.freezed.dart';
@@ -17,35 +18,28 @@ class DoctorChatCubit extends Cubit<DoctorChatState> {
   final ChatRepo chatRepo;
   PusherChannelsFlutter pusher = PusherChannelsFlutter.getInstance();
 
-  // void sendMessage(String message) {
-  //   tempChatList.insert(0, TempChatModel(message: message, from: "user"));
-  //   emit(DoctorChatState.sendMessage(message: message));
-  // }
-
-  final List<dynamic> listForPagination = [];
-  bool hasMore = true;
-  int page = 1;
+  final List<ChatModel> chatList = [];
 
   void chatDispose({required int id}) {
-    page = 1;
-    // listForPagination.clear();
-    hasMore = true;
     disposePusher(channelName: "${AppConstants.pusherPrefixChannelName}$id");
     Fluttertoast.cancel();
   }
 
-  Future getMessageData() async {
+  Future getMessageData({
+    required int senderID,
+    required int receiverID,
+  }) async {
     emit(const DoctorChatState.chatLoading());
 
-    final result = await chatRepo.getChatMessage();
+    final result = await chatRepo.getChatMessage(
+      receiverID: receiverID,
+      senderID: senderID,
+    );
     result.when(
       success: (response) {
-     
+        chatList.addAll(response);
 
-        if (state == const DoctorChatState.onPusherEvent()) {
-          log("state is onPusherEvent");
-        }
-        emit(DoctorChatState.chatLoaded(listOfChat: response));
+        emit(DoctorChatState.chatLoaded(listOfChat: chatList));
       },
       failure: (error) {
         emit(DoctorChatState.chatError(error: error.toString()));
@@ -73,15 +67,22 @@ class DoctorChatCubit extends Cubit<DoctorChatState> {
   }
 
   void onEvent(PusherEvent event) async {
-    log("$event");
+    log('$event');
+
     if (event.data.isNotEmpty) {
       final eventData = jsonDecode(event.data);
-      // final pusherChatModel = PusherChatModel.fromJson(eventData);
-      // final pusherMessage = pusherChatModel.message;
-      // if (pusherMessage != null) {
-      //   log("$eventData");
-      //   final newMessages = ChatModel();
-      emit(DoctorChatState.onPusherEvent(message: eventData));
+      final pusherChatModel = PusherChatModel.fromJson(eventData);
+      final pusherMessage = pusherChatModel.message;
+      if (pusherMessage != null) {
+        final newMessage = ChatModel(
+          content: pusherChatModel.message,
+          receiverID: pusherChatModel.receiverID,
+          senderID: pusherChatModel.senderID,
+          timestamp: pusherChatModel.timestamp,
+        );
+        chatList.insert(0, newMessage);
+        emit(DoctorChatState.onPusherEvent(model: newMessage));
+      }
     }
   }
 
@@ -110,10 +111,14 @@ class DoctorChatCubit extends Cubit<DoctorChatState> {
 
   Future<void> sendMessage({
     required String message,
+    required int senderID,
+    required int receiverID,
   }) async {
     chatRepo
         .sendMessage(
       message: message,
+      receiverID: receiverID,
+      senderID: senderID,
     )
         .then((result) {
       result.when(

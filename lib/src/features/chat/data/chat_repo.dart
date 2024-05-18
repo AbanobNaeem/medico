@@ -1,6 +1,7 @@
 import 'package:xpert/src/core/web_services/api_result.dart';
 import 'package:xpert/src/core/web_services/network_exceptions.dart';
 import 'package:xpert/src/features/chat/data/models/chat_model.dart';
+import 'package:xpert/src/features/chat/data/models/send_chat_model.dart';
 import 'package:xpert/src/features/chat/web_services/chat_web_services.dart';
 
 class ChatRepo {
@@ -10,9 +11,15 @@ class ChatRepo {
     ChatWebServices webServices,
   ) : _webServices = webServices;
 
-  Future<ApiResult<List<ChatModel>>> getChatMessage() async {
+  Future<ApiResult<List<ChatModel>>> getChatMessage({
+    required int senderID,
+    required int receiverID,
+  }) async {
     try {
-      var response = await _webServices.getChatMessages("2", "1");
+      var response = await _webServices.getChatMessages(
+        receiverID: receiverID,
+        senderID: senderID,
+      );
 
       return ApiResult.success(response);
     } catch (error) {
@@ -20,13 +27,16 @@ class ChatRepo {
     }
   }
 
-  Future<ApiResult<Map<String, String>>> sendMessage(
-      {required String message}) async {
+  Future<ApiResult<SendChatModel>> sendMessage({
+    required String message,
+    required int senderID,
+    required int receiverID,
+  }) async {
     try {
       var response = await _webServices.sendChatMessage(
-        "1",
-        "2",
-        message,
+        senderID: senderID,
+        receiverID: receiverID,
+        content: message,
       );
 
       return ApiResult.success(response);

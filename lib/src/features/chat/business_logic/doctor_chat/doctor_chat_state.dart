@@ -9,6 +9,6 @@ class DoctorChatState with _$DoctorChatState {
   const factory DoctorChatState.chatLoaded(
       {required List<ChatModel> listOfChat}) = _ChatLoaded;
   const factory DoctorChatState.chatError({required String error}) = _ChatError;
-  const factory DoctorChatState.onPusherEvent({String? message}) =
+  const factory DoctorChatState.onPusherEvent({required ChatModel model}) =
       _OnPusherEvent;
 }
