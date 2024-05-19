@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
+import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
@@ -40,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             8.verticalSpace,
-            _header("Hi Tasnim !"),
+            _header(CacheHelper.getData(key: AppConstants.myUserName)),
             32.verticalSpace,
             // _searchBar(),
             // 32.verticalSpace,

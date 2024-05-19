@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -138,7 +139,9 @@ class _DoctorChatState extends State<DoctorChat> {
   }
 
   Widget _message({required ChatModel model}) {
-    bool fromUser = (model.senderID == 1);
+    final int getMyId = CacheHelper.getData(key: AppConstants.myId);
+
+    bool fromUser = (model.senderID == getMyId);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment:
@@ -212,7 +215,7 @@ class _DoctorChatState extends State<DoctorChat> {
 
           RouteGenerator.doctorChatCubit.sendMessage(
             senderID: getMyId,
-              receiverID: widget.model.userId ?? 0,
+            receiverID: widget.model.userId ?? 0,
             message: message,
           );
           _scrollList.jumpTo(index: 0);

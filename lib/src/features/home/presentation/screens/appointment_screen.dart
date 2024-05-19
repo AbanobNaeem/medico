@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,15 +38,13 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
   @override
   void initState() {
     super.initState();
-    log("${widget.id}");
-    log(widget.type);
-    if (widget.type == AppConstants.userTypeDoctor) {
-      log("ddddd");
-      RouteGenerator.homeCubit.getDoctorInfo(doctorId: widget.id);
-    } else if (widget.type == AppConstants.userTypeNurse) {
-      log("nnnn");
 
-      RouteGenerator.homeCubit.getNurseInfo(nurseId: widget.id);
+    switch (widget.type) {
+      case AppConstants.userTypeDoctor:
+        RouteGenerator.homeCubit.getDoctorInfo(doctorId: widget.id);
+      case AppConstants.userTypeNurse:
+        RouteGenerator.homeCubit.getNurseInfo(nurseId: widget.id);
+      default:
     }
   }
 

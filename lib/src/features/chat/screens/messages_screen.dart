@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:xpert/src/app/app.dart';
-import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
@@ -44,20 +42,20 @@ class _MessagesScreenState extends State<MessagesScreen> {
     return AppBar(
       forceMaterialTransparency: true,
       title: const Text(StringsManager.message),
-      actions: [
-        Padding(
-          padding: EdgeInsetsDirectional.only(end: 16.w),
-          child: SvgPicture.asset(
-            width: 17.w,
-            height: 17.h,
-            AssetsManager.searchIc,
-            colorFilter: const ColorFilter.mode(
-              ColorManager.black,
-              BlendMode.srcIn,
-            ),
-          ),
-        ),
-      ],
+      // actions: [
+      //   Padding(
+      //     padding: EdgeInsetsDirectional.only(end: 16.w),
+      //     child: SvgPicture.asset(
+      //       width: 17.w,
+      //       height: 17.h,
+      //       AssetsManager.searchIc,
+      //       colorFilter: const ColorFilter.mode(
+      //         ColorManager.black,
+      //         BlendMode.srcIn,
+      //       ),
+      //     ),
+      //   ),
+      // ],
     );
   }
 

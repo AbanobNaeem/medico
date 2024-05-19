@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -24,8 +23,6 @@ class HomeCubit extends Cubit<HomeState> {
       result.when(
         success: (data) {
           emit(HomeState.uploadBonefracturesResult(data));
-
-          log("$result");
         },
         failure: (networkExceptions) {
           emit(HomeState.uploadImageError(networkExceptions.toString()));
@@ -44,8 +41,6 @@ class HomeCubit extends Cubit<HomeState> {
       result.when(
         success: (data) {
           emit(HomeState.uploadBrainTumorResult(data));
-
-          log("$result");
         },
         failure: (networkExceptions) {
           emit(HomeState.uploadImageError(networkExceptions.toString()));
@@ -89,7 +84,6 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       result.when(
         success: (data) {
-          log("$data");
           emit(HomeState.getNurseSuccess(data: data));
         },
         failure: (error) {
@@ -109,7 +103,6 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       result.when(
         success: (data) {
-          log("$data");
           emit(HomeState.getNurseInfoSuccess(data: data));
         },
         failure: (error) {
@@ -129,7 +122,6 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       result.when(
         success: (data) {
-          log("$data");
           emit(HomeState.getDoctorInfoSuccess(data: data));
         },
         failure: (error) {
@@ -153,7 +145,6 @@ class HomeCubit extends Cubit<HomeState> {
     try {
       result.when(
         success: (data) {
-          log(data);
           emit(const HomeState.addRatingSuccess());
         },
         failure: (error) {
