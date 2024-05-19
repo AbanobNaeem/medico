@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
-import 'package:xpert/src/features/home/data/constants/doctors_list_constants.dart';
 import 'package:xpert/src/features/home/data/models/get_doctor.dart';
 import 'package:xpert/src/features/home/presentation/widgets/drop_down_menu.dart';
 
@@ -100,47 +100,40 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
         mainAxisExtent: 0.23.sh,
       ),
       itemCount: data.doctorOrNurse?.length ?? 0,
-      itemBuilder: (context, index) => _containerBody(
-        image: data.doctorOrNurse?[index].profileImage ?? '',
-        drName: data.doctorOrNurse?[index].username ?? '',
-        drSpecialty: data.doctorOrNurse?[index].speciality ?? '',
-      ),
+      itemBuilder: (context, index) =>
+          _containerBody(model: data.doctorOrNurse?[index] ?? DoctorOrNurse()),
     );
   }
 
-  Widget _containerBody({
-    required String image,
-    required String drName,
-    required String drSpecialty,
-  }) {
+  Widget _containerBody({required DoctorOrNurse model}) {
     return _containerDecoration(
       child: Column(
         children: [
           8.verticalSpace,
           CircleAvatar(
             radius: 35.r,
-            backgroundImage: AssetImage(image),
+            backgroundImage: AssetImage(model.profileImage ?? ''),
           ),
           4.verticalSpace,
           Text(
-            drName,
+            model.username ?? '',
             style: StyleManager.getRegularStyle(fontSize: FontSize.s16),
           ),
           Text(
-            drSpecialty,
+            model.speciality ?? '',
             style: StyleManager.getRegularStyle(fontSize: FontSize.s16),
           ),
           9.verticalSpace,
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, Routes.appointmentScreen,
-                  arguments: {
-                    "model": DoctorsListModel(
-                      image: image,
-                      drName: drName,
-                      drSpecialty: drSpecialty,
-                    )
-                  });
+              Navigator.pushNamed(
+                context,
+                Routes.appointmentScreen,
+                arguments: {
+                  "id": model.id ?? 0,
+                  "type":AppConstants.userTypeDoctor,
+                },
+              );
             },
             style: ElevatedButton.styleFrom(
               fixedSize: Size(132.w, 38.h),

@@ -34,6 +34,7 @@ class StringsManager {
   static const String password = 'Password';
   static const String fullName = 'Full Name';
   static const String phoneNumber = 'Phone Number';
+  static const String pricePerHour = "Price per hour";
 
   //!ForgetPassword
   static const String forgetPassword = 'Forget Password ?';
@@ -180,6 +181,7 @@ class StringsManager {
   static const String people = 'people';
   static const String experience = 'Experience';
   static const String rating = 'Rating';
+  static const String address = 'Address';
 
   //!common
   static const String send = 'SEND';

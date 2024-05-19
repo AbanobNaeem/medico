@@ -18,4 +18,18 @@ class HomeState with _$HomeState {
   const factory HomeState.getNurseSuccess({required GetDoctorOrNurse data}) = _GetNurseSuccess;
   const factory HomeState.getNurseError(String networkExceptions) = _GetNurseError;
 
+
+  const factory HomeState.getDoctorInfoLoading() = _GetDoctorInfoLoading;
+  const factory HomeState.getDoctorInfoSuccess({required GetNurseOrDoctorInfo data}) = _GetDoctorInfoSuccess;
+  const factory HomeState.getDoctorInfoError(String networkExceptions) = _GetDoctorInfoError;
+
+
+  const factory HomeState.getNurseInfoLoading() = _GetNurseInfoLoading;
+  const factory HomeState.getNurseInfoSuccess({required GetNurseOrDoctorInfo data}) = _GetNurseInfoSuccess;
+  const factory HomeState.getNurseInfoError(String networkExceptions) = _GetNurseInfoError;
+
+  const factory HomeState.addRatingLoading() = _AddRatingLoading;
+  const factory HomeState.addRatingSuccess() = _AddRatingSuccess;
+  const factory HomeState.addRatingError(String networkExceptions) = _AddRatingError;
+
 }

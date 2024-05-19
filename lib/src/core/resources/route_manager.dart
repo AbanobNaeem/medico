@@ -208,8 +208,12 @@ class RouteGenerator {
       case Routes.appointmentScreen:
         var args = settings.arguments as Map;
         return MaterialPageRoute(
-          builder: (_) => AppointmentScreen(
-            model: args["model"],
+          builder: (_) => BlocProvider.value(
+            value: homeCubit,
+            child: AppointmentScreen(
+              id: args["id"],
+              type: args["type"],
+            ),
           ),
         );
 

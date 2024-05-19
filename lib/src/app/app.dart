@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:xpert/generated/l10n.dart';
@@ -6,8 +8,6 @@ import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/theme_manager.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:country_code_picker/country_code_picker.dart';
-
-
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -19,8 +19,38 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   RouteGenerator routeGenerator = RouteGenerator();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+
+    if (state == AppLifecycleState.resumed) {
+      log("resumed");
+    } else if (state == AppLifecycleState.inactive) {
+      log("inactive");
+    } else if (state == AppLifecycleState.paused) {
+      log("paused");
+    } else if (state == AppLifecycleState.detached) {
+      log("detached");
+    } else {
+      log("message");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return _buildMaterialApp(routeGenerator);

@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xpert/src/features/home/data/models/brain_tumor_model.dart';
 import 'package:xpert/src/features/home/data/models/diseases_model.dart';
 import 'package:xpert/src/features/home/data/models/get_doctor.dart';
+import 'package:xpert/src/features/home/data/models/get_nurse_or_doctor_info.dart';
 import 'package:xpert/src/features/home/data/repo/diseases_repo.dart';
 
 part 'home_state.dart';
@@ -97,6 +98,70 @@ class HomeCubit extends Cubit<HomeState> {
       );
     } catch (error) {
       emit(HomeState.getNurseError(error.toString()));
+    }
+  }
+
+  Future<void> getNurseInfo({required int nurseId}) async {
+    emit(const HomeState.getNurseInfoLoading());
+
+    final result = await _repo.getNurseInfo(nurseId: nurseId);
+
+    try {
+      result.when(
+        success: (data) {
+          log("$data");
+          emit(HomeState.getNurseInfoSuccess(data: data));
+        },
+        failure: (error) {
+          emit(HomeState.getNurseInfoError(error.toString()));
+        },
+      );
+    } catch (error) {
+      emit(HomeState.getNurseInfoError(error.toString()));
+    }
+  }
+
+  Future<void> getDoctorInfo({required int doctorId}) async {
+    emit(const HomeState.getDoctorInfoLoading());
+
+    final result = await _repo.getDoctorInfo(doctorId: doctorId);
+
+    try {
+      result.when(
+        success: (data) {
+          log("$data");
+          emit(HomeState.getDoctorInfoSuccess(data: data));
+        },
+        failure: (error) {
+          emit(HomeState.getDoctorInfoError(error.toString()));
+        },
+      );
+    } catch (error) {
+      emit(HomeState.getDoctorInfoError(error.toString()));
+    }
+  }
+
+  Future<void> addRating({
+    required int userId,
+    required int ratingValue,
+  }) async {
+    emit(const HomeState.addRatingLoading());
+
+    final result =
+        await _repo.addRating(userId: userId, ratingValue: ratingValue);
+
+    try {
+      result.when(
+        success: (data) {
+          log(data);
+          emit(const HomeState.addRatingSuccess());
+        },
+        failure: (error) {
+          emit(HomeState.addRatingError(error.toString()));
+        },
+      );
+    } catch (error) {
+      emit(HomeState.addRatingError(error.toString()));
     }
   }
 }
