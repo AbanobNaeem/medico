@@ -153,10 +153,19 @@ class AuthScreen extends StatelessWidget {
       isLoading: isLoading,
       title: _isSignUp() ? StringsManager.signUp : StringsManager.login,
       onPressed: () {
-        RouteGenerator.authLogicCubit.logIn(
-          email: email.text,
-          password: password.text,
-        );
+        if (_isLogIn()) {
+          RouteGenerator.authLogicCubit.logIn(
+            email: email.text,
+            password: password.text,
+          );
+        }
+        if (_isSignUp()) {
+          RouteGenerator.authLogicCubit.signUp(
+            email: email.text,
+            password: password.text,
+            userName: userName?.text ?? '',
+          );
+        }
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,17 +8,23 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:xpert/src/app/app.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
+import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
 import 'package:xpert/src/core/widgets/bottom_extend_app_bar.dart';
 import 'package:xpert/src/core/widgets/default_app_bar.dart';
+import 'package:xpert/src/core/widgets/default_button.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
 import 'package:xpert/src/features/home/data/constants/diseases_constants.dart';
+import 'package:xpert/src/features/home/presentation/widgets/drop_down_button.dart';
+import 'package:xpert/src/features/home/presentation/widgets/model_text_filed.dart';
 
 class DiseasesDetailsScreen extends StatefulWidget {
   final String title;
@@ -34,12 +41,26 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
   late List<DiseasesDetailsModel> listOfContent;
   late ImagePicker _imagePicker;
   bool _isLoading = false;
+  bool gpu = false;
+  ResolutionPreset resolution = ResolutionPreset.high;
+
+  // String labels = AssetsManager.aiTestLabel;
+  // String model = AssetsManager.aiBoneFractureModel;
+
+  late TextEditingController? _numThreadsController;
+  late TextEditingController? _classThresholdController;
+  late TextEditingController? _confThresholdController;
+  late TextEditingController? _iouThresholdController;
 
   @override
   void initState() {
     super.initState();
     listOfContent = listType(widget.title);
     _imagePicker = ImagePicker();
+    _numThreadsController = TextEditingController(text: "1");
+    _classThresholdController = TextEditingController(text: "0.5");
+    _confThresholdController = TextEditingController(text: "0.4");
+    _iouThresholdController = TextEditingController(text: "0.4");
   }
 
   @override
@@ -209,8 +230,13 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _blueBox(StringsManager.takePhoto, AssetsManager.cameraIc,
-            onTap: _openCamera),
+        _blueBox(
+          StringsManager.takePhoto,
+          AssetsManager.cameraIc,
+          onTap: () {
+            _dialogQuestion();
+          },
+        ),
         _blueBox(
           StringsManager.fromGallery,
           AssetsManager.galleryIc,
@@ -218,6 +244,108 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
         ),
       ],
     );
+  }
+
+  AwesomeDialog _dialogQuestion() {
+    return AwesomeDialog(
+      context: context,
+      dialogType: DialogType.question,
+      animType: AnimType.rightSlide,
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+      body: Column(
+        children: [
+          ModelTextFiled(
+            title: "Num threads",
+            hint: "Enter int num",
+            controller: _numThreadsController,
+            onChanged: (value) {},
+          ),
+          15.verticalSpace,
+          ModelTextFiled(
+            title: "Class thresholds",
+            hint: "Enter double num",
+            controller: _classThresholdController,
+            onChanged: (value) {},
+          ),
+          15.verticalSpace,
+          ModelTextFiled(
+            title: "Conf threshold",
+            hint: "Enter double num",
+            controller: _confThresholdController,
+            onChanged: (value) {},
+          ),
+          15.verticalSpace,
+          ModelTextFiled(
+            title: "Iou threshold",
+            hint: "Enter double num",
+            controller: _iouThresholdController,
+            onChanged: (value) {},
+          ),
+          15.verticalSpace,
+          ModelDropDownButton(
+            title: StringsManager.chosesCameraResolution,
+            onChanged: (value) {
+              if (value == AppConstants.resolutionMedium) {
+                setState(() {
+                  resolution = ResolutionPreset.medium;
+                });
+              } else if (value == AppConstants.resolutionHigh) {
+                setState(() {
+                  resolution = ResolutionPreset.high;
+                });
+              } else {
+                setState(() {
+                  resolution = ResolutionPreset.low;
+                });
+              }
+            },
+          ),
+          ModelDropDownButton(
+            title: StringsManager.gpuOption,
+            onChanged: (value) {
+              if (value == "true") {
+                setState(() {
+                  gpu = true;
+                });
+              } else {
+                setState(() {
+                  gpu = false;
+                });
+              }
+            },
+          ),
+          DefaultButton(
+            width: 150.w,
+            height: 50.h,
+            onPressed: () async {
+              await _navigatorPop();
+              Navigator.pushNamed(
+                navigatorKey.currentContext!,
+                Routes.yoloScreen,
+                arguments: {
+                  "gpu": gpu,
+                  "labels": label(widget.title),
+                  "modelPath": model(widget.title),
+                  "resolutionPreset": resolution,
+                  "numThreads": int.parse(_numThreadsController?.text ?? "1"),
+                  "classThreshold":
+                      double.parse(_classThresholdController?.text ?? "0.5"),
+                  "confThreshold":
+                      double.parse(_confThresholdController?.text ?? "0.4"),
+                  "iouThreshold":
+                      double.parse(_iouThresholdController?.text ?? " 0.4"),
+                },
+              );
+            },
+            title: StringsManager.continueWord,
+          ),
+        ],
+      ),
+    )..show();
+  }
+
+  _navigatorPop() {
+    Navigator.of(context).pop();
   }
 
   Widget _blueBox(String title, String icon, {void Function()? onTap}) {
@@ -289,14 +417,5 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     if (returnImage == null) return;
     final image = File(returnImage.path);
     sendImage(widget.title, image);
-  }
-
-  Future _openCamera() async {
-    final returnImage =
-        await _imagePicker.pickImage(source: ImageSource.camera);
-
-    if (returnImage == null) return;
-    // ignore: unused_local_variable
-    final image = File(returnImage.path);
   }
 }

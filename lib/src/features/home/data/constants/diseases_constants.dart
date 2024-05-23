@@ -157,6 +157,42 @@ List<DiseasesDetailsModel> listType(String title) {
   }
 }
 
+String model(String title) {
+  switch (title) {
+    case StringsManager.boneFractures:
+      return AssetsManager.aiBoneFractureModel;
+    case StringsManager.brainTumor:
+      return '';
+    case StringsManager.cancer:
+      return '';
+    case StringsManager.breastCancer:
+      return '';
+    default:
+      return '';
+  }
+}
+
+String label(String title) {
+  switch (title) {
+    case StringsManager.boneFractures:
+      return AssetsManager.aiTestLabel;
+    case StringsManager.brainTumor:
+      return '';
+    case StringsManager.cancer:
+      return '';
+    case StringsManager.breastCancer:
+      return '';
+    default:
+      return '';
+  }
+}
+
+List<String> resolutionList = [
+  AppConstants.resolutionLow,
+  AppConstants.resolutionMedium,
+  AppConstants.resolutionHigh,
+];
+
 Color color(double condition) {
   if (condition >= 1 && condition < 30) {
     return ColorManager.yellow;

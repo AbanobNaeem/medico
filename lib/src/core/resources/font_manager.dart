@@ -35,6 +35,8 @@ class FontSize {
 
   static double s12 = 12.spMin;
 
+  static double s13 = 13.spMin;
+
   static double s14 = 14.spMin;
 
   static double s15 = 15.spMin;

@@ -113,8 +113,8 @@ mixin AppTheme implements ThemeData {
 
         //! Switch Theme
         switchTheme: SwitchThemeData(
-          thumbColor: MaterialStateProperty.all(ColorManager.white),
-          trackColor: MaterialStateProperty.all(Colors.green),
+          thumbColor: WidgetStateProperty.all(ColorManager.white),
+          trackColor: WidgetStateProperty.all(Colors.green),
         ),
 
         //! Bottom Sheet Theme
@@ -133,8 +133,8 @@ mixin AppTheme implements ThemeData {
         textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(
           foregroundColor:
-              const MaterialStatePropertyAll<Color>(ColorManager.black),
-          textStyle: MaterialStatePropertyAll<TextStyle>(
+              const WidgetStatePropertyAll<Color>(ColorManager.black),
+          textStyle: WidgetStatePropertyAll<TextStyle>(
             StyleManager.getMediumStyle(
                 color: ColorManager.black, fontSize: FontSize.s14),
           ),
@@ -148,27 +148,27 @@ mixin AppTheme implements ThemeData {
         //! Checkbox Theme
         checkboxTheme: CheckboxThemeData(
           side: const BorderSide(width: 1),
-          fillColor: const MaterialStatePropertyAll(ColorManager.primary),
-          checkColor: const MaterialStatePropertyAll(ColorManager.white),
+          fillColor: const WidgetStatePropertyAll(ColorManager.primary),
+          checkColor: const WidgetStatePropertyAll(ColorManager.white),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.r)),
         ),
         radioTheme: const RadioThemeData(
-          fillColor: MaterialStatePropertyAll<Color?>(Colors.black),
+          fillColor: WidgetStatePropertyAll<Color?>(Colors.black),
         ),
 
         //! search bar
         searchBarTheme: SearchBarThemeData(
-          backgroundColor: MaterialStateProperty.all(
+          backgroundColor: WidgetStateProperty.all(
             ColorManager.paleSilver,
           ),
-          elevation: const MaterialStatePropertyAll(0),
-          shape: MaterialStatePropertyAll(
+          elevation: const WidgetStatePropertyAll(0),
+          shape: WidgetStatePropertyAll(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.r),
             ),
           ),
-          hintStyle: MaterialStatePropertyAll(
+          hintStyle: WidgetStatePropertyAll(
             StyleManager.getRegularStyle(
               color: ColorManager.mediumGray,
               fontSize: FontSize.s16,

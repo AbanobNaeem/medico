@@ -24,7 +24,7 @@ class AppConstants {
   static const tokenType = '';
   static const jsonAccept = '';
 
-  static const String pusherApiKey = 'b47f998137c2c1d1e983';
+  static const String pusherApiKey = '163441d70eec4f84205f';
   static const String pusherCluster = 'eu';
   static const String pusherPrefixChannelName = "my-channel";
 
@@ -49,6 +49,8 @@ class AppConstants {
 
   static const String fractureDislocationUrl =
       "https://www.healthline.com/health/dislocation";
+
+  static const String yolov8 = "yolov8";
 
   static const List<String> governorate = [
     "Cairo",
@@ -92,4 +94,8 @@ class AppConstants {
     "Ophthalmology",
     "Urology",
   ];
+
+  static const String resolutionLow = "Low";
+  static const String resolutionMedium = "Medium";
+  static const String resolutionHigh = "High";
 }

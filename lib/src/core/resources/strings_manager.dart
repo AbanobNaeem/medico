@@ -183,6 +183,12 @@ class StringsManager {
   static const String rating = 'Rating';
   static const String address = 'Address';
 
+  static const String resolution = 'Resolution';
+  static const String gpu = 'GPU';
+  static const String chosesCameraResolution = 'Choses camera\nresolution:';
+
+  static const String gpuOption = 'GPU option:';
+
   //!common
   static const String send = 'SEND';
   static const String getStarted = 'Get Started';

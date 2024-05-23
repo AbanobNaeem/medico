@@ -24,8 +24,12 @@ class AuthLogicCubit extends Cubit<AuthLogicState> {
       );
 
       result.when(
-        success: (UserModel model) {
-          emit(AuthLogicState.success(model: model));
+        success: (model) {
+          if (model.error != null) {
+            emit(AuthLogicState.error(error: model.error!));
+          } else {
+            emit(AuthLogicState.success(model: model));
+          }
         },
         failure: (DioExceptionTypes exceptionTypes) {
           emit(AuthLogicState.error(error: exceptionTypes.toString()));
@@ -52,7 +56,11 @@ class AuthLogicCubit extends Cubit<AuthLogicState> {
 
       result.when(
         success: (UserModel model) {
-          emit(AuthLogicState.success(model: model));
+          if (model.error != null) {
+            emit(AuthLogicState.error(error: model.error!));
+          } else {
+            emit(AuthLogicState.success(model: model));
+          }
         },
         failure: (DioExceptionTypes exceptionTypes) {
           emit(AuthLogicState.error(error: exceptionTypes.toString()));

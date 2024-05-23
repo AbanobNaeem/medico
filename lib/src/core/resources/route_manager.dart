@@ -27,6 +27,7 @@ import 'package:xpert/src/features/home/presentation/screens/health_care_screen.
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
 import 'package:xpert/src/features/chat/screens/chat.dart';
 import 'package:xpert/src/features/home/presentation/screens/appointment_screen.dart';
+import 'package:xpert/src/features/home/presentation/screens/yolo.dart';
 import 'package:xpert/src/features/onboarding/presentation/screens/on_boarding_view.dart';
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
 import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
@@ -63,6 +64,8 @@ class Routes {
   static const String navigationViewRoute = '/navigationView';
 
   static const String setting = '/setting';
+
+  static const String yoloScreen = '/yoloScreen';
 }
 
 class RouteGenerator {
@@ -225,6 +228,21 @@ class RouteGenerator {
             child: DoctorChat(
               model: args["model"],
             ),
+          ),
+        );
+
+      case Routes.yoloScreen:
+        var args = settings.arguments as Map;
+        return MaterialPageRoute(
+          builder: (_) => YoloScreen(
+            gpu: args["gpu"],
+            labels: args["labels"],
+            modelPath: args["modelPath"],
+            resolutionPreset: args["resolutionPreset"],
+            numThreads: args["numThreads"],
+            classThreshold: args["classThreshold"],
+            confThreshold: args["confThreshold"],
+            iouThreshold: args["iouThreshold"],
           ),
         );
 

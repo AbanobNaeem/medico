@@ -21,7 +21,7 @@ class _AuthWebServices implements AuthWebServices {
   String? baseUrl;
 
   @override
-  Future<UserModel> register({
+  Future<dynamic> register({
     String? email,
     String? password,
     String? username,
@@ -36,59 +36,55 @@ class _AuthWebServices implements AuthWebServices {
       'username': username,
     };
     _data.removeWhere((k, v) => v == null);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UserModel>(Options(
+    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              'SignUp/sign',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = UserModel.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          'SignUp/sign',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data;
     return value;
   }
 
   @override
-  Future<UserModel> login({
-    String? email,
-    String? password,
+  Future<dynamic> login({
+    required String email,
+    required String password,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = {
       'email': email,
       'password': password,
     };
-    _data.removeWhere((k, v) => v == null);
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<UserModel>(Options(
+    final _result = await _dio.fetch(_setStreamType<dynamic>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              'Login',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = UserModel.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          'Login/login',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data;
     return value;
   }
 

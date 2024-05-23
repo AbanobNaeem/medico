@@ -2,13 +2,19 @@ class UserModel {
   int? userId;
   String? userType;
   String? name;
+  String? error;
 
   UserModel({this.userId, this.userType, this.name});
 
-  UserModel.fromJson(Map<String, dynamic> json) {
-    userId = json['userId'];
-    userType = json['userType'];
-    name = json['name'];
+  UserModel.fromJson(dynamic json) {
+    if (json is Map<String, dynamic>) {
+      userId = json['userId'];
+      userType = json['userType'];
+      name = json['name'];
+    }
+    if (json is String) {
+      error = json;
+    }
   }
 
   Map<String, dynamic> toJson() {

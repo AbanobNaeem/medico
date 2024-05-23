@@ -20,7 +20,9 @@ class AuthRepo {
         password: password,
       );
 
-      return ApiResult.success(response);
+      final model = UserModel.fromJson(response);
+
+      return ApiResult.success(model);
     } catch (error) {
       return ApiResult.failure(DioExceptionTypes.getDioException(error));
     }
@@ -37,8 +39,9 @@ class AuthRepo {
         password: password,
         username: username,
       );
+      final model = UserModel.fromJson(response);
 
-      return ApiResult.success(response);
+      return ApiResult.success(model);
     } catch (error) {
       return ApiResult.failure(DioExceptionTypes.getDioException(error));
     }

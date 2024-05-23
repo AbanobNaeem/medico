@@ -2,6 +2,7 @@ const String imagePath = 'assets/images';
 const String svgPath = 'assets/svg';
 const String lottiePath = 'assets/lottie';
 const String tempPath = 'assets/temp';
+const String aiPath = 'assets/ai';
 
 class AssetsManager {
   const AssetsManager._internal();
@@ -31,6 +32,10 @@ class AssetsManager {
 
   static const String unfilledProfileIc = '$svgPath/unfilled_profile_ic.svg';
   static const String filledProfileIc = '$svgPath/profile_filled.svg';
+
+  static const String aiTestModel = '$aiPath/yolov8n_test.tflite';
+  static const String aiBoneFractureModel = '$aiPath/BoneFracture_ai_model.tflite';
+  static const String aiTestLabel = '$aiPath/labels.txt';
 
   //!Auth
   static const String loginBackGround = '$svgPath/login.svg';

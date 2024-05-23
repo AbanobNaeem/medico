@@ -188,9 +188,9 @@ class _OTPScreenState extends State<OTPScreen> {
         builder: (context, state) {
           return TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all<Color>(
+              foregroundColor: WidgetStateProperty.all<Color>(
                   _isButtonEnabled ? ColorManager.brightRed : Colors.grey),
-              textStyle: MaterialStateProperty.all<TextStyle>(
+              textStyle: WidgetStateProperty.all<TextStyle>(
                 StyleManager.getLightStyle(fontSize: FontSize.s18),
               ),
             ),
