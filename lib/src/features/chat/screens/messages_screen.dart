@@ -126,7 +126,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
         height: 68.w,
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage(model.profileImage ?? ''),
+          image: NetworkImage(model.profileImage ?? ''),
         )),
       ),
       title: Text(model.username ?? ''),

@@ -159,6 +159,7 @@ class StringsManager {
 
   //! Doctors List
   static const String doctorsList = 'Doctors List';
+  static const String nurseList = 'Nurse List';
   static const String drAillaAhmed = 'Dr. Ailla Ahmed';
   static const String drAhmed = 'Dr.  Ahmed ';
   static const String orthopedist = 'Orthopedist';
@@ -204,4 +205,8 @@ class StringsManager {
   static const String seeMore = 'See more';
   static const String seeLess = 'See less';
   static const String loading = 'Loading';
+
+  static const String speciality = 'Speciality';
+  static const String governorates = 'Governorates';
+  static const String priceperhour = 'Price per hour';
 }

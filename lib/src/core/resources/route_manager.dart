@@ -136,6 +136,9 @@ class RouteGenerator {
               BlocProvider.value(
                 value: doctorChatCubit,
               ),
+              BlocProvider.value(
+                value: profileCubit,
+              ),
             ],
             child: const BottomNav(),
           ),

@@ -6,7 +6,7 @@ import 'package:xpert/src/features/home/data/models/get_nurse_or_doctor_info.dar
 
 part 'home_web_services.g.dart';
 
-@RestApi(baseUrl: AppConstants.chatDomain)
+@RestApi(baseUrl: AppConstants.domain)
 abstract class HomeWebServices {
   factory HomeWebServices(Dio dio, {String baseUrl}) = _HomeWebServices;
 

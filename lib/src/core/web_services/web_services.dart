@@ -6,7 +6,7 @@ import 'package:xpert/src/features/home/data/models/diseases_model.dart';
 
 part 'web_services.g.dart';
 
-@RestApi(baseUrl: AppConstants.domain)
+@RestApi(baseUrl: AppConstants.aiDomain)
 abstract class WebServices {
   static const String apiKey = "vv5Bsj27ASI9XrvZH6Bz";
 

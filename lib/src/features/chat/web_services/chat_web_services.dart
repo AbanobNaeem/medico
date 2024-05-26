@@ -7,7 +7,7 @@ import 'package:xpert/src/features/chat/data/models/send_chat_model.dart';
 
 part 'chat_web_services.g.dart';
 
-@RestApi(baseUrl: AppConstants.chatDomain)
+@RestApi(baseUrl: AppConstants.domain)
 abstract class ChatWebServices {
   factory ChatWebServices(Dio dio, {String baseUrl}) = _ChatWebServices;
 

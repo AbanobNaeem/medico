@@ -17,6 +17,8 @@ import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_c
 import 'package:xpert/src/features/home/data/repo/diseases_repo.dart';
 import 'package:xpert/src/features/home/home_web_services/home_web_services.dart';
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
+import 'package:xpert/src/features/profile/data/repo/profile_repo.dart';
+import 'package:xpert/src/features/profile/web_service/profile_web_services.dart';
 
 final getIt = GetIt.instance;
 Dio dio = Dio();
@@ -25,6 +27,9 @@ Dio dioChatGpt = Dio();
 void initGetIt() {
   getIt.registerLazySingleton<WebServices>(
       () => WebServices(createAndSetupDio()));
+
+  getIt.registerLazySingleton<ProfileWebServices>(
+      () => ProfileWebServices(createAndSetupDio()));
 
   getIt.registerLazySingleton<ChatBotCubit>(() => ChatBotCubit());
 
@@ -38,6 +43,7 @@ void initGetIt() {
       () => HomeWebServices(createAndSetupDio()));
 
   getIt.registerLazySingleton<AuthRepo>(() => AuthRepo(getIt()));
+  getIt.registerLazySingleton<ProfileRepo>(() => ProfileRepo(getIt()));
 
   getIt.registerLazySingleton<AuthLogicCubit>(() => AuthLogicCubit(getIt()));
 
@@ -49,7 +55,7 @@ void initGetIt() {
 
   getIt.registerLazySingleton<OtpTimerCubit>(() => OtpTimerCubit());
   getIt.registerLazySingleton<NavBarCubit>(() => NavBarCubit());
-  getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit());
+  getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
 
   getIt.registerLazySingleton<ChatRepo>(() => ChatRepo(getIt()));
 
@@ -61,7 +67,7 @@ Dio createAndSetupDio() {
     ..options.connectTimeout = const Duration(seconds: 20)
     // ..interceptors.add(DioCacheInterceptor(options: customCacheOptions))
     ..options.receiveTimeout = const Duration(seconds: 20)
-    ..options.baseUrl = AppConstants.domain
+    ..options.baseUrl = AppConstants.aiDomain
     ..options.followRedirects = false
     ..options.headers = {
       'Content-Type': 'application/x-www-form-urlencoded',

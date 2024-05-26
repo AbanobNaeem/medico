@@ -53,8 +53,8 @@ class SettingScreen extends StatelessWidget {
         children: [
           10.verticalSpace,
           Expanded(flex: 2, child: _buildFirstBox()),
-          Expanded(flex: 3, child: _buildSceBox()),
-          Expanded(flex: 3, child: _buildThirdBox()),
+          // Expanded(flex: 3, child: _buildSceBox()),
+          // Expanded(flex: 3, child: _buildThirdBox()),
         ],
       ),
     );
@@ -77,16 +77,33 @@ class SettingScreen extends StatelessWidget {
         _buildContainer(
           widget: Column(
             children: [
-              _listTile(
-                title: StringsManager.setting,
-                icon: AssetsManager.setting,
-                trailing: true,
-              ),
-              const Divider(),
+              // _listTile(
+              //   title: StringsManager.setting,
+              //   icon: AssetsManager.setting,
+              //   trailing: true,
+              // ),
+              // const Divider(),
               _listTile(
                 title: StringsManager.editProfile,
                 icon: AssetsManager.editProfileIc,
                 trailing: true,
+                onTap: () {
+                  RouteGenerator.navBarCubit.onTap(3);
+                },
+              ),
+              _listTile(
+                title: StringsManager.password,
+                icon: AssetsManager.keyIc,
+                onTap: () {
+                  RouteGenerator.navBarCubit.onTap(3);
+                },
+              ),
+              _listTile(
+                title: StringsManager.editEmail,
+                icon: AssetsManager.email,
+                onTap: () {
+                  RouteGenerator.navBarCubit.onTap(3);
+                },
               ),
             ],
           ),
@@ -101,20 +118,23 @@ class SettingScreen extends StatelessWidget {
         _buildContainer(
           widget: Column(
             children: [
-              _listTile(
-                title: StringsManager.notifications,
-                icon: AssetsManager.notificationsIc,
-              ),
-              const Divider(),
+              // _listTile(
+              //   title: StringsManager.notifications,
+              //   icon: AssetsManager.notificationsIc,
+              // ),
+              // const Divider(),
               _listTile(
                 title: StringsManager.password,
                 icon: AssetsManager.keyIc,
+                onTap: () {
+                  RouteGenerator.navBarCubit.onTap(3);
+                },
               ),
-              const Divider(),
-              _listTile(
-                title: StringsManager.language,
-                icon: AssetsManager.lang,
-              ),
+              // const Divider(),
+              // _listTile(
+              //   title: StringsManager.language,
+              //   icon: AssetsManager.lang,
+              // ),
             ],
           ),
         ),
@@ -128,20 +148,23 @@ class SettingScreen extends StatelessWidget {
         _buildContainer(
           widget: Column(
             children: [
-              _listTile(
-                title: StringsManager.country,
-                icon: AssetsManager.location,
-              ),
-              const Divider(),
+              // _listTile(
+              //   title: StringsManager.country,
+              //   icon: AssetsManager.location,
+              // ),
+              // const Divider(),
               _listTile(
                 title: StringsManager.editEmail,
                 icon: AssetsManager.email,
+                onTap: () {
+                  RouteGenerator.navBarCubit.onTap(3);
+                },
               ),
-              const Divider(),
-              _listTile(
-                title: StringsManager.facebook,
-                icon: AssetsManager.unfilledFacebookIc,
-              ),
+              // const Divider(),
+              // _listTile(
+              //   title: StringsManager.facebook,
+              //   icon: AssetsManager.unfilledFacebookIc,
+              // ),
             ],
           ),
         ),
@@ -163,12 +186,13 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  Widget _listTile({
-    required String title,
-    required String icon,
-    bool? trailing,
-  }) {
+  Widget _listTile(
+      {required String title,
+      required String icon,
+      bool? trailing,
+      void Function()? onTap}) {
     return ListTile(
+      onTap: onTap,
       leading: SvgPicture.asset(
         icon,
         colorFilter: const ColorFilter.mode(

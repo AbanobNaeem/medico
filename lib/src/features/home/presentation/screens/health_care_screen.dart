@@ -42,7 +42,7 @@ class _HealthCareScreenState extends State<HealthCareScreen> {
         iconSize: 20.h,
         color: ColorManager.black,
       ),
-      title: const Text(StringsManager.doctorsList),
+      title: const Text(StringsManager.nurseList),
       actions: const [NurseDropDownMenuWidget()],
     );
   }

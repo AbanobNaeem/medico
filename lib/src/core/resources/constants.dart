@@ -5,8 +5,8 @@ class AppConstants {
 
   static const appName = 'Medico';
 
-  static const domain = 'https://classify.roboflow.com/';
-  static const chatDomain = 'https://ertdemo.azurewebsites.net/api/';
+  static const aiDomain = 'https://classify.roboflow.com/';
+  static const domain = 'https://ertdemo.azurewebsites.net/api/';
 
   static const chatBotToken = "AIzaSyDDMeYkvPbE4zUOnOG5cNQ0Aiowo2MpSiw";
   static const chatBotModel = 'gemini-pro';
@@ -99,3 +99,8 @@ class AppConstants {
   static const String resolutionMedium = "Medium";
   static const String resolutionHigh = "High";
 }
+
+int? myId;
+String? myType;
+String? myUserName;
+bool? isSkipOnBoarding;
