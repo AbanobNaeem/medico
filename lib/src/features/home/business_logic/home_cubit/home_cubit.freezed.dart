@@ -39,6 +39,9 @@ mixin _$HomeState {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +66,9 @@ mixin _$HomeState {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +93,9 @@ mixin _$HomeState {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +124,9 @@ mixin _$HomeState {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -140,6 +152,9 @@ mixin _$HomeState {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -165,6 +180,9 @@ mixin _$HomeState {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -246,6 +264,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return initial();
   }
@@ -273,6 +294,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return initial?.call();
   }
@@ -300,6 +324,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -334,6 +361,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return initial(this);
   }
@@ -362,6 +392,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return initial?.call(this);
   }
@@ -390,6 +423,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -465,6 +501,9 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return uploadImageLoading();
   }
@@ -492,6 +531,9 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return uploadImageLoading?.call();
   }
@@ -519,6 +561,9 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (uploadImageLoading != null) {
@@ -553,6 +598,9 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return uploadImageLoading(this);
   }
@@ -581,6 +629,9 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return uploadImageLoading?.call(this);
   }
@@ -609,6 +660,9 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (uploadImageLoading != null) {
@@ -711,6 +765,9 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return uploadBonefracturesResult(data);
   }
@@ -738,6 +795,9 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return uploadBonefracturesResult?.call(data);
   }
@@ -765,6 +825,9 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (uploadBonefracturesResult != null) {
@@ -799,6 +862,9 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return uploadBonefracturesResult(this);
   }
@@ -827,6 +893,9 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return uploadBonefracturesResult?.call(this);
   }
@@ -855,6 +924,9 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (uploadBonefracturesResult != null) {
@@ -962,6 +1034,9 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return uploadBrainTumorResult(data);
   }
@@ -989,6 +1064,9 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return uploadBrainTumorResult?.call(data);
   }
@@ -1016,6 +1094,9 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (uploadBrainTumorResult != null) {
@@ -1050,6 +1131,9 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return uploadBrainTumorResult(this);
   }
@@ -1078,6 +1162,9 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return uploadBrainTumorResult?.call(this);
   }
@@ -1106,6 +1193,9 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (uploadBrainTumorResult != null) {
@@ -1214,6 +1304,9 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return uploadImageError(networkExceptions);
   }
@@ -1241,6 +1334,9 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return uploadImageError?.call(networkExceptions);
   }
@@ -1268,6 +1364,9 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (uploadImageError != null) {
@@ -1302,6 +1401,9 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return uploadImageError(this);
   }
@@ -1330,6 +1432,9 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return uploadImageError?.call(this);
   }
@@ -1358,6 +1463,9 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (uploadImageError != null) {
@@ -1436,6 +1544,9 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getDoctorLoading();
   }
@@ -1463,6 +1574,9 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getDoctorLoading?.call();
   }
@@ -1490,6 +1604,9 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorLoading != null) {
@@ -1524,6 +1641,9 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getDoctorLoading(this);
   }
@@ -1552,6 +1672,9 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getDoctorLoading?.call(this);
   }
@@ -1580,6 +1703,9 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorLoading != null) {
@@ -1679,6 +1805,9 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getDoctorSuccess(data);
   }
@@ -1706,6 +1835,9 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getDoctorSuccess?.call(data);
   }
@@ -1733,6 +1865,9 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorSuccess != null) {
@@ -1767,6 +1902,9 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getDoctorSuccess(this);
   }
@@ -1795,6 +1933,9 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getDoctorSuccess?.call(this);
   }
@@ -1823,6 +1964,9 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorSuccess != null) {
@@ -1929,6 +2073,9 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getDoctorError(networkExceptions);
   }
@@ -1956,6 +2103,9 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getDoctorError?.call(networkExceptions);
   }
@@ -1983,6 +2133,9 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorError != null) {
@@ -2017,6 +2170,9 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getDoctorError(this);
   }
@@ -2045,6 +2201,9 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getDoctorError?.call(this);
   }
@@ -2073,6 +2232,9 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorError != null) {
@@ -2151,6 +2313,9 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getNurseLoading();
   }
@@ -2178,6 +2343,9 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getNurseLoading?.call();
   }
@@ -2205,6 +2373,9 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseLoading != null) {
@@ -2239,6 +2410,9 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getNurseLoading(this);
   }
@@ -2267,6 +2441,9 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getNurseLoading?.call(this);
   }
@@ -2295,6 +2472,9 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseLoading != null) {
@@ -2394,6 +2574,9 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getNurseSuccess(data);
   }
@@ -2421,6 +2604,9 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getNurseSuccess?.call(data);
   }
@@ -2448,6 +2634,9 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseSuccess != null) {
@@ -2482,6 +2671,9 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getNurseSuccess(this);
   }
@@ -2510,6 +2702,9 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getNurseSuccess?.call(this);
   }
@@ -2538,6 +2733,9 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseSuccess != null) {
@@ -2643,6 +2841,9 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getNurseError(networkExceptions);
   }
@@ -2670,6 +2871,9 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getNurseError?.call(networkExceptions);
   }
@@ -2697,6 +2901,9 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseError != null) {
@@ -2731,6 +2938,9 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getNurseError(this);
   }
@@ -2759,6 +2969,9 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getNurseError?.call(this);
   }
@@ -2787,6 +3000,9 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseError != null) {
@@ -2866,6 +3082,9 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getDoctorInfoLoading();
   }
@@ -2893,6 +3112,9 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getDoctorInfoLoading?.call();
   }
@@ -2920,6 +3142,9 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorInfoLoading != null) {
@@ -2954,6 +3179,9 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getDoctorInfoLoading(this);
   }
@@ -2982,6 +3210,9 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getDoctorInfoLoading?.call(this);
   }
@@ -3010,6 +3241,9 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorInfoLoading != null) {
@@ -3110,6 +3344,9 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getDoctorInfoSuccess(data);
   }
@@ -3137,6 +3374,9 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getDoctorInfoSuccess?.call(data);
   }
@@ -3164,6 +3404,9 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorInfoSuccess != null) {
@@ -3198,6 +3441,9 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getDoctorInfoSuccess(this);
   }
@@ -3226,6 +3472,9 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getDoctorInfoSuccess?.call(this);
   }
@@ -3254,6 +3503,9 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorInfoSuccess != null) {
@@ -3360,6 +3612,9 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getDoctorInfoError(networkExceptions);
   }
@@ -3387,6 +3642,9 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getDoctorInfoError?.call(networkExceptions);
   }
@@ -3414,6 +3672,9 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorInfoError != null) {
@@ -3448,6 +3709,9 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getDoctorInfoError(this);
   }
@@ -3476,6 +3740,9 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getDoctorInfoError?.call(this);
   }
@@ -3504,6 +3771,9 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getDoctorInfoError != null) {
@@ -3583,6 +3853,9 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getNurseInfoLoading();
   }
@@ -3610,6 +3883,9 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getNurseInfoLoading?.call();
   }
@@ -3637,6 +3913,9 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseInfoLoading != null) {
@@ -3671,6 +3950,9 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getNurseInfoLoading(this);
   }
@@ -3699,6 +3981,9 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getNurseInfoLoading?.call(this);
   }
@@ -3727,6 +4012,9 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseInfoLoading != null) {
@@ -3826,6 +4114,9 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getNurseInfoSuccess(data);
   }
@@ -3853,6 +4144,9 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getNurseInfoSuccess?.call(data);
   }
@@ -3880,6 +4174,9 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseInfoSuccess != null) {
@@ -3914,6 +4211,9 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getNurseInfoSuccess(this);
   }
@@ -3942,6 +4242,9 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getNurseInfoSuccess?.call(this);
   }
@@ -3970,6 +4273,9 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseInfoSuccess != null) {
@@ -4076,6 +4382,9 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return getNurseInfoError(networkExceptions);
   }
@@ -4103,6 +4412,9 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return getNurseInfoError?.call(networkExceptions);
   }
@@ -4130,6 +4442,9 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseInfoError != null) {
@@ -4164,6 +4479,9 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return getNurseInfoError(this);
   }
@@ -4192,6 +4510,9 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return getNurseInfoError?.call(this);
   }
@@ -4220,6 +4541,9 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (getNurseInfoError != null) {
@@ -4298,6 +4622,9 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return addRatingLoading();
   }
@@ -4325,6 +4652,9 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return addRatingLoading?.call();
   }
@@ -4352,6 +4682,9 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (addRatingLoading != null) {
@@ -4386,6 +4719,9 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return addRatingLoading(this);
   }
@@ -4414,6 +4750,9 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return addRatingLoading?.call(this);
   }
@@ -4442,6 +4781,9 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (addRatingLoading != null) {
@@ -4514,6 +4856,9 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return addRatingSuccess();
   }
@@ -4541,6 +4886,9 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return addRatingSuccess?.call();
   }
@@ -4568,6 +4916,9 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (addRatingSuccess != null) {
@@ -4602,6 +4953,9 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return addRatingSuccess(this);
   }
@@ -4630,6 +4984,9 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return addRatingSuccess?.call(this);
   }
@@ -4658,6 +5015,9 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (addRatingSuccess != null) {
@@ -4758,6 +5118,9 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     required TResult Function() addRatingLoading,
     required TResult Function() addRatingSuccess,
     required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
   }) {
     return addRatingError(networkExceptions);
   }
@@ -4785,6 +5148,9 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     TResult? Function()? addRatingLoading,
     TResult? Function()? addRatingSuccess,
     TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
   }) {
     return addRatingError?.call(networkExceptions);
   }
@@ -4812,6 +5178,9 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     TResult Function()? addRatingLoading,
     TResult Function()? addRatingSuccess,
     TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (addRatingError != null) {
@@ -4846,6 +5215,9 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     required TResult Function(_AddRatingLoading value) addRatingLoading,
     required TResult Function(_AddRatingSuccess value) addRatingSuccess,
     required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
   }) {
     return addRatingError(this);
   }
@@ -4874,6 +5246,9 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     TResult? Function(_AddRatingLoading value)? addRatingLoading,
     TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
   }) {
     return addRatingError?.call(this);
   }
@@ -4902,6 +5277,9 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     TResult Function(_AddRatingLoading value)? addRatingLoading,
     TResult Function(_AddRatingSuccess value)? addRatingSuccess,
     TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
     required TResult orElse(),
   }) {
     if (addRatingError != null) {
@@ -4918,5 +5296,783 @@ abstract class _AddRatingError implements HomeState {
   String get networkExceptions;
   @JsonKey(ignore: true)
   _$$AddRatingErrorImplCopyWith<_$AddRatingErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetTopDoctorsLoadingImplCopyWith<$Res> {
+  factory _$$GetTopDoctorsLoadingImplCopyWith(_$GetTopDoctorsLoadingImpl value,
+          $Res Function(_$GetTopDoctorsLoadingImpl) then) =
+      __$$GetTopDoctorsLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetTopDoctorsLoadingImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetTopDoctorsLoadingImpl>
+    implements _$$GetTopDoctorsLoadingImplCopyWith<$Res> {
+  __$$GetTopDoctorsLoadingImplCopyWithImpl(_$GetTopDoctorsLoadingImpl _value,
+      $Res Function(_$GetTopDoctorsLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetTopDoctorsLoadingImpl implements _GetTopDoctorsLoading {
+  const _$GetTopDoctorsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState.getTopDoctorsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopDoctorsLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+    required TResult Function() getDoctorInfoLoading,
+    required TResult Function(GetNurseOrDoctorInfo data) getDoctorInfoSuccess,
+    required TResult Function(String networkExceptions) getDoctorInfoError,
+    required TResult Function() getNurseInfoLoading,
+    required TResult Function(GetNurseOrDoctorInfo data) getNurseInfoSuccess,
+    required TResult Function(String networkExceptions) getNurseInfoError,
+    required TResult Function() addRatingLoading,
+    required TResult Function() addRatingSuccess,
+    required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
+  }) {
+    return getTopDoctorsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+    TResult? Function()? getDoctorInfoLoading,
+    TResult? Function(GetNurseOrDoctorInfo data)? getDoctorInfoSuccess,
+    TResult? Function(String networkExceptions)? getDoctorInfoError,
+    TResult? Function()? getNurseInfoLoading,
+    TResult? Function(GetNurseOrDoctorInfo data)? getNurseInfoSuccess,
+    TResult? Function(String networkExceptions)? getNurseInfoError,
+    TResult? Function()? addRatingLoading,
+    TResult? Function()? addRatingSuccess,
+    TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
+  }) {
+    return getTopDoctorsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    TResult Function()? getDoctorInfoLoading,
+    TResult Function(GetNurseOrDoctorInfo data)? getDoctorInfoSuccess,
+    TResult Function(String networkExceptions)? getDoctorInfoError,
+    TResult Function()? getNurseInfoLoading,
+    TResult Function(GetNurseOrDoctorInfo data)? getNurseInfoSuccess,
+    TResult Function(String networkExceptions)? getNurseInfoError,
+    TResult Function()? addRatingLoading,
+    TResult Function()? addRatingSuccess,
+    TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
+    required TResult orElse(),
+  }) {
+    if (getTopDoctorsLoading != null) {
+      return getTopDoctorsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+    required TResult Function(_GetDoctorInfoLoading value) getDoctorInfoLoading,
+    required TResult Function(_GetDoctorInfoSuccess value) getDoctorInfoSuccess,
+    required TResult Function(_GetDoctorInfoError value) getDoctorInfoError,
+    required TResult Function(_GetNurseInfoLoading value) getNurseInfoLoading,
+    required TResult Function(_GetNurseInfoSuccess value) getNurseInfoSuccess,
+    required TResult Function(_GetNurseInfoError value) getNurseInfoError,
+    required TResult Function(_AddRatingLoading value) addRatingLoading,
+    required TResult Function(_AddRatingSuccess value) addRatingSuccess,
+    required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
+  }) {
+    return getTopDoctorsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+    TResult? Function(_GetDoctorInfoLoading value)? getDoctorInfoLoading,
+    TResult? Function(_GetDoctorInfoSuccess value)? getDoctorInfoSuccess,
+    TResult? Function(_GetDoctorInfoError value)? getDoctorInfoError,
+    TResult? Function(_GetNurseInfoLoading value)? getNurseInfoLoading,
+    TResult? Function(_GetNurseInfoSuccess value)? getNurseInfoSuccess,
+    TResult? Function(_GetNurseInfoError value)? getNurseInfoError,
+    TResult? Function(_AddRatingLoading value)? addRatingLoading,
+    TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
+    TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
+  }) {
+    return getTopDoctorsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    TResult Function(_GetDoctorInfoLoading value)? getDoctorInfoLoading,
+    TResult Function(_GetDoctorInfoSuccess value)? getDoctorInfoSuccess,
+    TResult Function(_GetDoctorInfoError value)? getDoctorInfoError,
+    TResult Function(_GetNurseInfoLoading value)? getNurseInfoLoading,
+    TResult Function(_GetNurseInfoSuccess value)? getNurseInfoSuccess,
+    TResult Function(_GetNurseInfoError value)? getNurseInfoError,
+    TResult Function(_AddRatingLoading value)? addRatingLoading,
+    TResult Function(_AddRatingSuccess value)? addRatingSuccess,
+    TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
+    required TResult orElse(),
+  }) {
+    if (getTopDoctorsLoading != null) {
+      return getTopDoctorsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetTopDoctorsLoading implements HomeState {
+  const factory _GetTopDoctorsLoading() = _$GetTopDoctorsLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetTopDoctorsSuccessImplCopyWith<$Res> {
+  factory _$$GetTopDoctorsSuccessImplCopyWith(_$GetTopDoctorsSuccessImpl value,
+          $Res Function(_$GetTopDoctorsSuccessImpl) then) =
+      __$$GetTopDoctorsSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<TopDoctorsModel> model});
+}
+
+/// @nodoc
+class __$$GetTopDoctorsSuccessImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetTopDoctorsSuccessImpl>
+    implements _$$GetTopDoctorsSuccessImplCopyWith<$Res> {
+  __$$GetTopDoctorsSuccessImplCopyWithImpl(_$GetTopDoctorsSuccessImpl _value,
+      $Res Function(_$GetTopDoctorsSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? model = null,
+  }) {
+    return _then(_$GetTopDoctorsSuccessImpl(
+      null == model
+          ? _value._model
+          : model // ignore: cast_nullable_to_non_nullable
+              as List<TopDoctorsModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTopDoctorsSuccessImpl implements _GetTopDoctorsSuccess {
+  const _$GetTopDoctorsSuccessImpl(final List<TopDoctorsModel> model)
+      : _model = model;
+
+  final List<TopDoctorsModel> _model;
+  @override
+  List<TopDoctorsModel> get model {
+    if (_model is EqualUnmodifiableListView) return _model;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_model);
+  }
+
+  @override
+  String toString() {
+    return 'HomeState.getTopDoctorsSuccess(model: $model)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopDoctorsSuccessImpl &&
+            const DeepCollectionEquality().equals(other._model, _model));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_model));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTopDoctorsSuccessImplCopyWith<_$GetTopDoctorsSuccessImpl>
+      get copyWith =>
+          __$$GetTopDoctorsSuccessImplCopyWithImpl<_$GetTopDoctorsSuccessImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+    required TResult Function() getDoctorInfoLoading,
+    required TResult Function(GetNurseOrDoctorInfo data) getDoctorInfoSuccess,
+    required TResult Function(String networkExceptions) getDoctorInfoError,
+    required TResult Function() getNurseInfoLoading,
+    required TResult Function(GetNurseOrDoctorInfo data) getNurseInfoSuccess,
+    required TResult Function(String networkExceptions) getNurseInfoError,
+    required TResult Function() addRatingLoading,
+    required TResult Function() addRatingSuccess,
+    required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
+  }) {
+    return getTopDoctorsSuccess(model);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+    TResult? Function()? getDoctorInfoLoading,
+    TResult? Function(GetNurseOrDoctorInfo data)? getDoctorInfoSuccess,
+    TResult? Function(String networkExceptions)? getDoctorInfoError,
+    TResult? Function()? getNurseInfoLoading,
+    TResult? Function(GetNurseOrDoctorInfo data)? getNurseInfoSuccess,
+    TResult? Function(String networkExceptions)? getNurseInfoError,
+    TResult? Function()? addRatingLoading,
+    TResult? Function()? addRatingSuccess,
+    TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
+  }) {
+    return getTopDoctorsSuccess?.call(model);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    TResult Function()? getDoctorInfoLoading,
+    TResult Function(GetNurseOrDoctorInfo data)? getDoctorInfoSuccess,
+    TResult Function(String networkExceptions)? getDoctorInfoError,
+    TResult Function()? getNurseInfoLoading,
+    TResult Function(GetNurseOrDoctorInfo data)? getNurseInfoSuccess,
+    TResult Function(String networkExceptions)? getNurseInfoError,
+    TResult Function()? addRatingLoading,
+    TResult Function()? addRatingSuccess,
+    TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
+    required TResult orElse(),
+  }) {
+    if (getTopDoctorsSuccess != null) {
+      return getTopDoctorsSuccess(model);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+    required TResult Function(_GetDoctorInfoLoading value) getDoctorInfoLoading,
+    required TResult Function(_GetDoctorInfoSuccess value) getDoctorInfoSuccess,
+    required TResult Function(_GetDoctorInfoError value) getDoctorInfoError,
+    required TResult Function(_GetNurseInfoLoading value) getNurseInfoLoading,
+    required TResult Function(_GetNurseInfoSuccess value) getNurseInfoSuccess,
+    required TResult Function(_GetNurseInfoError value) getNurseInfoError,
+    required TResult Function(_AddRatingLoading value) addRatingLoading,
+    required TResult Function(_AddRatingSuccess value) addRatingSuccess,
+    required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
+  }) {
+    return getTopDoctorsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+    TResult? Function(_GetDoctorInfoLoading value)? getDoctorInfoLoading,
+    TResult? Function(_GetDoctorInfoSuccess value)? getDoctorInfoSuccess,
+    TResult? Function(_GetDoctorInfoError value)? getDoctorInfoError,
+    TResult? Function(_GetNurseInfoLoading value)? getNurseInfoLoading,
+    TResult? Function(_GetNurseInfoSuccess value)? getNurseInfoSuccess,
+    TResult? Function(_GetNurseInfoError value)? getNurseInfoError,
+    TResult? Function(_AddRatingLoading value)? addRatingLoading,
+    TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
+    TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
+  }) {
+    return getTopDoctorsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    TResult Function(_GetDoctorInfoLoading value)? getDoctorInfoLoading,
+    TResult Function(_GetDoctorInfoSuccess value)? getDoctorInfoSuccess,
+    TResult Function(_GetDoctorInfoError value)? getDoctorInfoError,
+    TResult Function(_GetNurseInfoLoading value)? getNurseInfoLoading,
+    TResult Function(_GetNurseInfoSuccess value)? getNurseInfoSuccess,
+    TResult Function(_GetNurseInfoError value)? getNurseInfoError,
+    TResult Function(_AddRatingLoading value)? addRatingLoading,
+    TResult Function(_AddRatingSuccess value)? addRatingSuccess,
+    TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
+    required TResult orElse(),
+  }) {
+    if (getTopDoctorsSuccess != null) {
+      return getTopDoctorsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetTopDoctorsSuccess implements HomeState {
+  const factory _GetTopDoctorsSuccess(final List<TopDoctorsModel> model) =
+      _$GetTopDoctorsSuccessImpl;
+
+  List<TopDoctorsModel> get model;
+  @JsonKey(ignore: true)
+  _$$GetTopDoctorsSuccessImplCopyWith<_$GetTopDoctorsSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetTopDoctorsErrorImplCopyWith<$Res> {
+  factory _$$GetTopDoctorsErrorImplCopyWith(_$GetTopDoctorsErrorImpl value,
+          $Res Function(_$GetTopDoctorsErrorImpl) then) =
+      __$$GetTopDoctorsErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String networkExceptions});
+}
+
+/// @nodoc
+class __$$GetTopDoctorsErrorImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetTopDoctorsErrorImpl>
+    implements _$$GetTopDoctorsErrorImplCopyWith<$Res> {
+  __$$GetTopDoctorsErrorImplCopyWithImpl(_$GetTopDoctorsErrorImpl _value,
+      $Res Function(_$GetTopDoctorsErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$GetTopDoctorsErrorImpl(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetTopDoctorsErrorImpl implements _GetTopDoctorsError {
+  const _$GetTopDoctorsErrorImpl(this.networkExceptions);
+
+  @override
+  final String networkExceptions;
+
+  @override
+  String toString() {
+    return 'HomeState.getTopDoctorsError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetTopDoctorsErrorImpl &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetTopDoctorsErrorImplCopyWith<_$GetTopDoctorsErrorImpl> get copyWith =>
+      __$$GetTopDoctorsErrorImplCopyWithImpl<_$GetTopDoctorsErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+    required TResult Function() getDoctorInfoLoading,
+    required TResult Function(GetNurseOrDoctorInfo data) getDoctorInfoSuccess,
+    required TResult Function(String networkExceptions) getDoctorInfoError,
+    required TResult Function() getNurseInfoLoading,
+    required TResult Function(GetNurseOrDoctorInfo data) getNurseInfoSuccess,
+    required TResult Function(String networkExceptions) getNurseInfoError,
+    required TResult Function() addRatingLoading,
+    required TResult Function() addRatingSuccess,
+    required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
+  }) {
+    return getTopDoctorsError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+    TResult? Function()? getDoctorInfoLoading,
+    TResult? Function(GetNurseOrDoctorInfo data)? getDoctorInfoSuccess,
+    TResult? Function(String networkExceptions)? getDoctorInfoError,
+    TResult? Function()? getNurseInfoLoading,
+    TResult? Function(GetNurseOrDoctorInfo data)? getNurseInfoSuccess,
+    TResult? Function(String networkExceptions)? getNurseInfoError,
+    TResult? Function()? addRatingLoading,
+    TResult? Function()? addRatingSuccess,
+    TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
+  }) {
+    return getTopDoctorsError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    TResult Function()? getDoctorInfoLoading,
+    TResult Function(GetNurseOrDoctorInfo data)? getDoctorInfoSuccess,
+    TResult Function(String networkExceptions)? getDoctorInfoError,
+    TResult Function()? getNurseInfoLoading,
+    TResult Function(GetNurseOrDoctorInfo data)? getNurseInfoSuccess,
+    TResult Function(String networkExceptions)? getNurseInfoError,
+    TResult Function()? addRatingLoading,
+    TResult Function()? addRatingSuccess,
+    TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
+    required TResult orElse(),
+  }) {
+    if (getTopDoctorsError != null) {
+      return getTopDoctorsError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+    required TResult Function(_GetDoctorInfoLoading value) getDoctorInfoLoading,
+    required TResult Function(_GetDoctorInfoSuccess value) getDoctorInfoSuccess,
+    required TResult Function(_GetDoctorInfoError value) getDoctorInfoError,
+    required TResult Function(_GetNurseInfoLoading value) getNurseInfoLoading,
+    required TResult Function(_GetNurseInfoSuccess value) getNurseInfoSuccess,
+    required TResult Function(_GetNurseInfoError value) getNurseInfoError,
+    required TResult Function(_AddRatingLoading value) addRatingLoading,
+    required TResult Function(_AddRatingSuccess value) addRatingSuccess,
+    required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
+  }) {
+    return getTopDoctorsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+    TResult? Function(_GetDoctorInfoLoading value)? getDoctorInfoLoading,
+    TResult? Function(_GetDoctorInfoSuccess value)? getDoctorInfoSuccess,
+    TResult? Function(_GetDoctorInfoError value)? getDoctorInfoError,
+    TResult? Function(_GetNurseInfoLoading value)? getNurseInfoLoading,
+    TResult? Function(_GetNurseInfoSuccess value)? getNurseInfoSuccess,
+    TResult? Function(_GetNurseInfoError value)? getNurseInfoError,
+    TResult? Function(_AddRatingLoading value)? addRatingLoading,
+    TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
+    TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
+  }) {
+    return getTopDoctorsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    TResult Function(_GetDoctorInfoLoading value)? getDoctorInfoLoading,
+    TResult Function(_GetDoctorInfoSuccess value)? getDoctorInfoSuccess,
+    TResult Function(_GetDoctorInfoError value)? getDoctorInfoError,
+    TResult Function(_GetNurseInfoLoading value)? getNurseInfoLoading,
+    TResult Function(_GetNurseInfoSuccess value)? getNurseInfoSuccess,
+    TResult Function(_GetNurseInfoError value)? getNurseInfoError,
+    TResult Function(_AddRatingLoading value)? addRatingLoading,
+    TResult Function(_AddRatingSuccess value)? addRatingSuccess,
+    TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
+    required TResult orElse(),
+  }) {
+    if (getTopDoctorsError != null) {
+      return getTopDoctorsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetTopDoctorsError implements HomeState {
+  const factory _GetTopDoctorsError(final String networkExceptions) =
+      _$GetTopDoctorsErrorImpl;
+
+  String get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$GetTopDoctorsErrorImplCopyWith<_$GetTopDoctorsErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

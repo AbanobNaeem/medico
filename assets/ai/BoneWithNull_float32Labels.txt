@@ -1,0 +1,24 @@
+author: Ultralytics
+batch: 1
+date: '2024-05-26T13:40:38.658877'
+description: Ultralytics BoneWithNull model trained on /content/Break-bone-5/data.yaml
+docs: https://docs.ultralytics.com
+imgsz:
+- 640
+- 640
+license: AGPL-3.0 License (https://ultralytics.com/license)
+names:
+  0: Avlusion Fracture
+  1: Comminuted Fracture
+  2: Compression-Crush Fracutre
+  3: Fracture Dislocation
+  4: GreenStick Fracture
+  5: HairLine Fracture
+  6: Impact Fracture
+  7: Intra-articular fracture
+  8: 'Null'
+  9: Oblique fracture
+  10: spiral fracture
+stride: 32
+task: detect
+version: 8.1.29

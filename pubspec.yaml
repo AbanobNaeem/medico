@@ -54,6 +54,10 @@ dependencies:
 
   pusher_channels_flutter: ^2.2.1
 
+  #For FireBase
+  # firebase_core: ^2.30.1
+  # firebase_database: ^10.5.4
+
   #For Ui
   image_picker: ^1.0.7
   dots_indicator: ^3.0.0
@@ -82,7 +86,6 @@ dependencies:
   flutter_vision: any
   dropdown_button2: ^2.3.9
   file_picker: ^8.0.3
-  # flutter_tts: any
 
 dev_dependencies:
   flutter_test:

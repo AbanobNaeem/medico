@@ -1,0 +1,16 @@
+author: Ultralytics
+batch: 1
+date: '2024-05-23T20:38:20.592393'
+description: Ultralytics Brain Tumor updated model trained on /content/Brain-Tumor-1/data.yaml
+docs: https://docs.ultralytics.com
+imgsz:
+- 640
+- 640
+license: AGPL-3.0 License (https://ultralytics.com/license)
+names:
+  0: Healthy
+  1: 'Null'
+  2: Tumor
+stride: 32
+task: detect
+version: 8.1.29

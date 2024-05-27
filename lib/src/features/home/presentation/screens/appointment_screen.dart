@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -10,6 +11,7 @@ import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
+import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/core/resources/utils.dart';
@@ -131,25 +133,33 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                 _label(StringsManager.aboutDoctors),
                 8.verticalSpace,
                 _readMoreText(model),
-                if (widget.type == AppConstants.userTypeDoctor)
+                if (widget.type == AppConstants.userTypeDoctor ||
+                    widget.type == AppConstants.userTypeNurse)
                   24.verticalSpace,
-                if (widget.type == AppConstants.userTypeDoctor)
+                if (widget.type == AppConstants.userTypeDoctor ||
+                    widget.type == AppConstants.userTypeNurse)
                   _label(StringsManager.workingTime),
-                if (widget.type == AppConstants.userTypeDoctor) 8.verticalSpace,
-                if (widget.type == AppConstants.userTypeDoctor)
+                if (widget.type == AppConstants.userTypeDoctor ||
+                    widget.type == AppConstants.userTypeNurse)
+                  8.verticalSpace,
+                if (widget.type == AppConstants.userTypeDoctor ||
+                    widget.type == AppConstants.userTypeNurse)
                   _bodyText(model.workTime ?? ''),
                 24.verticalSpace,
-                _label(StringsManager.address),
-                8.verticalSpace,
+                if (model.address != null) _label(StringsManager.address),
+                if (model.address != null) 8.verticalSpace,
                 if (model.address != null) _bodyText(model.address!),
                 if (model.address != null) 24.verticalSpace,
-                if (model.address != null) _label(StringsManager.phoneNumber),
+                if (model.phoneNumber != null)
+                  _label(StringsManager.phoneNumber),
                 if (model.address != null) 8.verticalSpace,
                 _bodyText(model.phoneNumber ?? ''),
                 24.verticalSpace,
-                _label(StringsManager.pricePerHour),
-                8.verticalSpace,
-                _bodyText(model.pricePerHour ?? ''),
+                if (model.pricePerHour != null)
+                  _label(StringsManager.pricePerHour),
+                if (model.pricePerHour != null) 8.verticalSpace,
+                if (model.pricePerHour != null)
+                  _bodyText(model.pricePerHour ?? ''),
                 // _label(StringsManager.schedule),
                 // 16.verticalSpace,
                 // const TableCalendarWidget(),
@@ -170,7 +180,8 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
             height: 90.h,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(model.profileImage ?? ''),
+                fit: BoxFit.cover,
+                image: CachedNetworkImageProvider(model.profileImage ?? ''),
               ),
               shape: BoxShape.circle,
             ),
@@ -313,8 +324,10 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
           color: Colors.amber,
         ),
         onRatingUpdate: (rating) {
+          int id = CacheHelper.getData(key: AppConstants.myId);
           RouteGenerator.homeCubit.addRating(
-            userId: widget.id,
+            userId: id,
+            doctorOrnursId: widget.id,
             ratingValue: rating.round(),
           );
           Navigator.of(context).pop();

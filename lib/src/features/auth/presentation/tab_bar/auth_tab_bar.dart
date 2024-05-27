@@ -31,8 +31,8 @@ class _AuthTabBarState extends State<AuthTabBar> {
   @override
   void initState() {
     super.initState();
-    _email = TextEditingController(text: "Ahmed@gmail.com");
-    _password = TextEditingController(text: "hhHdf3eeee");
+    _email = TextEditingController();
+    _password = TextEditingController();
     _userName = TextEditingController();
   }
 

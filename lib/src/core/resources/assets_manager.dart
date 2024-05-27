@@ -33,9 +33,19 @@ class AssetsManager {
   static const String unfilledProfileIc = '$svgPath/unfilled_profile_ic.svg';
   static const String filledProfileIc = '$svgPath/profile_filled.svg';
 
-  static const String aiTestModel = '$aiPath/yolov8n_test.tflite';
-  static const String aiBoneFractureModel = '$aiPath/BoneFracture_ai_model.tflite';
-  static const String aiTestLabel = '$aiPath/labels.txt';
+  // static const String aiTestModel = '$aiPath/yolov8n_test.tflite';
+  // static const String aiTestLabel = '$aiPath/labels.txt';
+
+  static const String aiBoneFractureModel = '$aiPath/BoneWithNull_float32.tflite';
+  static const String aiBoneFractureLabel = '$aiPath/BoneWithNull_float32Labels.txt';
+
+  static const String aiBrainTumorModel = '$aiPath/BrainTumorupdated_float32.tflite';
+  static const String aiBrainTumorLabel = '$aiPath/BrainTumorupdated_float32Labels.txt';
+
+
+  static const String aiBreastCancerModel = '$aiPath/OwnBreastCancer_float32.tflite';
+  static const String aiBreastCancerLabel = '$aiPath/BreastCancerLable.txt';
+
 
   //!Auth
   static const String loginBackGround = '$svgPath/login.svg';
@@ -49,6 +59,8 @@ class AssetsManager {
   //!home
   static const String searchIc = '$svgPath/search_ic.svg';
   static const String doctorPic = '$imagePath/doctor.png';
+  static const String doctorPic2 = '$tempPath/doctor2.jpeg';
+  static const String doctorPic3 = '$tempPath/doctor3.jpeg';
 
   static const String bonefracturesPic = '$imagePath/bonefractures.png';
   static const String braintumorPic = '$imagePath/braintumor.png';

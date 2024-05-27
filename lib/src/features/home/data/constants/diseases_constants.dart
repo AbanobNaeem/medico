@@ -53,17 +53,17 @@ List<DiseasesModel> diseasesList = [
       );
     },
   ),
-  DiseasesModel(
-    title: StringsManager.cancer,
-    image: AssetsManager.cancerPic,
-    onTap: () {
-      Navigator.pushNamed(
-        navigatorKey.currentContext!,
-        Routes.diseasesDetails,
-        arguments: {"title": StringsManager.cancer},
-      );
-    },
-  ),
+  // DiseasesModel(
+  //   title: StringsManager.cancer,
+  //   image: AssetsManager.cancerPic,
+  //   onTap: () {
+  //     Navigator.pushNamed(
+  //       navigatorKey.currentContext!,
+  //       Routes.diseasesDetails,
+  //       arguments: {"title": StringsManager.cancer},
+  //     );
+  //   },
+  // ),
   DiseasesModel(
     title: StringsManager.breastCancer,
     image: AssetsManager.breastcancerPic,
@@ -162,11 +162,10 @@ String model(String title) {
     case StringsManager.boneFractures:
       return AssetsManager.aiBoneFractureModel;
     case StringsManager.brainTumor:
-      return '';
-    case StringsManager.cancer:
-      return '';
+      return AssetsManager.aiBrainTumorModel;
+
     case StringsManager.breastCancer:
-      return '';
+      return AssetsManager.aiBreastCancerModel;
     default:
       return '';
   }
@@ -175,13 +174,12 @@ String model(String title) {
 String label(String title) {
   switch (title) {
     case StringsManager.boneFractures:
-      return AssetsManager.aiTestLabel;
+      return AssetsManager.aiBoneFractureLabel;
     case StringsManager.brainTumor:
-      return '';
-    case StringsManager.cancer:
-      return '';
+      return AssetsManager.aiBoneFractureLabel;
+
     case StringsManager.breastCancer:
-      return '';
+      return AssetsManager.aiBreastCancerLabel;
     default:
       return '';
   }
@@ -276,8 +274,7 @@ void sendImage(String title, File image) {
       return RouteGenerator.homeCubit.uploadOfBonefractures(image);
     case StringsManager.brainTumor:
       return RouteGenerator.homeCubit.uploadOfBrainTumor(image);
-    case StringsManager.cancer:
-      return;
+
     case StringsManager.breastCancer:
       return;
     default:

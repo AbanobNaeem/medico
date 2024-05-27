@@ -3,6 +3,7 @@ import 'package:retrofit/retrofit.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/features/home/data/models/get_doctor.dart';
 import 'package:xpert/src/features/home/data/models/get_nurse_or_doctor_info.dart';
+import 'package:xpert/src/features/home/data/models/top_doctor_model.dart';
 
 part 'home_web_services.g.dart';
 
@@ -30,10 +31,13 @@ abstract class HomeWebServices {
   Future<GetNurseOrDoctorInfo> getDoctorInfo({
     @Field() required int userId,
   });
-
-  @POST("Rating/AddRating")
+  @POST("Rating/AddRating1")
   Future<String> addRating({
     @Field() required int userId,
+    @Field() required int doctorOrnursId,
     @Field() required int ratingValue,
   });
+
+  @GET("Rating/top-rated")
+  Future<List<TopDoctorsModel>> getTopDoctors();
 }

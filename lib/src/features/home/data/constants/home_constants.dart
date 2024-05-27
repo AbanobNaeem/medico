@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xpert/src/app/app.dart';
+import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 
@@ -11,13 +12,6 @@ class CategoriesModel {
     required this.title,
     this.onTap,
   });
-}
-
-class TopDoctorsModel {
-  final String title;
-  final String subtitle;
-
-  TopDoctorsModel({required this.title, required this.subtitle});
 }
 
 List<CategoriesModel> categoriesList = [
@@ -43,14 +37,34 @@ List<CategoriesModel> categoriesList = [
   ),
 ];
 
-List<TopDoctorsModel> topDoctorsList = [
-  TopDoctorsModel(
-      title: StringsManager.topDoctorsTitle1,
-      subtitle: StringsManager.topDoctorsSubTitle1),
-  TopDoctorsModel(
-      title: StringsManager.topDoctorsTitle2,
-      subtitle: StringsManager.topDoctorsSubTitle2),
-  TopDoctorsModel(
-      title: StringsManager.topDoctorsTitle3,
-      subtitle: StringsManager.topDoctorsSubTitle3),
-];
+class SliderModel {
+  final String desc;
+  final String? name;
+  final String? speciality;
+  final String image;
+
+  SliderModel({
+    required this.desc,
+    this.name,
+    this.speciality,
+    required this.image,
+  });
+
+  static List<SliderModel> sliderList = [
+    SliderModel(
+      desc: StringsManager.specialistDesc1,
+      name: StringsManager.specialistDrName1,
+      image: AssetsManager.doctorPic,
+      speciality: StringsManager.specialist1,
+    ),
+    SliderModel(
+      desc: "You can ask the chatbot for any information or inquiry.",
+      image: AssetsManager.doctorPic2,
+    ),
+    SliderModel(
+      desc: "Are you looking for a healthcare professional of your desires?",
+      name: "R.N Ahmed Mostafa",
+      image: AssetsManager.doctorPic3,
+    ),
+  ];
+}

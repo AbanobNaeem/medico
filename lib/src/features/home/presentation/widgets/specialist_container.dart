@@ -1,9 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
-import 'package:xpert/src/core/resources/strings_manager.dart';
+import 'package:xpert/src/features/home/data/constants/home_constants.dart';
 
 class SpecialistContainer extends StatelessWidget {
   const SpecialistContainer({
@@ -11,6 +10,7 @@ class SpecialistContainer extends StatelessWidget {
     required this.index,
   });
   final int index;
+
   @override
   Widget build(BuildContext context) {
     return _specialistContainer(context);
@@ -33,7 +33,15 @@ class SpecialistContainer extends StatelessWidget {
               Expanded(
                 child: _bodyText(context),
               ),
-              Image.asset(AssetsManager.doctorPic),
+              Container(
+                margin: EdgeInsetsDirectional.only(end: 5.w),
+                child: Image.asset(
+                  fit: BoxFit.fill,
+                  width: 100.w,
+                  height: 100.h,
+                  SliderModel.sliderList[index].image,
+                ),
+              ),
             ],
           ),
           const Spacer(),
@@ -44,25 +52,29 @@ class SpecialistContainer extends StatelessWidget {
   }
 
   Widget _bodyText(context) {
-    return Padding(
-      padding: EdgeInsetsDirectional.only(start: 20.w, top: 13.h),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            StringsManager.specialistDesc1,
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
-          18.verticalSpace,
-          Text(
-            StringsManager.specialistDrName1,
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
-          Text(
-            StringsManager.specialist1,
-            style: Theme.of(context).textTheme.labelSmall,
-          ),
-        ],
+    return SizedBox(
+      width: 195.w,
+      height: 153.5.h,
+      child: Padding(
+        padding: EdgeInsetsDirectional.only(start: 20.w, top: 13.h),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              SliderModel.sliderList[index].desc,
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+            18.verticalSpace,
+            Text(
+              SliderModel.sliderList[index].name ?? '',
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+            Text(
+              SliderModel.sliderList[index].speciality ?? '',
+              style: Theme.of(context).textTheme.labelSmall,
+            ),
+          ],
+        ),
       ),
     );
   }

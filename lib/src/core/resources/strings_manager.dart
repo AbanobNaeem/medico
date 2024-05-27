@@ -9,6 +9,7 @@ class StringsManager {
   //!onBoarding
 
   static const String continueWord = 'continue';
+  static const String edit = 'edit';
   static const String getStart = 'Get Start';
   static const String skip = 'skip';
   static const String start = 'start';
@@ -179,6 +180,8 @@ class StringsManager {
   static const String schedule = 'Schedule';
   static const String workingTime = 'Working time';
   static const String aboutDoctors = 'About Doctors';
+  static const String oldPassword = 'Old Password';
+  static const String newPassword = 'New Password';
   static const String people = 'people';
   static const String experience = 'Experience';
   static const String rating = 'Rating';
@@ -198,6 +201,7 @@ class StringsManager {
   static const String search = 'search';
   static const String details = 'Details';
   static const String takePhoto = 'Take photo';
+  static const String openCamera = 'Open Camera';
   static const String fromGallery = 'From Gallery';
   static const String message = 'Message';
   static const String online = 'Online';

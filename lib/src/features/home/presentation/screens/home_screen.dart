@@ -1,15 +1,24 @@
+import 'dart:developer';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
+import 'package:xpert/src/core/resources/route_manager.dart';
 import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
+import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
 import 'package:xpert/src/features/home/data/constants/home_constants.dart';
+import 'package:xpert/src/features/home/data/models/top_doctor_model.dart';
 import 'package:xpert/src/features/home/presentation/widgets/specialist_container.dart';
+import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
+import 'package:xpert/src/features/profile/data/models/profile_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,9 +29,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late TextEditingController controller;
+  List<TopDoctorsModel>? topDoctorsModelList;
+  ProfileModel? model;
   @override
   void initState() {
     super.initState();
+    _getData();
     controller = TextEditingController();
   }
 
@@ -57,6 +69,64 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Widget _circleAvatarBloc() {
+    return BlocConsumer<ProfileCubit, ProfileState>(
+      listener: (context, state) {
+        state.mapOrNull(
+          getDoctorProfile: (state) {
+            model = state.model;
+          },
+          getNurseProfile: (state) {
+            model = state.model;
+          },
+          getUserProfile: (state) {
+            model = state.model;
+          },
+          doctorProfileError: (state) {
+            showErrorToast(state.error, context);
+          },
+          nurseProfileError: (state) {
+            showErrorToast(state.error, context);
+          },
+          userProfileError: (state) {
+            showErrorToast(state.error, context);
+          },
+        );
+      },
+      builder: (context, state) {
+        if (model != null) {
+          return CircleAvatar(
+            radius: 26.r,
+            backgroundImage:
+                CachedNetworkImageProvider(model!.profileImage ?? ''),
+          );
+        } else {
+          return const SizedBox();
+        }
+      },
+    );
+  }
+
+  void _getData() {
+    try {
+      String type = CacheHelper.getData(key: AppConstants.myType);
+      int id = CacheHelper.getData(key: AppConstants.myId);
+
+      switch (type) {
+        case AppConstants.userTypeDoctor:
+          RouteGenerator.profileCubit.getDoctorProfile(id: id);
+        case AppConstants.userTypeNurse:
+          RouteGenerator.profileCubit.getNurseProfile(id: id);
+        case AppConstants.userTypeUser:
+          RouteGenerator.profileCubit.getUserProfile(id: id);
+      }
+    } catch (e) {
+      log("$e");
+    }
+
+    RouteGenerator.homeCubit.getTopDoctors();
+  }
+
   Widget _header(String text) {
     return Row(
       children: [
@@ -67,10 +137,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         const Spacer(),
-        CircleAvatar(
-          radius: 26.r,
-          backgroundImage: const AssetImage(AssetsManager.temp1),
-        ),
+        // CircleAvatar(
+        //   radius: 26.r,
+        //   backgroundImage: const AssetImage(AssetsManager.temp1),
+        // ),
+        _circleAvatarBloc(),
       ],
     );
   }
@@ -90,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _pageView() {
     return SizedBox(
-      height: 0.2.sh,
+      height: 0.21.sh,
       child: PageView.builder(
         itemCount: 3,
         itemBuilder: (context, index) {
@@ -131,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         _label(context, text: StringsManager.topDoctors),
         9.verticalSpace,
-        _topDoctor(),
+        _topDoctorsBloc(),
       ],
     );
   }
@@ -181,13 +252,35 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _topDoctor() {
+  Widget _topDoctorsBloc() {
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {
+        state.mapOrNull(
+          getTopDoctorsSuccess: (state) {
+            topDoctorsModelList = state.model;
+          },
+          getTopDoctorsError: (state) {
+            showErrorToast(state.networkExceptions, context);
+          },
+        );
+      },
+      builder: (context, state) {
+        if (topDoctorsModelList != null) {
+          return _topDoctorWidget(model: topDoctorsModelList!);
+        } else {
+          return const SizedBox();
+        }
+      },
+    );
+  }
+
+  Widget _topDoctorWidget({required List<TopDoctorsModel> model}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
-        topDoctorsList.length,
+        model.length,
         (index) => _doctorsCard(
-          model: topDoctorsList[index],
+          model: model[index],
         ),
       ),
     );
@@ -211,15 +304,35 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Column(
         children: [
-          Image.asset(AssetsManager.temp2),
+          if (model.userprofileimge != null)
+            Container(
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.r)
+              ),
+              child: Image.network(
+                fit: BoxFit.cover,
+                width: 97.w,
+                height: 85.h,
+                model.userprofileimge ?? '',
+              ),
+            ),
+          if (model.userprofileimge == null)
+            SizedBox(
+              width: 97.w,
+              height: 85.h,
+              child: const Center(
+                child: Text("No Image"),
+              ),
+            ),
           Text(
-            model.title,
+            model.username ?? '',
             style: StyleManager.getRegularStyle(
               fontSize: FontSize.s18,
             ),
           ),
           Text(
-            model.subtitle,
+            model.userSpeciality ?? '',
             style: StyleManager.getRegularStyle(
               fontSize: FontSize.s15,
               color: ColorManager.mediumGray,

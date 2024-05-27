@@ -5,6 +5,7 @@ import 'package:xpert/src/features/home/data/models/brain_tumor_model.dart';
 import 'package:xpert/src/features/home/data/models/diseases_model.dart';
 import 'package:xpert/src/features/home/data/models/get_doctor.dart';
 import 'package:xpert/src/features/home/data/models/get_nurse_or_doctor_info.dart';
+import 'package:xpert/src/features/home/data/models/top_doctor_model.dart';
 import 'package:xpert/src/features/home/data/repo/diseases_repo.dart';
 
 part 'home_state.dart';
@@ -135,12 +136,16 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> addRating({
     required int userId,
+    required int doctorOrnursId,
     required int ratingValue,
   }) async {
     emit(const HomeState.addRatingLoading());
 
-    final result =
-        await _repo.addRating(userId: userId, ratingValue: ratingValue);
+    final result = await _repo.addRating(
+      userId: userId,
+      doctorOrnursId: doctorOrnursId,
+      ratingValue: ratingValue,
+    );
 
     try {
       result.when(
@@ -153,6 +158,25 @@ class HomeCubit extends Cubit<HomeState> {
       );
     } catch (error) {
       emit(HomeState.addRatingError(error.toString()));
+    }
+  }
+
+  Future<void> getTopDoctors() async {
+    emit(const HomeState.getTopDoctorsLoading());
+
+    final result = await _repo.getTopDoctors();
+
+    try {
+      result.when(
+        success: (data) {
+          emit(HomeState.getTopDoctorsSuccess(data));
+        },
+        failure: (error) {
+          emit(HomeState.getTopDoctorsError(error.toString()));
+        },
+      );
+    } catch (error) {
+      emit(HomeState.getTopDoctorsError(error.toString()));
     }
   }
 }

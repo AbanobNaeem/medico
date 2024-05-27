@@ -131,6 +131,9 @@ class RouteGenerator {
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider.value(
+                value: homeCubit,
+              ),
+              BlocProvider.value(
                 value: navBarCubit,
               ),
               BlocProvider.value(

@@ -137,6 +137,7 @@ class _HomeWebServices implements HomeWebServices {
   @override
   Future<String> addRating({
     required int userId,
+    required int doctorOrnursId,
     required int ratingValue,
   }) async {
     final _extra = <String, dynamic>{};
@@ -144,6 +145,7 @@ class _HomeWebServices implements HomeWebServices {
     final _headers = <String, dynamic>{};
     final _data = {
       'userId': userId,
+      'doctorOrnursId': doctorOrnursId,
       'ratingValue': ratingValue,
     };
     final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
@@ -153,7 +155,7 @@ class _HomeWebServices implements HomeWebServices {
     )
         .compose(
           _dio.options,
-          'Rating/AddRating',
+          'Rating/AddRating1',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -163,6 +165,35 @@ class _HomeWebServices implements HomeWebServices {
           baseUrl,
         ))));
     final value = _result.data!;
+    return value;
+  }
+
+  @override
+  Future<List<TopDoctorsModel>> getTopDoctors() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<TopDoctorsModel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'Rating/top-rated',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var value = _result.data!
+        .map((dynamic i) => TopDoctorsModel.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

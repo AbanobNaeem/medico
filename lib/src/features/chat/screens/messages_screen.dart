@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -126,7 +127,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
         height: 68.w,
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: NetworkImage(model.profileImage ?? ''),
+          image: CachedNetworkImageProvider(model.profileImage ?? ''),
         )),
       ),
       title: Text(model.username ?? ''),

@@ -100,6 +100,7 @@ mixin AppTheme implements ThemeData {
           errorStyle: getTFFFontStyle(error: true),
           //enabledBorder the border before click on field
           enabledBorder: getTFFBorderStyle(),
+          disabledBorder: getTFFBorderStyle(),
           //focusedBorder the border after click on field
           focusedBorder: getTFFBorderStyle(color: ColorManager.primary),
           errorBorder: getTFFBorderStyle(color: ColorManager.brightRed),

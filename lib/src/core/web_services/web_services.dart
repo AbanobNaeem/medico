@@ -17,4 +17,7 @@ abstract class WebServices {
 
   @POST("brain-tumor-e0ofl/1?api_key=$apiKey")
   Future<BrainTumorModel> brainTumor(@Body() String base64Image);
+
+  @POST("mass-classification/1?api_key=$apiKey")
+  Future<BrainTumorModel> breastCancer(@Body() String base64Image);
 }

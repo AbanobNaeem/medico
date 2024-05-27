@@ -32,6 +32,7 @@ void initGetIt() {
       () => ProfileWebServices(createAndSetupDio()));
 
   getIt.registerLazySingleton<ChatBotCubit>(() => ChatBotCubit());
+  
 
   getIt.registerLazySingleton<ChatWebServices>(
       () => ChatWebServices(createAndSetupDio()));

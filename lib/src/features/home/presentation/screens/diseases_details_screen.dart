@@ -231,7 +231,7 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _blueBox(
-          StringsManager.takePhoto,
+          StringsManager.openCamera,
           AssetsManager.cameraIc,
           onTap: () {
             _dialogQuestion();
