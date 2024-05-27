@@ -47,8 +47,8 @@ class ModelDropDownButton extends StatelessWidget {
             decoration: InputDecoration(
               filled: false,
               contentPadding: EdgeInsets.symmetric(
+                horizontal: 10.0.w,
                 vertical: 10.0.h,
-                horizontal: 12.0.w,
               ),
               enabledBorder: _getTFFBorderStyle(),
               focusedBorder: _getTFFBorderStyle(color: ColorManager.secondary),

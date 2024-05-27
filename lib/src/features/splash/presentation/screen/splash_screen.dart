@@ -50,15 +50,15 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Widget _typer() {
     return SizedBox(
-      width: 0.35.sw,
+      width: 0.4.sw,
       child: DefaultTextStyle(
         style: StyleManager.getSemiBoldStyle(
-            color: ColorManager.primary, fontSize: size ?? FontSize.s32),
+            color: ColorManager.primary, fontSize: size ?? FontSize.s30),
         child: AnimatedTextKit(
           isRepeatingAnimation: false,
           onFinished: () {
             setState(() {
-              size = FontSize.s34;
+              size = FontSize.s33;
             });
           },
           animatedTexts: [

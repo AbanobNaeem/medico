@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
@@ -28,23 +26,23 @@ class _DiseasesScreenState extends State<DiseasesScreen> {
   }
 
   PreferredSizeWidget? _appBar() {
-    return DefaultAppBar(
+    return const DefaultAppBar(
       title: StringsManager.diseases,
       centerTitle: true,
-      actions: [
-        Padding(
-          padding: EdgeInsetsDirectional.only(end: 16.w),
-          child: SvgPicture.asset(
-            width: 17.w,
-            height: 17.h,
-            AssetsManager.searchIc,
-            colorFilter: const ColorFilter.mode(
-              ColorManager.white,
-              BlendMode.srcIn,
-            ),
-          ),
-        ),
-      ],
+      // actions: [
+      //   Padding(
+      //     padding: EdgeInsetsDirectional.only(end: 16.w),
+      //     child: SvgPicture.asset(
+      //       width: 17.w,
+      //       height: 17.h,
+      //       AssetsManager.searchIc,
+      //       colorFilter: const ColorFilter.mode(
+      //         ColorManager.white,
+      //         BlendMode.srcIn,
+      //       ),
+      //     ),
+      //   ),
+      // ],
     );
   }
 

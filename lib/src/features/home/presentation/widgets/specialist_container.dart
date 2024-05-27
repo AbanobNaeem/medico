@@ -19,9 +19,6 @@ class SpecialistContainer extends StatelessWidget {
   Widget _specialistContainer(context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      width: 343.w,
-      height: 158.h,
-      padding: EdgeInsets.only(bottom: 9.h),
       decoration: BoxDecoration(
         color: ColorManager.primary,
         borderRadius: BorderRadius.circular(10.r),
@@ -31,15 +28,19 @@ class SpecialistContainer extends StatelessWidget {
           Row(
             children: [
               Expanded(
+                flex: 4,
                 child: _bodyText(context),
               ),
-              Container(
-                margin: EdgeInsetsDirectional.only(end: 5.w),
-                child: Image.asset(
-                  fit: BoxFit.fill,
+              Expanded(
+                flex: 2,
+                child: Container(
                   width: 100.w,
-                  height: 100.h,
-                  SliderModel.sliderList[index].image,
+                  height: 90.h,
+                  margin: EdgeInsetsDirectional.only(end: 5.w),
+                  child: Image.asset(
+                    fit: BoxFit.fill,
+                    SliderModel.sliderList[index].image,
+                  ),
                 ),
               ),
             ],
@@ -52,45 +53,45 @@ class SpecialistContainer extends StatelessWidget {
   }
 
   Widget _bodyText(context) {
-    return SizedBox(
-      width: 195.w,
-      height: 153.5.h,
-      child: Padding(
-        padding: EdgeInsetsDirectional.only(start: 20.w, top: 13.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              SliderModel.sliderList[index].desc,
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
-            18.verticalSpace,
-            Text(
-              SliderModel.sliderList[index].name ?? '',
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
-            Text(
-              SliderModel.sliderList[index].speciality ?? '',
-              style: Theme.of(context).textTheme.labelSmall,
-            ),
-          ],
-        ),
+    return Padding(
+      padding: EdgeInsetsDirectional.only(start: 20.w, top: 13.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            SliderModel.sliderList[index].desc,
+            style: Theme.of(context).textTheme.labelLarge,
+          ),
+          18.verticalSpace,
+          Text(
+            SliderModel.sliderList[index].name ?? '',
+            style: Theme.of(context).textTheme.labelLarge,
+          ),
+          Text(
+            SliderModel.sliderList[index].speciality ?? '',
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+        ],
       ),
     );
   }
 
   Widget _dotsIndicator() {
-    return Center(
-      child: DotsIndicator(
-        mainAxisSize: MainAxisSize.min,
-        dotsCount: 3,
-        position: index,
-        decorator: DotsDecorator(
-          spacing: EdgeInsets.symmetric(horizontal: 7.w),
-          activeColor: ColorManager.white,
-          color: ColorManager.silver,
-          activeSize: Size(8.w, 8.h),
-          size: Size(8.w, 8.h),
+    return Padding(
+      padding: EdgeInsets.only(
+          bottom: 5.h), // Added padding to ensure it fits within the container
+      child: Center(
+        child: DotsIndicator(
+          mainAxisSize: MainAxisSize.min,
+          dotsCount: 3,
+          position: index,
+          decorator: DotsDecorator(
+            spacing: EdgeInsets.symmetric(horizontal: 7.w),
+            activeColor: ColorManager.white,
+            color: ColorManager.silver,
+            activeSize: Size(8.w, 8.h),
+            size: Size(8.w, 8.h),
+          ),
         ),
       ),
     );
