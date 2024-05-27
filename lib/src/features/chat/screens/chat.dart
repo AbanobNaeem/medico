@@ -1,30 +1,27 @@
-import 'dart:io';
-
-import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
-import 'package:xpert/src/core/resources/strings_manager.dart';
+import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
 import 'package:xpert/src/core/widgets/chat_text_field.dart';
-import 'package:xpert/src/features/chat/screens/messages_screen.dart';
+import 'package:xpert/src/features/chat/data/models/chat_model.dart';
+import 'package:xpert/src/features/chat/data/models/messages_model.dart';
 import 'package:xpert/src/features/chat/business_logic/doctor_chat/doctor_chat_cubit.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class DoctorChat extends StatefulWidget {
   const DoctorChat({
     super.key,
     required this.model,
   });
-  final MessagesListModel model;
+  final MessagesModel model;
 
   @override
   State<DoctorChat> createState() => _DoctorChatState();
@@ -32,38 +29,28 @@ class DoctorChat extends StatefulWidget {
 
 class _DoctorChatState extends State<DoctorChat> {
   late TextEditingController _controller;
-  late ScrollController _scrollController;
   late ItemScrollController _scrollList;
-  bool _isEmojiVisible = false;
-  bool _isKeyboardVisible = false;
-  late FocusNode _focusNode;
+
+  List<ChatModel>? chat;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      // Scroll to the last message after the frame has been rendered
-      _scrollList.jumpTo(index: 0);
-    });
-    _controller = TextEditingController();
-    _scrollController = ScrollController();
+
+    final int getMyId = CacheHelper.getData(key: AppConstants.myId);
+
+    RouteGenerator.doctorChatCubit.getMessageData(
+      senderID: getMyId,
+      receiverID: widget.model.userId ?? 0,
+    );
+    _loadChatData();
     _scrollList = ItemScrollController();
+    _controller = TextEditingController();
+  }
 
-    _focusNode = FocusNode();
-
-    var keyboardVisibilityController = KeyboardVisibilityController();
-
-    keyboardVisibilityController.onChange.listen((bool isKeyboardVisible) {
-      setState(() {
-        _isKeyboardVisible = isKeyboardVisible;
-      });
-
-      if (isKeyboardVisible && _isEmojiVisible) {
-        setState(() {
-          _isEmojiVisible = false;
-        });
-      }
-    });
+  Future<void> _loadChatData() async {
+    await RouteGenerator.doctorChatCubit
+        .pusherInit(channelName: AppConstants.pusherPrefixChannelName);
   }
 
   @override
@@ -88,67 +75,72 @@ class _DoctorChatState extends State<DoctorChat> {
         iconSize: 20.h,
         color: ColorManager.black,
       ),
-      title: Text(widget.model.name),
+      title: Text(widget.model.username ?? ''),
     );
   }
 
   Widget _buildBloc() {
     return BlocConsumer<DoctorChatCubit, DoctorChatState>(
-      listener: (context, state) {},
-      builder: (context, state) => _buildBody(),
+      listener: (context, state) {
+        state.mapOrNull(
+          chatLoaded: (state) {
+            chat = state.listOfChat;
+          },
+          chatError: (state) {
+            showErrorToast(state.error, context);
+          },
+        );
+      },
+      builder: (context, state) {
+        if (chat != null) {
+          return _buildBody(chat!);
+        } else if (state == const DoctorChatState.chatLoading()) {
+          return _twistingDots();
+        } else {
+          return const SizedBox();
+        }
+      },
     );
   }
 
-  Widget _buildBody() {
+  Widget _buildBody(List<ChatModel> chat) {
     return Column(
       children: [
-        _onlineWidget(),
         Expanded(
-          child: AppPaddingWidgetHorizontal(child: _buildChatMessageBox()),
+          child: AppPaddingWidgetHorizontal(child: _buildChatMessageBox(chat)),
         ),
         _chatTextField(),
-        Offstage(
-          offstage: !_isEmojiVisible,
-          child: SizedBox(
-            height: 0.35.sh,
-            child: EmojiPicker(
-              textEditingController: _controller,
-              scrollController: _scrollController,
-              config: Config(
-                swapCategoryAndBottomBar: true,
-                bottomActionBarConfig: const BottomActionBarConfig(
-                  backgroundColor: ColorManager.primary,
-                  buttonColor: ColorManager.transparent,
-                  enabled: true,
-                ),
-                height: 256.h,
-                checkPlatformCompatibility: true,
-                emojiViewConfig: EmojiViewConfig(
-                  emojiSizeMax: 32 * (Platform.isIOS ? 1.30 : 1.0),
-                ),
-              ),
-            ),
-          ),
-        ),
       ],
     );
   }
 
-  Widget _buildChatMessageBox() {
+  Widget _twistingDots() {
+    return Center(
+      child: LoadingAnimationWidget.twistingDots(
+        leftDotColor: ColorManager.black,
+        rightDotColor: ColorManager.primary,
+        size: 100,
+      ),
+    );
+  }
+
+  Widget _buildChatMessageBox(List<ChatModel> chat) {
     return SizedBox(
       width: 1.sw,
       child: ScrollablePositionedList.separated(
         reverse: true,
         itemScrollController: _scrollList,
         separatorBuilder: (context, index) => 16.verticalSpace,
-        itemCount: tempChatList.length,
-        itemBuilder: (context, index) => _message(model: tempChatList[index]),
+        itemCount: chat.length,
+        itemBuilder: (context, index) => _message(model: chat[index]),
       ),
     );
   }
 
-  Widget _message({required TempChatModel model}) {
-    bool fromUser = (model.from == "user");
+  Widget _message({required ChatModel model}) {
+    final int getMyId = CacheHelper.getData(key: AppConstants.myId);
+
+    bool fromUser = (model.senderID == getMyId);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment:
@@ -157,7 +149,9 @@ class _DoctorChatState extends State<DoctorChat> {
         if (!fromUser)
           CircleAvatar(
             radius: 25.r,
-            backgroundImage: AssetImage(widget.model.image),
+            backgroundImage: NetworkImage(
+              widget.model.profileImage ?? '',
+            ),
           ),
         if (!fromUser) 7.horizontalSpace,
         Container(
@@ -170,7 +164,7 @@ class _DoctorChatState extends State<DoctorChat> {
           ),
           child: Center(
             child: Text(
-              model.message,
+              model.content ?? '',
               textAlign: TextAlign.center,
               style: StyleManager.getLightStyle(
                 fontSize: FontSize.s16,
@@ -183,61 +177,48 @@ class _DoctorChatState extends State<DoctorChat> {
     );
   }
 
-  Widget _onlineWidget() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          width: 9.h,
-          height: 9.h,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: ColorManager.vividGreen,
-          ),
-        ),
-        3.horizontalSpace,
-        Text(
-          StringsManager.online,
-          style: StyleManager.getMediumStyle(
-            color: ColorManager.vividGreen,
-            fontSize: FontSize.s18,
-          ),
-        )
-      ],
-    );
-  }
-
   Widget _chatTextField() {
     return ChatTextField(
       onSendWithPrefixIcon: () {
         if (_controller.text.isNotEmpty) {
-          RouteGenerator.doctorChatCubit.sendMessage(_controller.text);
+          final int getMyId = CacheHelper.getData(key: AppConstants.myId);
+          RouteGenerator.doctorChatCubit.sendMessage(
+            senderID: getMyId,
+            receiverID: widget.model.userId ?? 0,
+            message: _controller.text,
+          );
         }
         _controller.clear();
       },
-      suffixIcon: Padding(
-        padding: EdgeInsetsDirectional.only(end: 20.w),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            InkWell(child: SvgPicture.asset(AssetsManager.documentIc)),
-            InkWell(
-              onTap: onClickEmoji,
-              child: _isEmojiVisible
-                  ? const Icon(Icons.keyboard_alt_outlined,
-                      color: ColorManager.white)
-                  : SvgPicture.asset(
-                      AssetsManager.emojiIc,
-                    ),
-            ),
-          ],
-        ),
-      ),
+      // suffixIcon: Padding(
+      //   padding: EdgeInsetsDirectional.only(end: 20.w),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     children: [
+      //       InkWell(child: SvgPicture.asset(AssetsManager.documentIc)),
+      //       InkWell(
+      //         onTap: onClickEmoji,
+      //         child: _isEmojiVisible
+      //             ? const Icon(Icons.keyboard_alt_outlined,
+      //                 color: ColorManager.white)
+      //             : SvgPicture.asset(
+      //                 AssetsManager.emojiIc,
+      //               ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
       controller: _controller,
-      focusNode: _focusNode,
+      // focusNode: _focusNode,
       onSubmitted: (message) {
         if (message.isNotEmpty) {
-          RouteGenerator.doctorChatCubit.sendMessage(message);
+          final int getMyId = CacheHelper.getData(key: AppConstants.myId);
+
+          RouteGenerator.doctorChatCubit.sendMessage(
+            senderID: getMyId,
+            receiverID: widget.model.userId ?? 0,
+            message: message,
+          );
           _scrollList.jumpTo(index: 0);
         }
         _controller.clear();
@@ -245,43 +226,12 @@ class _DoctorChatState extends State<DoctorChat> {
     );
   }
 
-  void onClickEmoji() async {
-    if (_isEmojiVisible) {
-      _focusNode.requestFocus();
-    } else if (_isKeyboardVisible) {
-      await SystemChannels.textInput.invokeMethod('TextInput.hide');
-      await Future.delayed(const Duration(milliseconds: 100));
-    }
-
-    setState(() {
-      _isEmojiVisible = !_isEmojiVisible;
-    });
-  }
-
   @override
   void dispose() {
     _controller.dispose();
+    RouteGenerator.doctorChatCubit.chatList.clear();
+    RouteGenerator.doctorChatCubit
+        .disposePusher(channelName: AppConstants.pusherPrefixChannelName);
     super.dispose();
   }
 }
-
-class TempChatModel {
-  final String message;
-  final String from;
-
-  TempChatModel({
-    required this.message,
-    required this.from,
-  });
-}
-
-List<TempChatModel> tempChatList = [
-  TempChatModel(
-    message: "Hello, How can help you?",
-    from: "doctor",
-  ),
-  TempChatModel(
-    message: "I don't feel good today",
-    from: "user",
-  ),
-];

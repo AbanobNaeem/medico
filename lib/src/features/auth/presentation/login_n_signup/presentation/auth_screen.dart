@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:xpert/src/app/app.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
@@ -16,9 +17,17 @@ class AuthScreen extends StatelessWidget {
   const AuthScreen({
     super.key,
     required this.title,
+    required this.email,
+    required this.password,
+    this.userName,
+    required this.isLoading,
   });
 
   final String title;
+  final TextEditingController email;
+  final TextEditingController password;
+  final TextEditingController? userName;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -78,19 +87,36 @@ class AuthScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (_isSignUp()) _buildTextField(title: StringsManager.fullName),
+          if (_isSignUp())
+            _buildTextField(
+              controller: userName,
+              title: StringsManager.fullName,
+            ),
           13.verticalSpace,
-          _buildTextField(title: StringsManager.email),
+          _buildTextField(
+            controller: email,
+            title: StringsManager.email,
+          ),
           13.verticalSpace,
-          if (_isSignUp()) _buildTextField(title: StringsManager.phoneNumber),
+          if (_isSignUp())
+            _buildTextField(
+              title: StringsManager.phoneNumber,
+            ),
           13.verticalSpace,
-          _buildTextField(title: StringsManager.password, obscureText: true),
+          _buildTextField(
+            controller: password,
+            title: StringsManager.password,
+            obscureText: true,
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildTextField({required String title, bool? obscureText}) {
+  Widget _buildTextField(
+      {required String title,
+      bool? obscureText,
+      TextEditingController? controller}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -100,6 +126,8 @@ class AuthScreen extends StatelessWidget {
         ),
         16.verticalSpace,
         TextFormField(
+          controller: controller,
+          onTapOutside: (event) => FocusScope.of(navigatorKey.currentContext!).unfocus(),
           obscureText: obscureText ?? false,
         ),
       ],
@@ -124,10 +152,22 @@ class AuthScreen extends StatelessWidget {
 
   Widget _buildButton(context) {
     return DefaultButton(
+      isLoading: isLoading,
       title: _isSignUp() ? StringsManager.signUp : StringsManager.login,
       onPressed: () {
-        Navigator.pushNamedAndRemoveUntil(
-            context, Routes.navigationViewRoute, (route) => false);
+        if (_isLogIn()) {
+          RouteGenerator.authLogicCubit.logIn(
+            email: email.text,
+            password: password.text,
+          );
+        }
+        if (_isSignUp()) {
+          RouteGenerator.authLogicCubit.signUp(
+            email: email.text,
+            password: password.text,
+            userName: userName?.text ?? '',
+          );
+        }
       },
     );
   }

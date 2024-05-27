@@ -7,6 +7,7 @@ import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/injection.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/features/auth/business_logic/auth_logic/cubit/auth_logic_cubit.dart';
 import 'package:xpert/src/features/auth/business_logic/cubit/otp_timer_cubit.dart';
 import 'package:xpert/src/features/auth/presentation/forget_password/presentation/forget_password_screen.dart';
 import 'package:xpert/src/features/auth/presentation/otp/otp_screen.dart';
@@ -26,10 +27,12 @@ import 'package:xpert/src/features/home/presentation/screens/health_care_screen.
 import 'package:xpert/src/features/home/presentation/screens/home_screen.dart';
 import 'package:xpert/src/features/chat/screens/chat.dart';
 import 'package:xpert/src/features/home/presentation/screens/appointment_screen.dart';
+import 'package:xpert/src/features/home/presentation/screens/yolo.dart';
 import 'package:xpert/src/features/onboarding/presentation/screens/on_boarding_view.dart';
 import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
 import 'package:xpert/src/features/profile/presentation/screens/profile_screen.dart';
 import 'package:xpert/src/features/setting/presentation/screen/setting_screen.dart';
+import 'package:xpert/src/features/splash/presentation/screen/splash_screen.dart';
 
 class Routes {
   static const String onboarding = '/onboarding';
@@ -41,6 +44,7 @@ class Routes {
   static const String resetPassword = '/resetPassword';
   static const String otp = '/otp';
   static const String gender = '/Gender';
+  static const String splashScreen = '/splashScreen';
 
   static const String home = '/home';
   static const String diseases = '/diseasesScreen';
@@ -60,6 +64,8 @@ class Routes {
   static const String navigationViewRoute = '/navigationView';
 
   static const String setting = '/setting';
+
+  static const String yoloScreen = '/yoloScreen';
 }
 
 class RouteGenerator {
@@ -69,6 +75,7 @@ class RouteGenerator {
   static late ChatBotCubit chatBotCubit;
   static late ProfileCubit profileCubit;
   static late DoctorChatCubit doctorChatCubit;
+  static late AuthLogicCubit authLogicCubit;
 
   RouteGenerator() {
     otpTimerCubit = getIt<OtpTimerCubit>();
@@ -77,14 +84,23 @@ class RouteGenerator {
     chatBotCubit = getIt<ChatBotCubit>();
     profileCubit = getIt<ProfileCubit>();
     doctorChatCubit = getIt<DoctorChatCubit>();
+    authLogicCubit = getIt<AuthLogicCubit>();
   }
   Route? getRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.splashScreen:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
+
       case Routes.onboarding:
         return MaterialPageRoute(builder: (_) => const OnBoardingView());
 
       case Routes.authTapBar:
-        return MaterialPageRoute(builder: (_) => const AuthTabBar());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: authLogicCubit,
+            child: const AuthTabBar(),
+          ),
+        );
 
       case Routes.forgotPassword:
         Map? args = settings.arguments as Map;
@@ -112,8 +128,21 @@ class RouteGenerator {
 
       case Routes.navigationViewRoute:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: navBarCubit,
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider.value(
+                value: homeCubit,
+              ),
+              BlocProvider.value(
+                value: navBarCubit,
+              ),
+              BlocProvider.value(
+                value: doctorChatCubit,
+              ),
+              BlocProvider.value(
+                value: profileCubit,
+              ),
+            ],
             child: const BottomNav(),
           ),
         );
@@ -170,20 +199,30 @@ class RouteGenerator {
 
       case Routes.doctorsListScreen:
         return MaterialPageRoute(
-          builder: (_) => const DoctorsListScreen(),
+          builder: (_) => BlocProvider.value(
+            value: homeCubit,
+            child: const DoctorsListScreen(),
+          ),
           // builder: (_) => const MessagesScreen(),
         );
 
       case Routes.healthCareScreen:
         return MaterialPageRoute(
-          builder: (_) => const HealthCareScreen(),
+          builder: (_) => BlocProvider.value(
+            value: homeCubit,
+            child: const HealthCareScreen(),
+          ),
         );
 
       case Routes.appointmentScreen:
         var args = settings.arguments as Map;
         return MaterialPageRoute(
-          builder: (_) => AppointmentScreen(
-            model: args["model"],
+          builder: (_) => BlocProvider.value(
+            value: homeCubit,
+            child: AppointmentScreen(
+              id: args["id"],
+              type: args["type"],
+            ),
           ),
         );
 
@@ -195,6 +234,21 @@ class RouteGenerator {
             child: DoctorChat(
               model: args["model"],
             ),
+          ),
+        );
+
+      case Routes.yoloScreen:
+        var args = settings.arguments as Map;
+        return MaterialPageRoute(
+          builder: (_) => YoloScreen(
+            gpu: args["gpu"],
+            labels: args["labels"],
+            modelPath: args["modelPath"],
+            resolutionPreset: args["resolutionPreset"],
+            numThreads: args["numThreads"],
+            classThreshold: args["classThreshold"],
+            confThreshold: args["confThreshold"],
+            iouThreshold: args["iouThreshold"],
           ),
         );
 

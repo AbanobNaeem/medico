@@ -1,59 +1,61 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
+import 'package:xpert/src/core/resources/route_manager.dart';
+import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
-import 'package:xpert/src/features/home/data/constants/doctors_list_constants.dart';
-import 'package:xpert/src/features/home/presentation/widgets/calendar_lib/table_calendar.dart';
+import 'package:xpert/src/features/chat/data/models/messages_model.dart';
+import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
+import 'package:xpert/src/features/home/data/models/get_nurse_or_doctor_info.dart';
 import 'package:xpert/src/features/home/presentation/widgets/gradient_button.dart';
 import 'package:readmore/readmore.dart';
 
-class AppointmentScreen extends StatelessWidget {
+class AppointmentScreen extends StatefulWidget {
   const AppointmentScreen({
     super.key,
-    required this.model,
+    required this.id,
+    required this.type,
   });
-  final DoctorsListModel model;
+  final int id;
+  final String type;
+
+  @override
+  State<AppointmentScreen> createState() => _AppointmentScreenState();
+}
+
+class _AppointmentScreenState extends State<AppointmentScreen> {
+  GetNurseOrDoctorInfo? data;
+  @override
+  void initState() {
+    super.initState();
+
+    switch (widget.type) {
+      case AppConstants.userTypeDoctor:
+        RouteGenerator.homeCubit.getDoctorInfo(doctorId: widget.id);
+      case AppConstants.userTypeNurse:
+        RouteGenerator.homeCubit.getNurseInfo(nurseId: widget.id);
+      default:
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.offWhite,
       appBar: _appBar(context),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            16.verticalSpace,
-            _customListTile(),
-            16.verticalSpace,
-            _buildRow(),
-            24.verticalSpace,
-            AppPaddingWidgetHorizontal(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _label(StringsManager.aboutDoctors),
-                  8.verticalSpace,
-                  _readMoreText(),
-                  24.verticalSpace,
-                  _label(StringsManager.workingTime),
-                  8.verticalSpace,
-                  _bodyText("Mon - Sat (08:30 AM - 09:00PM)"),
-                  24.verticalSpace,
-                  _label(StringsManager.schedule),
-                  16.verticalSpace,
-                  const TableCalendarWidget(),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: _bodyBloc(),
       bottomNavigationBar: _bottomNavigationBar(),
     );
   }
@@ -73,7 +75,103 @@ class AppointmentScreen extends StatelessWidget {
     );
   }
 
-  Widget _customListTile() {
+  Widget _bodyBloc() {
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {
+        state.mapOrNull(
+          getDoctorInfoSuccess: (state) {
+            data = state.data;
+          },
+          getNurseInfoSuccess: (state) {
+            data = state.data;
+          },
+          getNurseInfoError: (state) {
+            showErrorToast(state.networkExceptions, context);
+          },
+          getDoctorInfoError: (state) {
+            showErrorToast(state.networkExceptions, context);
+          },
+        );
+      },
+      builder: (context, state) {
+        if (state == const HomeState.getNurseInfoLoading() ||
+            state == const HomeState.getDoctorInfoLoading()) {
+          return _twistingDots();
+        } else if (data != null) {
+          return _body(data!);
+        } else {
+          return const SizedBox();
+        }
+      },
+    );
+  }
+
+  Widget _twistingDots() {
+    return Center(
+      child: LoadingAnimationWidget.twistingDots(
+        leftDotColor: ColorManager.black,
+        rightDotColor: ColorManager.primary,
+        size: 100,
+      ),
+    );
+  }
+
+  Widget _body(GetNurseOrDoctorInfo model) {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          16.verticalSpace,
+          _customListTile(model),
+          16.verticalSpace,
+          _containerContent(model),
+          24.verticalSpace,
+          AppPaddingWidgetHorizontal(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _label(StringsManager.aboutDoctors),
+                8.verticalSpace,
+                _readMoreText(model),
+                if (widget.type == AppConstants.userTypeDoctor ||
+                    widget.type == AppConstants.userTypeNurse)
+                  24.verticalSpace,
+                if (widget.type == AppConstants.userTypeDoctor ||
+                    widget.type == AppConstants.userTypeNurse)
+                  _label(StringsManager.workingTime),
+                if (widget.type == AppConstants.userTypeDoctor ||
+                    widget.type == AppConstants.userTypeNurse)
+                  8.verticalSpace,
+                if (widget.type == AppConstants.userTypeDoctor ||
+                    widget.type == AppConstants.userTypeNurse)
+                  _bodyText(model.workTime ?? ''),
+                24.verticalSpace,
+                if (model.address != null) _label(StringsManager.address),
+                if (model.address != null) 8.verticalSpace,
+                if (model.address != null) _bodyText(model.address!),
+                if (model.address != null) 24.verticalSpace,
+                if (model.phoneNumber != null)
+                  _label(StringsManager.phoneNumber),
+                if (model.address != null) 8.verticalSpace,
+                _bodyText(model.phoneNumber ?? ''),
+                24.verticalSpace,
+                if (model.pricePerHour != null)
+                  _label(StringsManager.pricePerHour),
+                if (model.pricePerHour != null) 8.verticalSpace,
+                if (model.pricePerHour != null)
+                  _bodyText(model.pricePerHour ?? ''),
+                // _label(StringsManager.schedule),
+                // 16.verticalSpace,
+                // const TableCalendarWidget(),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _customListTile(GetNurseOrDoctorInfo model) {
     return AppPaddingWidgetHorizontal(
       child: Row(
         children: [
@@ -82,7 +180,8 @@ class AppointmentScreen extends StatelessWidget {
             height: 90.h,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(model.image),
+                fit: BoxFit.cover,
+                image: CachedNetworkImageProvider(model.profileImage ?? ''),
               ),
               shape: BoxShape.circle,
             ),
@@ -92,7 +191,7 @@ class AppointmentScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                model.drName,
+                model.username ?? '',
                 style: StyleManager.getMediumStyle(fontSize: FontSize.s18),
               ),
               Row(
@@ -100,14 +199,14 @@ class AppointmentScreen extends StatelessWidget {
                   SvgPicture.asset(AssetsManager.star),
                   5.horizontalSpace,
                   Text(
-                    '4.9 (462 ${StringsManager.reviews})',
+                    "${model.governorates}",
                     style: StyleManager.getRegularStyle(
                         fontSize: FontSize.s16, color: ColorManager.mediumGray),
                   ),
                 ],
               ),
               Text(
-                "${model.drSpecialty}. Asian Hospital",
+                "${model.speciality}",
                 style: StyleManager.getRegularStyle(
                     fontSize: FontSize.s16, color: ColorManager.mediumGray),
               ),
@@ -118,13 +217,13 @@ class AppointmentScreen extends StatelessWidget {
     );
   }
 
-  Widget _readMoreText() {
+  Widget _readMoreText(GetNurseOrDoctorInfo model) {
     return ReadMoreText(
       style: StyleManager.getRegularStyle(
         fontSize: FontSize.s16,
         color: ColorManager.mediumGray,
       ),
-      'Doctor Ailla top specialist at Asian hospital at landon .She  has achieved awards and recognition this text for display only this text for display only this text for display only',
+      model.description ?? '',
       trimMode: TrimMode.Line,
       trimLines: 3,
       trimCollapsedText: StringsManager.seeMore,
@@ -136,20 +235,6 @@ class AppointmentScreen extends StatelessWidget {
       moreStyle: StyleManager.getSemiBoldStyle(
         fontSize: FontSize.s16,
         color: ColorManager.primary,
-      ),
-    );
-  }
-
-  Widget _buildRow() {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.w),
-      child: Row(
-        children: List.generate(
-          appointmentList.length,
-          (index) => _containerContent(
-            model: appointmentList[index],
-          ),
-        ),
       ),
     );
   }
@@ -175,37 +260,80 @@ class AppointmentScreen extends StatelessWidget {
     );
   }
 
-  Widget _containerContent({required AppointmentModel model}) {
-    return Expanded(
-      child: _container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            14.verticalSpace,
-            Expanded(child: SvgPicture.asset(model.image)),
-            Expanded(
-              flex: 2,
-              child: Column(
+  Widget _containerContent(GetNurseOrDoctorInfo model) {
+    return Center(
+      child: InkWell(
+        onTap: () {
+          _rating();
+        },
+        child: _container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(AssetsManager.yellowStar),
+              10.verticalSpace,
+              Column(
                 children: [
                   Text(
-                    model.text1,
+                    "${model.mostFrequentRating ?? 0}",
                     style: StyleManager.getMediumStyle(fontSize: FontSize.s20),
                   ),
                   Text(
-                    model.text2,
+                    StringsManager.rating,
                     style: StyleManager.getRegularStyle(
                       fontSize: FontSize.s16,
                       color: ColorManager.mediumGray,
                     ),
                   ),
                 ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  AwesomeDialog _rating() {
+    return AwesomeDialog(
+      context: context,
+      animType: AnimType.rightSlide,
+      customHeader: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          color: ColorManager.primary,
+          shape: BoxShape.circle,
+        ),
+        child: const Icon(
+          size: 50,
+          Icons.star_rounded,
+          color: Colors.amber,
+        ),
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+      body: RatingBar.builder(
+        initialRating: 0,
+        minRating: 0,
+        direction: Axis.horizontal,
+        itemCount: 5,
+        itemPadding: EdgeInsets.symmetric(horizontal: 4.0.w, vertical: 10.h),
+        itemBuilder: (context, _) => const Icon(
+          Icons.star_rounded,
+          color: Colors.amber,
+        ),
+        onRatingUpdate: (rating) {
+          int id = CacheHelper.getData(key: AppConstants.myId);
+          RouteGenerator.homeCubit.addRating(
+            userId: id,
+            doctorOrnursId: widget.id,
+            ratingValue: rating.round(),
+          );
+          Navigator.of(context).pop();
+        },
+      ),
+    )..show();
   }
 
   Widget _label(String text) {
@@ -227,40 +355,25 @@ class AppointmentScreen extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
-        child: GradientButton(
-          height: 72.h,
-          title: StringsManager.appointment,
-          textStyle: StyleManager.getMediumStyle(
-              fontSize: FontSize.s20, color: ColorManager.white),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(10.r),
+          onTap: () {
+            Navigator.pushNamed(context, Routes.doctorChat, arguments: {
+              "model": MessagesModel(
+                userId: widget.id,
+                username: data?.username,
+                profileImage: data?.profileImage,
+              ),
+            });
+          },
+          child: GradientButton(
+            height: 72.h,
+            title: StringsManager.appointment,
+            textStyle: StyleManager.getMediumStyle(
+                fontSize: FontSize.s20, color: ColorManager.white),
+          ),
         ),
       ),
     );
   }
 }
-
-class AppointmentModel {
-  final String image;
-  final String text1;
-  final String text2;
-
-  AppointmentModel({
-    required this.image,
-    required this.text1,
-    required this.text2,
-  });
-}
-
-List<AppointmentModel> appointmentList = [
-  AppointmentModel(
-      image: AssetsManager.people,
-      text1: "1000+",
-      text2: StringsManager.people),
-  AppointmentModel(
-      image: AssetsManager.experience,
-      text1: "5 yr+",
-      text2: StringsManager.experience),
-  AppointmentModel(
-      image: AssetsManager.yellowStar,
-      text1: "4.9",
-      text2: StringsManager.rating),
-];

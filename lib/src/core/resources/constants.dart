@@ -3,14 +3,30 @@ class AppConstants {
   static const AppConstants _instance = AppConstants._internal(); // singleton
   factory AppConstants() => _instance;
 
-  static const appName = 'Xpert';
+  static const appName = 'Medico';
 
-  static const domain = 'https://classify.roboflow.com/';
+  static const aiDomain = 'https://classify.roboflow.com/';
+  static const domain = 'https://ertdemo.azurewebsites.net/api/';
+
+  static const chatBotToken = "AIzaSyDDMeYkvPbE4zUOnOG5cNQ0Aiowo2MpSiw";
+  static const chatBotModel = 'gemini-pro';
+
+  static const userTypeDoctor = "D";
+  static const userTypeNurse = "N";
+  static const userTypeUser = "U";
+
+  static const myId = "myId";
+  static const myUserName = "myUserName";
+  static const myType = "myType";
 
   // ignore: constant_identifier_names
   static const ACCESS_TOKEN_KEY = '';
   static const tokenType = '';
   static const jsonAccept = '';
+
+  static const String pusherApiKey = '163441d70eec4f84205f';
+  static const String pusherCluster = 'eu';
+  static const String pusherPrefixChannelName = "my-channel";
 
   static const String onBoarding = 'on_boarding_skip';
   static const String tempImageUrl =
@@ -33,4 +49,58 @@ class AppConstants {
 
   static const String fractureDislocationUrl =
       "https://www.healthline.com/health/dislocation";
+
+  static const String yolov8 = "yolov8";
+
+  static const List<String> governorate = [
+    "Cairo",
+    "Alexandria",
+    "Port Said",
+    "Suez",
+    "Damietta",
+    "Dakahlia",
+    "Beheira",
+    "Gharbia",
+    "Kafr El Sheikh",
+    "Sharkia",
+    "Monufia",
+    "Qalyubia",
+    "Minya",
+    "Giza",
+    "Faiyum",
+    "Beni Suef",
+    "Asyut",
+    "Sohag",
+    "Qena",
+    "Luxor",
+    "Aswan",
+    "Red Sea",
+    "New Valley",
+    "Matrouh",
+    "North Sinai",
+    "South Sinai",
+    "Ismailia",
+  ];
+
+  static const List<String> speciality = [
+    "Pediatrics",
+    "Cardiology",
+    "Oncology",
+    "Neurology",
+    "Orthopedics",
+    "Dermatology",
+    "Gynecology",
+    "Psychiatry",
+    "Ophthalmology",
+    "Urology",
+  ];
+
+  static const String resolutionLow = "Low";
+  static const String resolutionMedium = "Medium";
+  static const String resolutionHigh = "High";
 }
+
+int? myId;
+String? myType;
+String? myUserName;
+bool? isSkipOnBoarding;

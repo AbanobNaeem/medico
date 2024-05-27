@@ -1,17 +1,27 @@
 import 'package:xpert/src/core/resources/strings_manager.dart';
+import 'package:xpert/src/features/profile/data/models/profile_model.dart';
 
 List<String> profileTextFelidTitles = [
   StringsManager.yourEmail,
   StringsManager.yourPassword,
   StringsManager.yourPhone,
-  StringsManager.city,
-  StringsManager.country,
+  StringsManager.workingTime,
+  StringsManager.address,
+  StringsManager.governorates,
+  StringsManager.priceperhour,
+  StringsManager.speciality,
 ];
 
-List<String> profileTextFelidTempData = [
-  "tasnim163@gmail.com",
-  "123456789",
-  "012345678911",
-  "Cairo",
-  'Egypt',
-];
+List<String> getData(ProfileModel model) {
+  List<String> profileTextFelid = [
+    model.userEmail ?? '',
+    '********',
+    model.phoneNumber ?? '',
+    model.workTime ?? '',
+    model.address ?? '',
+    model.governorates ?? '',
+    model.priceperhour ?? '',
+    model.speciality ?? '',
+  ];
+  return profileTextFelid;
+}

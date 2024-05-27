@@ -6,7 +6,7 @@ import 'package:xpert/src/features/home/data/models/diseases_model.dart';
 
 part 'web_services.g.dart';
 
-@RestApi(baseUrl: AppConstants.domain)
+@RestApi(baseUrl: AppConstants.aiDomain)
 abstract class WebServices {
   static const String apiKey = "vv5Bsj27ASI9XrvZH6Bz";
 
@@ -17,4 +17,7 @@ abstract class WebServices {
 
   @POST("brain-tumor-e0ofl/1?api_key=$apiKey")
   Future<BrainTumorModel> brainTumor(@Body() String base64Image);
+
+  @POST("mass-classification/1?api_key=$apiKey")
+  Future<BrainTumorModel> breastCancer(@Body() String base64Image);
 }

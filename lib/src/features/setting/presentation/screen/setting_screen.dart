@@ -1,22 +1,51 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
+import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/core/resources/font_manager.dart';
 import 'package:xpert/src/core/resources/route_manager.dart';
+import 'package:xpert/src/core/resources/shared_preferences.dart';
 import 'package:xpert/src/core/resources/strings_manager.dart';
 import 'package:xpert/src/core/resources/styles_manager.dart';
+import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
+import 'package:xpert/src/core/widgets/default_button.dart';
+import 'package:xpert/src/features/profile/business_logic/profile/profile_cubit.dart';
 
-class SettingScreen extends StatelessWidget {
+class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
+
+  @override
+  State<SettingScreen> createState() => _SettingScreenState();
+}
+
+class _SettingScreenState extends State<SettingScreen> {
+  late final TextEditingController? _oldPasswordController;
+  late final TextEditingController? _newPasswordController;
+
+  @override
+  void initState() {
+    super.initState();
+    _oldPasswordController = TextEditingController();
+    _newPasswordController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _oldPasswordController?.dispose();
+    _newPasswordController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(),
-      body: _body(),
+      body: _body(context),
       bottomNavigationBar: _bottomNavigationBar(context),
     );
   }
@@ -28,33 +57,33 @@ class SettingScreen extends StatelessWidget {
         fontSize: FontSize.s18,
         color: ColorManager.black,
       ),
-      actions: [
-        Padding(
-          padding: EdgeInsetsDirectional.only(end: 16.w),
-          child: SvgPicture.asset(
-            width: 17.w,
-            height: 17.h,
-            AssetsManager.searchIc,
-            colorFilter: const ColorFilter.mode(
-              ColorManager.black,
-              BlendMode.srcIn,
-            ),
-          ),
-        ),
-      ],
     );
   }
 
-  Widget _body() {
-    return AppPaddingWidgetHorizontal(
-      child: Column(
-        children: [
-          10.verticalSpace,
-          Expanded(flex: 2, child: _buildFirstBox()),
-          Expanded(flex: 3, child: _buildSceBox()),
-          Expanded(flex: 3, child: _buildThirdBox()),
-        ],
-      ),
+  Widget _body(context) {
+    return BlocConsumer<ProfileCubit, ProfileState>(
+      listener: (context, state) {
+        state.mapOrNull(
+          changePasswordSuccess: (state) {
+            showSuccessToast("Password has been changed", context);
+          },
+          changePasswordError: (state) {
+            showErrorToast(state.error, context);
+          },
+        );
+      },
+      builder: (context, state) {
+        return AppPaddingWidgetHorizontal(
+          child: Column(
+            children: [
+              10.verticalSpace,
+              Expanded(flex: 2, child: _buildFirstBox(context)),
+              // Expanded(flex: 3, child: _buildSceBox()),
+              // Expanded(flex: 3, child: _buildThirdBox()),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -69,76 +98,40 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildFirstBox() {
+  Widget _buildFirstBox(context) {
     return Column(
       children: [
         _buildContainer(
           widget: Column(
             children: [
-              _listTile(
-                title: StringsManager.setting,
-                icon: AssetsManager.setting,
-                trailing: true,
-              ),
-              const Divider(),
+              // _listTile(
+              //   title: StringsManager.setting,
+              //   icon: AssetsManager.setting,
+              //   trailing: true,
+              // ),
+              // const Divider(),
               _listTile(
                 title: StringsManager.editProfile,
                 icon: AssetsManager.editProfileIc,
                 trailing: true,
+                onTap: () {
+                  RouteGenerator.navBarCubit.onTap(3);
+                },
               ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildSceBox() {
-    return Column(
-      children: [
-        _buildContainer(
-          widget: Column(
-            children: [
-              _listTile(
-                title: StringsManager.notifications,
-                icon: AssetsManager.notificationsIc,
-              ),
-              const Divider(),
               _listTile(
                 title: StringsManager.password,
                 icon: AssetsManager.keyIc,
+                onTap: () {
+                  // RouteGenerator.navBarCubit.onTap(3);
+                  _dialogPassword(context);
+                },
               ),
-              const Divider(),
-              _listTile(
-                title: StringsManager.language,
-                icon: AssetsManager.lang,
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildThirdBox() {
-    return Column(
-      children: [
-        _buildContainer(
-          widget: Column(
-            children: [
-              _listTile(
-                title: StringsManager.country,
-                icon: AssetsManager.location,
-              ),
-              const Divider(),
               _listTile(
                 title: StringsManager.editEmail,
                 icon: AssetsManager.email,
-              ),
-              const Divider(),
-              _listTile(
-                title: StringsManager.facebook,
-                icon: AssetsManager.unfilledFacebookIc,
+                onTap: () {
+                  RouteGenerator.navBarCubit.onTap(3);
+                },
               ),
             ],
           ),
@@ -147,6 +140,64 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
+  AwesomeDialog _dialogPassword(context) {
+    return AwesomeDialog(
+      context: context,
+      dialogType: DialogType.infoReverse,
+      animType: AnimType.rightSlide,
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            StringsManager.oldPassword.toUpperCase(),
+            style: StyleManager.getMediumStyle(
+              color: ColorManager.mediumGray,
+              fontSize: FontSize.s16,
+            ),
+          ),
+          TextFormField(
+            controller: _oldPasswordController,
+            onTapOutside: (event) => FocusScope.of(context).unfocus(),
+          ),
+          15.verticalSpace,
+          Text(
+            StringsManager.newPassword.toUpperCase(),
+            style: StyleManager.getMediumStyle(
+              color: ColorManager.mediumGray,
+              fontSize: FontSize.s16,
+            ),
+          ),
+          TextFormField(
+            controller: _newPasswordController,
+            onTapOutside: (event) => FocusScope.of(context).unfocus(),
+          ),
+          30.verticalSpace,
+          Center(
+            child: DefaultButton(
+              width: 150.w,
+              height: 50.h,
+              onPressed: () {
+                int id = CacheHelper.getData(key: AppConstants.myId);
+                RouteGenerator.profileCubit.changePassword(
+                  id: id,
+                  oldPassword: _oldPasswordController!.text,
+                  newPassword: _newPasswordController!.text,
+                ).then((value) {
+                  Navigator.of(context).pop();
+                  _newPasswordController.clear();
+                  _oldPasswordController.clear();
+                },);
+              },
+              title: StringsManager.edit,
+            ),
+          ),
+        ],
+      ),
+    )..show();
+  }
+
+  // Widget _buildSceBox() {
   Widget _buildContainer({
     required Widget widget,
   }) {
@@ -161,12 +212,13 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  Widget _listTile({
-    required String title,
-    required String icon,
-    bool? trailing,
-  }) {
+  Widget _listTile(
+      {required String title,
+      required String icon,
+      bool? trailing,
+      void Function()? onTap}) {
     return ListTile(
+      onTap: onTap,
       leading: SvgPicture.asset(
         icon,
         colorFilter: const ColorFilter.mode(
@@ -179,11 +231,19 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
+  Future<void> _deleteUserDataBeforeLogOut() async {
+    CacheHelper.removeData(key: AppConstants.myId);
+    CacheHelper.removeData(key: AppConstants.myUserName);
+    CacheHelper.removeData(key: AppConstants.myType);
+  }
+
   Widget _logOut(context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.pushNamedAndRemoveUntil(
-            context, Routes.authTapBar, (route) => false);
+        _deleteUserDataBeforeLogOut().then((value) {
+          Navigator.pushNamedAndRemoveUntil(
+              context, Routes.authTapBar, (route) => false);
+        });
       },
       style: ElevatedButton.styleFrom(
         fixedSize: Size(140.w, 60.h),

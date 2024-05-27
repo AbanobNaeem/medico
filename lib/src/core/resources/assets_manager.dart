@@ -2,6 +2,7 @@ const String imagePath = 'assets/images';
 const String svgPath = 'assets/svg';
 const String lottiePath = 'assets/lottie';
 const String tempPath = 'assets/temp';
+const String aiPath = 'assets/ai';
 
 class AssetsManager {
   const AssetsManager._internal();
@@ -32,6 +33,20 @@ class AssetsManager {
   static const String unfilledProfileIc = '$svgPath/unfilled_profile_ic.svg';
   static const String filledProfileIc = '$svgPath/profile_filled.svg';
 
+  // static const String aiTestModel = '$aiPath/yolov8n_test.tflite';
+  // static const String aiTestLabel = '$aiPath/labels.txt';
+
+  static const String aiBoneFractureModel = '$aiPath/BoneWithNull_float32.tflite';
+  static const String aiBoneFractureLabel = '$aiPath/BoneWithNull_float32Labels.txt';
+
+  static const String aiBrainTumorModel = '$aiPath/BrainTumorupdated_float32.tflite';
+  static const String aiBrainTumorLabel = '$aiPath/BrainTumorupdated_float32Labels.txt';
+
+
+  static const String aiBreastCancerModel = '$aiPath/OwnBreastCancer_float32.tflite';
+  static const String aiBreastCancerLabel = '$aiPath/BreastCancerLable.txt';
+
+
   //!Auth
   static const String loginBackGround = '$svgPath/login.svg';
   static const String facebook = '$svgPath/facebook.svg';
@@ -44,6 +59,8 @@ class AssetsManager {
   //!home
   static const String searchIc = '$svgPath/search_ic.svg';
   static const String doctorPic = '$imagePath/doctor.png';
+  static const String doctorPic2 = '$tempPath/doctor2.jpeg';
+  static const String doctorPic3 = '$tempPath/doctor3.jpeg';
 
   static const String bonefracturesPic = '$imagePath/bonefractures.png';
   static const String braintumorPic = '$imagePath/braintumor.png';
@@ -68,6 +85,7 @@ class AssetsManager {
   static const String unfilledFacebookIc = '$svgPath/unfilled_facebook_ic.svg';
 
   //!common
+  static const String logo = '$imagePath/logo.png';
   static const String arrowBack = '$svgPath/arrow_back.svg';
   static const String arrowForward = '$svgPath/arrow_forward.svg';
   static const String loadingShimmer = '$imagePath/loading.gif';

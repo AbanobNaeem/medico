@@ -9,6 +9,7 @@ class StringsManager {
   //!onBoarding
 
   static const String continueWord = 'continue';
+  static const String edit = 'edit';
   static const String getStart = 'Get Start';
   static const String skip = 'skip';
   static const String start = 'start';
@@ -34,6 +35,7 @@ class StringsManager {
   static const String password = 'Password';
   static const String fullName = 'Full Name';
   static const String phoneNumber = 'Phone Number';
+  static const String pricePerHour = "Price per hour";
 
   //!ForgetPassword
   static const String forgetPassword = 'Forget Password ?';
@@ -158,18 +160,38 @@ class StringsManager {
 
   //! Doctors List
   static const String doctorsList = 'Doctors List';
+  static const String nurseList = 'Nurse List';
   static const String drAillaAhmed = 'Dr. Ailla Ahmed';
   static const String drAhmed = 'Dr.  Ahmed ';
   static const String orthopedist = 'Orthopedist';
   static const String appointment = 'Appointment';
+
+  static const String governorate = 'Governorate';
+  static const String specialty = 'Specialty';
+  static const String pleaseSpecialtyGovernorate =
+      'Please enter\n governorate & speciality\nto search';
+  static const String pleaseGovernorate = 'Please enter governorate\nto search';
+
+  static const String pleaseEnterGovernorate = "Please Enter Governorate";
+  static const String pleaseEnterSpeciality = "Enter Speciality";
+
   //! Health Care
   static const String healthCareTitle = 'Health Care';
   static const String schedule = 'Schedule';
   static const String workingTime = 'Working time';
   static const String aboutDoctors = 'About Doctors';
+  static const String oldPassword = 'Old Password';
+  static const String newPassword = 'New Password';
   static const String people = 'people';
   static const String experience = 'Experience';
   static const String rating = 'Rating';
+  static const String address = 'Address';
+
+  static const String resolution = 'Resolution';
+  static const String gpu = 'GPU';
+  static const String chosesCameraResolution = 'Choses camera\nresolution:';
+
+  static const String gpuOption = 'GPU option:';
 
   //!common
   static const String send = 'SEND';
@@ -179,6 +201,7 @@ class StringsManager {
   static const String search = 'search';
   static const String details = 'Details';
   static const String takePhoto = 'Take photo';
+  static const String openCamera = 'Open Camera';
   static const String fromGallery = 'From Gallery';
   static const String message = 'Message';
   static const String online = 'Online';
@@ -186,4 +209,8 @@ class StringsManager {
   static const String seeMore = 'See more';
   static const String seeLess = 'See less';
   static const String loading = 'Loading';
+
+  static const String speciality = 'Speciality';
+  static const String governorates = 'Governorates';
+  static const String priceperhour = 'Price per hour';
 }

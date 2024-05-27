@@ -74,6 +74,33 @@ class _WebServices implements WebServices {
     return value;
   }
 
+  @override
+  Future<BrainTumorModel> breastCancer(String base64Image) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = base64Image;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<BrainTumorModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'mass-classification/1?api_key=vv5Bsj27ASI9XrvZH6Bz',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = BrainTumorModel.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

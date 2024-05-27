@@ -1,7 +1,6 @@
-import 'dart:developer';
 import 'dart:io';
-
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +8,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:xpert/src/app/app.dart';
 import 'package:xpert/src/core/resources/assets_manager.dart';
 import 'package:xpert/src/core/resources/color_manager.dart';
@@ -22,8 +20,11 @@ import 'package:xpert/src/core/resources/utils.dart';
 import 'package:xpert/src/core/widgets/app_padding.dart';
 import 'package:xpert/src/core/widgets/bottom_extend_app_bar.dart';
 import 'package:xpert/src/core/widgets/default_app_bar.dart';
+import 'package:xpert/src/core/widgets/default_button.dart';
 import 'package:xpert/src/features/home/business_logic/home_cubit/home_cubit.dart';
 import 'package:xpert/src/features/home/data/constants/diseases_constants.dart';
+import 'package:xpert/src/features/home/presentation/widgets/drop_down_button.dart';
+import 'package:xpert/src/features/home/presentation/widgets/model_text_filed.dart';
 
 class DiseasesDetailsScreen extends StatefulWidget {
   final String title;
@@ -40,27 +41,26 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
   late List<DiseasesDetailsModel> listOfContent;
   late ImagePicker _imagePicker;
   bool _isLoading = false;
+  bool gpu = false;
+  ResolutionPreset resolution = ResolutionPreset.high;
+
+  // String labels = AssetsManager.aiTestLabel;
+  // String model = AssetsManager.aiBoneFractureModel;
+
+  late TextEditingController? _numThreadsController;
+  late TextEditingController? _classThresholdController;
+  late TextEditingController? _confThresholdController;
+  late TextEditingController? _iouThresholdController;
 
   @override
   void initState() {
     super.initState();
-    listOfContent = _listType();
+    listOfContent = listType(widget.title);
     _imagePicker = ImagePicker();
-  }
-
-  List<DiseasesDetailsModel> _listType() {
-    switch (widget.title) {
-      case StringsManager.boneFractures:
-        return boneFracturesList;
-      case StringsManager.brainTumor:
-        return brainTumorList;
-      case StringsManager.cancer:
-        return cancerList;
-      case StringsManager.breastCancer:
-        return breastCancerList;
-      default:
-        return boneFracturesList;
-    }
+    _numThreadsController = TextEditingController(text: "1");
+    _classThresholdController = TextEditingController(text: "0.5");
+    _confThresholdController = TextEditingController(text: "0.4");
+    _iouThresholdController = TextEditingController(text: "0.4");
   }
 
   @override
@@ -101,10 +101,10 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
           uploadBrainTumorResult: (state) {
             _isLoading = false;
             Fluttertoast.cancel;
-            log("${state.data.predictedClasses?.first}");
             _dialog(title: state.data.predictedClasses?.first);
           },
           uploadImageError: (state) {
+            Fluttertoast.cancel;
             _isLoading = false;
             showErrorToast(state.networkExceptions.toString(), context);
           },
@@ -131,45 +131,44 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _cameraAndGalleryRow(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 16.w, vertical: 16.h),
-                      child: Text(
-                        StringsManager.details,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                    ),
-                    ...List.generate(
-                      listOfContent.length,
-                      (index) =>
-                          _bodyText(context, title: listOfContent[index].body),
-                    )
+                    _details(),
+                    ..._generateDetails(),
                   ],
                 ),
               ),
             ],
           ),
-          if (_isLoading)
-            Center(
-              child: LoadingAnimationWidget.twistingDots(
-                leftDotColor: ColorManager.black,
-                rightDotColor: ColorManager.primary,
-                size: 100,
-              ),
-            )
+          if (_isLoading) _twistingDots(),
         ],
       ),
     );
   }
 
-  Color _color(double condition) {
-    if (condition >= 1 && condition < 30) {
-      return ColorManager.yellow;
-    } else if (condition >= 30 && condition < 70) {
-      return ColorManager.green;
-    } else {
-      return ColorManager.brightRed;
-    }
+  Widget _details() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      child: Text(
+        StringsManager.details,
+        style: Theme.of(context).textTheme.bodyMedium,
+      ),
+    );
+  }
+
+  List _generateDetails() {
+    return List.generate(
+      listOfContent.length,
+      (index) => _bodyText(context, title: listOfContent[index].body),
+    );
+  }
+
+  Widget _twistingDots() {
+    return Center(
+      child: LoadingAnimationWidget.twistingDots(
+        leftDotColor: ColorManager.black,
+        rightDotColor: ColorManager.primary,
+        size: 100,
+      ),
+    );
   }
 
   AwesomeDialog _dialog({String? title, String? desc}) {
@@ -192,7 +191,7 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
               "$desc%",
               style: StyleManager.getMediumStyle(
                 fontSize: FontSize.s16,
-                color: _color(double.parse(desc)),
+                color: color(double.parse(desc)),
               ),
             ),
           _brief(title),
@@ -202,54 +201,12 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     )..show();
   }
 
-  void _launchUrl(url) async {
-
-    if (!await launchUrl(Uri.parse(url))) {
-      showErrorToast('${StringsManager.couldNotLaunch} $url',
-          navigatorKey.currentContext!);
-    }
-  }
-
-  String? _briefCondition(String? title) {
-    switch (title) {
-      case "Comminuted fracture":
-        return AppConstants.comminutedFracture;
-      case "Greenstick fracture":
-        return AppConstants.greenstickFracture;
-      case "Fracture Dislocation":
-        return AppConstants.fractureDislocation;
-      case "Compression-Crush fracture":
-        return null;
-      case "Hairline Fracture":
-        return null;
-      case "Impacted fracture":
-        return null;
-      case "Intra-articular fracture":
-        return null;
-      case "Longitudinal fracture":
-        return null;
-      case "Spiral Fracture":
-        return null;
-      case "Avulsion fracture":
-        return null;
-      case "Oblique fracture":
-        return null;
-      default:
-        return null;
-    }
-  }
-
   Widget _brief(String? title) {
-    return TextButton(
-      onPressed: () {
-        _launchUrl(AppConstants.comminutedFractureUrl);
-      },
-      child: Text(
-        _briefCondition(title) ?? '',
-        style: StyleManager.getRegularStyle(
-          fontSize: FontSize.s16,
-          color: ColorManager.black,
-        ),
+    return Text(
+      briefCondition(title) ?? '',
+      style: StyleManager.getRegularStyle(
+        fontSize: FontSize.s16,
+        color: ColorManager.black,
       ),
     );
   }
@@ -257,35 +214,7 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
   Widget _moreAbout(String? title) {
     return TextButton(
       onPressed: () {
-        _launchUrl(AppConstants.comminutedFractureUrl);
-        switch (title) {
-          case "Comminuted fracture":
-            return _launchUrl(AppConstants.comminutedFractureUrl);
-          case "Greenstick fracture":
-            return _launchUrl(AppConstants.greenstickFractureUrl);
-
-          case "Fracture Dislocation":
-            return _launchUrl(AppConstants.fractureDislocationUrl);
-
-          case "Compression-Crush fracture":
-            return;
-          case "Hairline Fracture":
-            return;
-          case "Impacted fracture":
-            return;
-          case "Intra-articular fracture":
-            return;
-          case "Longitudinal fracture":
-            return;
-          case "Spiral Fracture":
-            return;
-          case "Avulsion fracture":
-            return;
-          case "Oblique fracture":
-            return;
-          default:
-            return;
-        }
+        launchUrlCondition(title);
       },
       child: const Text(
         StringsManager.moreAbout,
@@ -301,8 +230,13 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _blueBox(StringsManager.takePhoto, AssetsManager.cameraIc,
-            onTap: _openCamera),
+        _blueBox(
+          StringsManager.openCamera,
+          AssetsManager.cameraIc,
+          onTap: () {
+            _dialogQuestion();
+          },
+        ),
         _blueBox(
           StringsManager.fromGallery,
           AssetsManager.galleryIc,
@@ -310,6 +244,108 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
         ),
       ],
     );
+  }
+
+  AwesomeDialog _dialogQuestion() {
+    return AwesomeDialog(
+      context: context,
+      dialogType: DialogType.question,
+      animType: AnimType.rightSlide,
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+      body: Column(
+        children: [
+          ModelTextFiled(
+            title: "Num threads",
+            hint: "Enter int num",
+            controller: _numThreadsController,
+            onChanged: (value) {},
+          ),
+          15.verticalSpace,
+          ModelTextFiled(
+            title: "Class thresholds",
+            hint: "Enter double num",
+            controller: _classThresholdController,
+            onChanged: (value) {},
+          ),
+          15.verticalSpace,
+          ModelTextFiled(
+            title: "Conf threshold",
+            hint: "Enter double num",
+            controller: _confThresholdController,
+            onChanged: (value) {},
+          ),
+          15.verticalSpace,
+          ModelTextFiled(
+            title: "Iou threshold",
+            hint: "Enter double num",
+            controller: _iouThresholdController,
+            onChanged: (value) {},
+          ),
+          15.verticalSpace,
+          ModelDropDownButton(
+            title: StringsManager.chosesCameraResolution,
+            onChanged: (value) {
+              if (value == AppConstants.resolutionMedium) {
+                setState(() {
+                  resolution = ResolutionPreset.medium;
+                });
+              } else if (value == AppConstants.resolutionHigh) {
+                setState(() {
+                  resolution = ResolutionPreset.high;
+                });
+              } else {
+                setState(() {
+                  resolution = ResolutionPreset.low;
+                });
+              }
+            },
+          ),
+          ModelDropDownButton(
+            title: StringsManager.gpuOption,
+            onChanged: (value) {
+              if (value == "true") {
+                setState(() {
+                  gpu = true;
+                });
+              } else {
+                setState(() {
+                  gpu = false;
+                });
+              }
+            },
+          ),
+          DefaultButton(
+            width: 150.w,
+            height: 50.h,
+            onPressed: () async {
+              await _navigatorPop();
+              Navigator.pushNamed(
+                navigatorKey.currentContext!,
+                Routes.yoloScreen,
+                arguments: {
+                  "gpu": gpu,
+                  "labels": label(widget.title),
+                  "modelPath": model(widget.title),
+                  "resolutionPreset": resolution,
+                  "numThreads": int.parse(_numThreadsController?.text ?? "1"),
+                  "classThreshold":
+                      double.parse(_classThresholdController?.text ?? "0.5"),
+                  "confThreshold":
+                      double.parse(_confThresholdController?.text ?? "0.4"),
+                  "iouThreshold":
+                      double.parse(_iouThresholdController?.text ?? " 0.4"),
+                },
+              );
+            },
+            title: StringsManager.continueWord,
+          ),
+        ],
+      ),
+    )..show();
+  }
+
+  _navigatorPop() {
+    Navigator.of(context).pop();
   }
 
   Widget _blueBox(String title, String icon, {void Function()? onTap}) {
@@ -375,35 +411,11 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
     );
   }
 
-  void _send(image) {
-    switch (widget.title) {
-      case StringsManager.boneFractures:
-        return RouteGenerator.homeCubit.uploadOfBonefractures(image);
-      case StringsManager.brainTumor:
-        return RouteGenerator.homeCubit.uploadOfBrainTumor(image);
-      case StringsManager.cancer:
-        return;
-      case StringsManager.breastCancer:
-        return;
-      default:
-        return;
-    }
-  }
-
   Future _openGallery() async {
     final returnImage =
         await _imagePicker.pickImage(source: ImageSource.gallery);
     if (returnImage == null) return;
     final image = File(returnImage.path);
-    _send(image);
-  }
-
-  Future _openCamera() async {
-    final returnImage =
-        await _imagePicker.pickImage(source: ImageSource.camera);
-
-    if (returnImage == null) return;
-    // ignore: unused_local_variable
-    final image = File(returnImage.path);
+    sendImage(widget.title, image);
   }
 }
