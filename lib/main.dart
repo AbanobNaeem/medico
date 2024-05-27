@@ -27,6 +27,7 @@ Future<void> main() async {
     runApp(
       Phoenix(
         child: MyApp(),
+        /////////////
       ),
     );
   });
