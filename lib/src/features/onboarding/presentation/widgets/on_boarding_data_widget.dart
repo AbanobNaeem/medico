@@ -7,7 +7,6 @@ import 'package:xpert/src/core/resources/styles_manager.dart';
 import 'package:xpert/src/features/onboarding/data/models.dart';
 import 'package:xpert/src/features/onboarding/presentation/widgets/dots_indicator_widget.dart';
 
-
 class OnBoardingDataWidget extends StatelessWidget {
   const OnBoardingDataWidget({super.key, required this.onboardingViewObject});
 
@@ -21,13 +20,16 @@ class OnBoardingDataWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          16.verticalSpace,
-          _buildBackGroundImage(),
-          40.verticalSpace,
-          _buildTitle(),
-          24.verticalSpace,
-          _buildDescription(),
-          32.verticalSpace,
+          // 16.verticalSpace,
+          Expanded(
+            flex: 3,
+            child: _buildBackGroundImage(),
+          ),
+          // 40.verticalSpace,
+          Expanded(flex: 1, child: _buildTitle()),
+          // 24.verticalSpace,
+          Expanded(flex: 1, child: _buildDescription()),
+          // 32.verticalSpace,
           _dotsIndicatorWidget(),
         ],
       ),

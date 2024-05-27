@@ -27,6 +27,8 @@ class AuthLogicCubit extends Cubit<AuthLogicState> {
         success: (model) {
           if (model.error != null) {
             emit(AuthLogicState.error(error: model.error!));
+          } else if (model.status == 400) {
+            emit(AuthLogicState.errorInValidation(error: model.errors!));
           } else {
             emit(AuthLogicState.success(model: model));
           }
@@ -58,6 +60,8 @@ class AuthLogicCubit extends Cubit<AuthLogicState> {
         success: (UserModel model) {
           if (model.error != null) {
             emit(AuthLogicState.error(error: model.error!));
+          } else if (model.status == 400) {
+            emit(AuthLogicState.errorInValidation(error: model.errors!));
           } else {
             emit(AuthLogicState.success(model: model));
           }

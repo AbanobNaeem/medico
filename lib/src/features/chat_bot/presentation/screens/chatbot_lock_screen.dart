@@ -102,47 +102,50 @@ class _ChatBotLockScreenState extends State<ChatBotLockScreen> {
   }
 
   Widget _buildSlider(context) {
-    return Center(
-      child: SliderButton(
-        gradient: ColorManager.chatBotGradient,
-        width: 311.w,
-        height: 72.h,
-        action: () async {
-          Navigator.pushNamed(context, Routes.chatBotScreen);
-          return true;
-        },
-        alignLabel: Alignment.center,
-        shimmer: false,
-        label: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            120.horizontalSpace,
-            Text(
-              StringsManager.getStarted,
-              style: StyleManager.getLightStyle(
-                fontSize: FontSize.s16,
+    return Expanded(
+      flex: 20,
+      child: Center(
+        child: SliderButton(
+          gradient: ColorManager.chatBotGradient,
+          width: 311.w,
+          height: 72.h,
+          action: () async {
+            Navigator.pushNamed(context, Routes.chatBotScreen);
+            return true;
+          },
+          alignLabel: Alignment.center,
+          shimmer: false,
+          label: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              120.horizontalSpace,
+              Text(
+                StringsManager.getStarted,
+                style: StyleManager.getLightStyle(
+                  fontSize: FontSize.s16,
+                  color: ColorManager.white,
+                ),
+              ),
+              const Spacer(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 32.w),
+                child: Image.asset(AssetsManager.threeArrows),
+              )
+            ],
+          ),
+          buttonSize: 55,
+          icon: Container(
+            decoration: const BoxDecoration(
+              color: ColorManager.darkMidnightBlue,
+              shape: BoxShape.circle,
+            ),
+            child: const Center(
+              child: Icon(
+                size: 13,
+                Icons.arrow_forward_ios_rounded,
                 color: ColorManager.white,
               ),
-            ),
-            const Spacer(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32.w),
-              child: Image.asset(AssetsManager.threeArrows),
-            )
-          ],
-        ),
-        buttonSize: 55,
-        icon: Container(
-          decoration: const BoxDecoration(
-            color: ColorManager.darkMidnightBlue,
-            shape: BoxShape.circle,
-          ),
-          child: const Center(
-            child: Icon(
-              size: 13,
-              Icons.arrow_forward_ios_rounded,
-              color: ColorManager.white,
             ),
           ),
         ),

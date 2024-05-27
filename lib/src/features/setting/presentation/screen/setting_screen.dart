@@ -92,7 +92,7 @@ class _SettingScreenState extends State<SettingScreen> {
       padding: EdgeInsets.only(
         left: 0.3.sw,
         right: 0.3.sw,
-        bottom: kBottomNavigationBarHeight + 0.05.sh,
+        bottom: kBottomNavigationBarHeight + 0.10.sh,
       ),
       child: _logOut(context),
     );
@@ -197,7 +197,7 @@ class _SettingScreenState extends State<SettingScreen> {
     )..show();
   }
 
-  // Widget _buildSceBox() {
+
   Widget _buildContainer({
     required Widget widget,
   }) {

@@ -24,6 +24,7 @@ class SplashScreenLogic {
     myId = await CacheHelper.getData(key: AppConstants.myId);
     myType = await CacheHelper.getData(key: AppConstants.myType);
     myUserName = await CacheHelper.getData(key: AppConstants.myUserName);
+    // isSkipOnBoarding = await CacheHelper.saveData(key: AppConstants.onBoarding,value: false );
     isSkipOnBoarding = await CacheHelper.getData(key: AppConstants.onBoarding);
 
     isSkipOnBoarding = await CacheHelper.getData(key: AppConstants.onBoarding);

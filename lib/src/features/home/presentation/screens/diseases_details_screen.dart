@@ -396,9 +396,11 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
         children: [
           _circle(),
           12.horizontalSpace,
-          Text(
-            title,
-            style: Theme.of(context).textTheme.bodySmall,
+          Expanded(
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ),
         ],
       ),

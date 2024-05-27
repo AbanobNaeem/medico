@@ -22,6 +22,7 @@ mixin _$AuthLogicState {
     required TResult Function() loading,
     required TResult Function(UserModel model) success,
     required TResult Function(String error) error,
+    required TResult Function(Errors error) errorInValidation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$AuthLogicState {
     TResult? Function()? loading,
     TResult? Function(UserModel model)? success,
     TResult? Function(String error)? error,
+    TResult? Function(Errors error)? errorInValidation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$AuthLogicState {
     TResult Function()? loading,
     TResult Function(UserModel model)? success,
     TResult Function(String error)? error,
+    TResult Function(Errors error)? errorInValidation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$AuthLogicState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
+    required TResult Function(_ErrorInValidation value) errorInValidation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$AuthLogicState {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
+    TResult? Function(_ErrorInValidation value)? errorInValidation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$AuthLogicState {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
+    TResult Function(_ErrorInValidation value)? errorInValidation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +134,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function(UserModel model) success,
     required TResult Function(String error) error,
+    required TResult Function(Errors error) errorInValidation,
   }) {
     return initial();
   }
@@ -139,6 +146,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function(UserModel model)? success,
     TResult? Function(String error)? error,
+    TResult? Function(Errors error)? errorInValidation,
   }) {
     return initial?.call();
   }
@@ -150,6 +158,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function(UserModel model)? success,
     TResult Function(String error)? error,
+    TResult Function(Errors error)? errorInValidation,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +174,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
+    required TResult Function(_ErrorInValidation value) errorInValidation,
   }) {
     return initial(this);
   }
@@ -176,6 +186,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
+    TResult? Function(_ErrorInValidation value)? errorInValidation,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +198,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
+    TResult Function(_ErrorInValidation value)? errorInValidation,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -242,6 +254,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() loading,
     required TResult Function(UserModel model) success,
     required TResult Function(String error) error,
+    required TResult Function(Errors error) errorInValidation,
   }) {
     return loading();
   }
@@ -253,6 +266,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? loading,
     TResult? Function(UserModel model)? success,
     TResult? Function(String error)? error,
+    TResult? Function(Errors error)? errorInValidation,
   }) {
     return loading?.call();
   }
@@ -264,6 +278,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? loading,
     TResult Function(UserModel model)? success,
     TResult Function(String error)? error,
+    TResult Function(Errors error)? errorInValidation,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -279,6 +294,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
+    required TResult Function(_ErrorInValidation value) errorInValidation,
   }) {
     return loading(this);
   }
@@ -290,6 +306,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
+    TResult? Function(_ErrorInValidation value)? errorInValidation,
   }) {
     return loading?.call(this);
   }
@@ -301,6 +318,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
+    TResult Function(_ErrorInValidation value)? errorInValidation,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -382,6 +400,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() loading,
     required TResult Function(UserModel model) success,
     required TResult Function(String error) error,
+    required TResult Function(Errors error) errorInValidation,
   }) {
     return success(model);
   }
@@ -393,6 +412,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? loading,
     TResult? Function(UserModel model)? success,
     TResult? Function(String error)? error,
+    TResult? Function(Errors error)? errorInValidation,
   }) {
     return success?.call(model);
   }
@@ -404,6 +424,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? loading,
     TResult Function(UserModel model)? success,
     TResult Function(String error)? error,
+    TResult Function(Errors error)? errorInValidation,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -419,6 +440,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
+    required TResult Function(_ErrorInValidation value) errorInValidation,
   }) {
     return success(this);
   }
@@ -430,6 +452,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
+    TResult? Function(_ErrorInValidation value)? errorInValidation,
   }) {
     return success?.call(this);
   }
@@ -441,6 +464,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
+    TResult Function(_ErrorInValidation value)? errorInValidation,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -527,6 +551,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() loading,
     required TResult Function(UserModel model) success,
     required TResult Function(String error) error,
+    required TResult Function(Errors error) errorInValidation,
   }) {
     return error(this.error);
   }
@@ -538,6 +563,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? loading,
     TResult? Function(UserModel model)? success,
     TResult? Function(String error)? error,
+    TResult? Function(Errors error)? errorInValidation,
   }) {
     return error?.call(this.error);
   }
@@ -549,6 +575,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? loading,
     TResult Function(UserModel model)? success,
     TResult Function(String error)? error,
+    TResult Function(Errors error)? errorInValidation,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -564,6 +591,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
+    required TResult Function(_ErrorInValidation value) errorInValidation,
   }) {
     return error(this);
   }
@@ -575,6 +603,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
+    TResult? Function(_ErrorInValidation value)? errorInValidation,
   }) {
     return error?.call(this);
   }
@@ -586,6 +615,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
+    TResult Function(_ErrorInValidation value)? errorInValidation,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -601,5 +631,158 @@ abstract class _Error implements AuthLogicState {
   String get error;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ErrorInValidationImplCopyWith<$Res> {
+  factory _$$ErrorInValidationImplCopyWith(_$ErrorInValidationImpl value,
+          $Res Function(_$ErrorInValidationImpl) then) =
+      __$$ErrorInValidationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Errors error});
+}
+
+/// @nodoc
+class __$$ErrorInValidationImplCopyWithImpl<$Res>
+    extends _$AuthLogicStateCopyWithImpl<$Res, _$ErrorInValidationImpl>
+    implements _$$ErrorInValidationImplCopyWith<$Res> {
+  __$$ErrorInValidationImplCopyWithImpl(_$ErrorInValidationImpl _value,
+      $Res Function(_$ErrorInValidationImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorInValidationImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Errors,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorInValidationImpl implements _ErrorInValidation {
+  const _$ErrorInValidationImpl({required this.error});
+
+  @override
+  final Errors error;
+
+  @override
+  String toString() {
+    return 'AuthLogicState.errorInValidation(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorInValidationImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorInValidationImplCopyWith<_$ErrorInValidationImpl> get copyWith =>
+      __$$ErrorInValidationImplCopyWithImpl<_$ErrorInValidationImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserModel model) success,
+    required TResult Function(String error) error,
+    required TResult Function(Errors error) errorInValidation,
+  }) {
+    return errorInValidation(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserModel model)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(Errors error)? errorInValidation,
+  }) {
+    return errorInValidation?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserModel model)? success,
+    TResult Function(String error)? error,
+    TResult Function(Errors error)? errorInValidation,
+    required TResult orElse(),
+  }) {
+    if (errorInValidation != null) {
+      return errorInValidation(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
+    required TResult Function(_ErrorInValidation value) errorInValidation,
+  }) {
+    return errorInValidation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_ErrorInValidation value)? errorInValidation,
+  }) {
+    return errorInValidation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    TResult Function(_ErrorInValidation value)? errorInValidation,
+    required TResult orElse(),
+  }) {
+    if (errorInValidation != null) {
+      return errorInValidation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ErrorInValidation implements AuthLogicState {
+  const factory _ErrorInValidation({required final Errors error}) =
+      _$ErrorInValidationImpl;
+
+  Errors get error;
+  @JsonKey(ignore: true)
+  _$$ErrorInValidationImplCopyWith<_$ErrorInValidationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

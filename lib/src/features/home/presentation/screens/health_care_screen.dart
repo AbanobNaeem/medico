@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -98,7 +97,7 @@ class _HealthCareScreenState extends State<HealthCareScreen> {
         crossAxisCount: 2,
         crossAxisSpacing: 20.w,
         mainAxisSpacing: 16.h,
-        mainAxisExtent: 0.23.sh,
+        mainAxisExtent: 0.25.sh,
       ),
       itemCount: data.doctorOrNurse?.length ?? 0,
       itemBuilder: (context, index) =>
@@ -124,32 +123,36 @@ class _HealthCareScreenState extends State<HealthCareScreen> {
             model.speciality ?? '',
             style: StyleManager.getRegularStyle(fontSize: FontSize.s16),
           ),
-          9.verticalSpace,
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(
-                context,
-                Routes.appointmentScreen,
-                arguments: {
-                  "id": model.id ?? 0,
-                  "type": AppConstants.userTypeNurse,
-                },
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              fixedSize: Size(132.w, 38.h),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50.r),
+          5.verticalSpace,
+          Expanded(
+            flex: 2,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  Routes.appointmentScreen,
+                  arguments: {
+                    "id": model.id ?? 0,
+                    "type": AppConstants.userTypeNurse,
+                  },
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                fixedSize: Size(140.w, 38.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.r),
+                ),
+                elevation: 0,
+                foregroundColor: ColorManager.black,
+                backgroundColor: ColorManager.offWhite,
               ),
-              elevation: 0,
-              foregroundColor: ColorManager.black,
-              backgroundColor: ColorManager.offWhite,
+              child: Text(StringsManager.appointment,
+                  style: StyleManager.getSemiBoldStyle(
+                    fontSize: FontSize.s14,
+                  )),
             ),
-            child: Text(StringsManager.appointment,
-                style: StyleManager.getSemiBoldStyle(
-                  fontSize: FontSize.s14,
-                )),
           ),
+          5.verticalSpace,
         ],
       ),
     );

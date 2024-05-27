@@ -34,6 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    int id = CacheHelper.getData(key: AppConstants.myId);
+    log("$id");
     _getData();
     controller = TextEditingController();
   }
@@ -63,6 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
             _buildCategories(context),
             18.verticalSpace,
             _buildTopDoctor(context),
+            100.verticalSpace,
           ],
         ),
       ),
@@ -161,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _pageView() {
     return SizedBox(
-      height: 0.21.sh,
+      height: 0.3.sh,
       child: PageView.builder(
         itemCount: 3,
         itemBuilder: (context, index) {
@@ -307,9 +310,8 @@ class _HomeScreenState extends State<HomeScreen> {
           if (model.userprofileimge != null)
             Container(
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r)
-              ),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20.r)),
               child: Image.network(
                 fit: BoxFit.cover,
                 width: 97.w,

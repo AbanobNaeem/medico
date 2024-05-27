@@ -61,6 +61,18 @@ class _AuthTabBarState extends State<AuthTabBar> {
               );
             });
           },
+          errorInValidation: (state) {
+            isLoading = false;
+            if (state.error.email != null && state.error.password != null) {
+              showErrorToast(
+                  "${state.error.email!.first}\n${state.error.password!.first}",
+                  context);
+            } else if (state.error.email != null) {
+              showErrorToast(state.error.email!.first, context);
+            } else if (state.error.password != null) {
+              showErrorToast(state.error.password!.first, context);
+            }
+          },
           error: (state) {
             isLoading = false;
 
