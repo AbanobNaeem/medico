@@ -4,6 +4,7 @@ import 'package:xpert/src/core/web_services/api_result.dart';
 import 'package:xpert/src/core/web_services/network_exceptions.dart';
 import 'package:xpert/src/core/web_services/web_services.dart';
 import 'package:xpert/src/features/home/data/models/brain_tumor_model.dart';
+import 'package:xpert/src/features/home/data/models/breast_cancer.dart';
 import 'package:xpert/src/features/home/data/models/diseases_model.dart';
 import 'package:xpert/src/features/home/data/models/get_doctor.dart';
 import 'package:xpert/src/features/home/data/models/get_nurse_or_doctor_info.dart';
@@ -38,6 +39,20 @@ class HomeRepo {
 
     try {
       var response = await _webServices.brainTumor(base64Image);
+
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(DioExceptionTypes.getDioException(error));
+    }
+  }
+
+  Future<ApiResult<BreastCancerModel>> uploadOfBreastCancer(File imageFile) async {
+    List<int> imageBytes = await imageFile.readAsBytes();
+
+    String base64Image = base64Encode(imageBytes);
+
+    try {
+      var response = await _webServices.breastCancer(base64Image);
 
       return ApiResult.success(response);
     } catch (error) {

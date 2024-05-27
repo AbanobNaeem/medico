@@ -2,6 +2,7 @@ import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/retrofit.dart';
 import 'package:xpert/src/core/resources/constants.dart';
 import 'package:xpert/src/features/home/data/models/brain_tumor_model.dart';
+import 'package:xpert/src/features/home/data/models/breast_cancer.dart';
 import 'package:xpert/src/features/home/data/models/diseases_model.dart';
 
 part 'web_services.g.dart';
@@ -19,5 +20,5 @@ abstract class WebServices {
   Future<BrainTumorModel> brainTumor(@Body() String base64Image);
 
   @POST("mass-classification/1?api_key=$apiKey")
-  Future<BrainTumorModel> breastCancer(@Body() String base64Image);
+  Future<BreastCancerModel> breastCancer(@Body() String base64Image);
 }

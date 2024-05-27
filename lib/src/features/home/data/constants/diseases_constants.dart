@@ -276,7 +276,7 @@ void sendImage(String title, File image) {
       return RouteGenerator.homeCubit.uploadOfBrainTumor(image);
 
     case StringsManager.breastCancer:
-      return;
+      return RouteGenerator.homeCubit.uploadOfBreastCancer(image);
     default:
       return;
   }

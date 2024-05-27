@@ -103,6 +103,11 @@ class _DiseasesDetailsScreenState extends State<DiseasesDetailsScreen> {
             Fluttertoast.cancel;
             _dialog(title: state.data.predictedClasses?.first);
           },
+          uploadBreastCancerResult: (state) {
+            _isLoading = false;
+            Fluttertoast.cancel;
+            _dialog(title: state.data.predictedClasses?.first);
+          },
           uploadImageError: (state) {
             Fluttertoast.cancel;
             _isLoading = false;

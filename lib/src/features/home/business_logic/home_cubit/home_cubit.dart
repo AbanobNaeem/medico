@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xpert/src/features/home/data/models/brain_tumor_model.dart';
+import 'package:xpert/src/features/home/data/models/breast_cancer.dart';
 import 'package:xpert/src/features/home/data/models/diseases_model.dart';
 import 'package:xpert/src/features/home/data/models/get_doctor.dart';
 import 'package:xpert/src/features/home/data/models/get_nurse_or_doctor_info.dart';
@@ -42,6 +43,24 @@ class HomeCubit extends Cubit<HomeState> {
       result.when(
         success: (data) {
           emit(HomeState.uploadBrainTumorResult(data));
+        },
+        failure: (networkExceptions) {
+          emit(HomeState.uploadImageError(networkExceptions.toString()));
+        },
+      );
+    } catch (e) {
+      emit(HomeState.uploadImageError(e.toString()));
+    }
+  }
+
+  void uploadOfBreastCancer(File imageFile) async {
+    emit(const HomeState.uploadImageLoading());
+
+    try {
+      var result = await _repo.uploadOfBreastCancer(imageFile);
+      result.when(
+        success: (data) {
+          emit(HomeState.uploadBreastCancerResult(data));
         },
         failure: (networkExceptions) {
           emit(HomeState.uploadImageError(networkExceptions.toString()));
