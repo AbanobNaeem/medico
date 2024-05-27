@@ -103,11 +103,11 @@ class _ChatBotLockScreenState extends State<ChatBotLockScreen> {
 
   Widget _buildSlider(context) {
     return Expanded(
-      flex: 20,
+      flex: 21,
       child: Center(
         child: SliderButton(
           gradient: ColorManager.chatBotGradient,
-          width: 311.w,
+          width: 330.w,
           height: 72.h,
           action: () async {
             Navigator.pushNamed(context, Routes.chatBotScreen);

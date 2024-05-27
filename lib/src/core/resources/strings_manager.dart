@@ -112,17 +112,17 @@ class StringsManager {
 
   //!Bone fractures
   static const String boneFracturesBodyText1 =
-      'A fracture is a break or a crack in a \nbone.';
+      'A fracture is a break or a crack in a bone.';
   static const String boneFracturesBodyText2 =
-      'A fracture occurs when force exerted \na bone is stronger than the bone can \nstructurally withstand.';
+      'A fracture occurs when force exerted a bone is stronger than the bone can structurally withstand.';
   static const String boneFracturesBodyText3 =
-      'The most common sites for \nbone fractures are the wrist, ankle \nand hip.';
+      'The most common sites for bone fractures are the wrist, ankle and hip.';
   static const String boneFracturesBodyText4 =
-      'Treatment includes immobilizing \nthe bone with a plaster cast, or surgically \ninserting metal rods or plates to hold \nthe bone .';
+      'Treatment includes immobilizing the bone with a plaster cast, or surgically inserting metal rods or plates to hold \nthe bone .';
   static const String boneFracturesBodyText5 =
-      'In most cases, your cast will be remove \nafter a few weeks, but you must treat \nyour limb with care for at least \nthe next month .';
+      'In most cases, your cast will be remove after a few weeks, but you must treat your limb with care for at least \nthe next month .';
   static const String boneFracturesBodyText6 =
-      'Some complicated fractures may \nneed surgery and surgical traction.';
+      'Some complicated fractures may need surgery and surgical traction.';
 
   //!Brain tumor
   static const String brainTumorBodyText1 =

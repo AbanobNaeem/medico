@@ -28,7 +28,7 @@ class SpecialistContainer extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                flex: 4,
+                flex: 5,
                 child: _bodyText(context),
               ),
               Expanded(

@@ -273,23 +273,23 @@ class _YoloScreenState extends State<YoloScreen> with WidgetsBindingObserver {
       speak(result);
 
       return Positioned(
-        left: objectX.w,
-        top: objectY.h,
-        width: objectWidth.w,
-        height: objectHeight.h,
-        child: Column(
-          children: [
-            Text(
-              "${result['tag']} ${((result['box'][4] * 100) as num).toStringAsFixed(2)}%",
-              style: TextStyle(
-                fontFamily: FontConstants.defaultFontFamily,
-                background: Paint()..color = colorPick,
-                color: ColorManager.primary,
-                fontSize: FontSize.s10,
-                // overflow: TextOverflow.ellipsis,
-              ),
+        left: objectX,
+        top: objectY,
+        width: objectWidth,
+        height: objectHeight,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            border: Border.all(color: Colors.pink, width: 2.0),
+          ),
+          child: Text(
+            "${result['tag']} ${(result['box'][4] * 100)}",
+            style: TextStyle(
+              background: Paint()..color = colorPick,
+              color: const Color.fromARGB(255, 115, 0, 255),
+              fontSize: 18.0,
             ),
-          ],
+          ),
         ),
       );
     }).toList();

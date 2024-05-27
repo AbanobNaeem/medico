@@ -97,7 +97,7 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
         crossAxisCount: 2,
         crossAxisSpacing: 20.w,
         mainAxisSpacing: 16.h,
-        mainAxisExtent: 0.23.sh,
+        mainAxisExtent: 0.26.sh,
       ),
       itemCount: data.doctorOrNurse?.length ?? 0,
       itemBuilder: (context, index) =>
@@ -136,7 +136,7 @@ class _DoctorsListScreenState extends State<DoctorsListScreen> {
               );
             },
             style: ElevatedButton.styleFrom(
-              fixedSize: Size(132.w, 38.h),
+              fixedSize: Size(150.w, 38.h),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50.r),
               ),

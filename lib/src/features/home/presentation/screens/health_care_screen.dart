@@ -97,7 +97,7 @@ class _HealthCareScreenState extends State<HealthCareScreen> {
         crossAxisCount: 2,
         crossAxisSpacing: 20.w,
         mainAxisSpacing: 16.h,
-        mainAxisExtent: 0.25.sh,
+        mainAxisExtent: 0.26.sh,
       ),
       itemCount: data.doctorOrNurse?.length ?? 0,
       itemBuilder: (context, index) =>
@@ -138,7 +138,7 @@ class _HealthCareScreenState extends State<HealthCareScreen> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                fixedSize: Size(140.w, 38.h),
+                fixedSize: Size(150.w, 38.h),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50.r),
                 ),
