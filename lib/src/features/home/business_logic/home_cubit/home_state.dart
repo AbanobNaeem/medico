@@ -9,6 +9,9 @@ class HomeState with _$HomeState {
       _UploadBonefracturesResult;
   const factory HomeState.uploadBrainTumorResult(BrainTumorModel data) =
       _UploadBrainTumorResult;
+
+  const factory HomeState.uploadBreastCancerResult(BreastCancerModel data) =
+      _UploadBreastCancerResult;
   const factory HomeState.uploadImageError(String networkExceptions) =
       _UploadBonefracturesError;
 
@@ -42,7 +45,8 @@ class HomeState with _$HomeState {
       _AddRatingError;
 
   const factory HomeState.getTopDoctorsLoading() = _GetTopDoctorsLoading;
-  const factory HomeState.getTopDoctorsSuccess(List<TopDoctorsModel> model) = _GetTopDoctorsSuccess;
+  const factory HomeState.getTopDoctorsSuccess(List<TopDoctorsModel> model) =
+      _GetTopDoctorsSuccess;
   const factory HomeState.getTopDoctorsError(String networkExceptions) =
       _GetTopDoctorsError;
 }

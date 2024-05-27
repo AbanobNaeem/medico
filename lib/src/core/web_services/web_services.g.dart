@@ -75,13 +75,13 @@ class _WebServices implements WebServices {
   }
 
   @override
-  Future<BrainTumorModel> breastCancer(String base64Image) async {
+  Future<BreastCancerModel> breastCancer(String base64Image) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = base64Image;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<BrainTumorModel>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<BreastCancerModel>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -97,7 +97,7 @@ class _WebServices implements WebServices {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = BrainTumorModel.fromJson(_result.data!);
+    final value = BreastCancerModel.fromJson(_result.data!);
     return value;
   }
 

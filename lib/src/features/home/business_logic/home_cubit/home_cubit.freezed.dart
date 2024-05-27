@@ -23,6 +23,7 @@ mixin _$HomeState {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -50,6 +51,7 @@ mixin _$HomeState {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -77,6 +79,7 @@ mixin _$HomeState {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -108,6 +111,8 @@ mixin _$HomeState {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -136,6 +141,8 @@ mixin _$HomeState {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -164,6 +171,7 @@ mixin _$HomeState {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -248,6 +256,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -278,6 +287,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -308,6 +318,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -345,6 +356,8 @@ class _$InitialImpl implements _Initial {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -376,6 +389,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -407,6 +422,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -485,6 +501,7 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -515,6 +532,7 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -545,6 +563,7 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -582,6 +601,8 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -613,6 +634,8 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -644,6 +667,7 @@ class _$UploadBonefracturesLoadingImpl implements _UploadBonefracturesLoading {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -749,6 +773,7 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -779,6 +804,7 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -809,6 +835,7 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -846,6 +873,8 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -877,6 +906,8 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -908,6 +939,7 @@ class _$UploadBonefracturesResultImpl implements _UploadBonefracturesResult {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -1018,6 +1050,7 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -1048,6 +1081,7 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -1078,6 +1112,7 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -1115,6 +1150,8 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -1146,6 +1183,8 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -1177,6 +1216,7 @@ class _$UploadBrainTumorResultImpl implements _UploadBrainTumorResult {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -1212,6 +1252,283 @@ abstract class _UploadBrainTumorResult implements HomeState {
   BrainTumorModel get data;
   @JsonKey(ignore: true)
   _$$UploadBrainTumorResultImplCopyWith<_$UploadBrainTumorResultImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadBreastCancerResultImplCopyWith<$Res> {
+  factory _$$UploadBreastCancerResultImplCopyWith(
+          _$UploadBreastCancerResultImpl value,
+          $Res Function(_$UploadBreastCancerResultImpl) then) =
+      __$$UploadBreastCancerResultImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BreastCancerModel data});
+}
+
+/// @nodoc
+class __$$UploadBreastCancerResultImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$UploadBreastCancerResultImpl>
+    implements _$$UploadBreastCancerResultImplCopyWith<$Res> {
+  __$$UploadBreastCancerResultImplCopyWithImpl(
+      _$UploadBreastCancerResultImpl _value,
+      $Res Function(_$UploadBreastCancerResultImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UploadBreastCancerResultImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as BreastCancerModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UploadBreastCancerResultImpl implements _UploadBreastCancerResult {
+  const _$UploadBreastCancerResultImpl(this.data);
+
+  @override
+  final BreastCancerModel data;
+
+  @override
+  String toString() {
+    return 'HomeState.uploadBreastCancerResult(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadBreastCancerResultImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadBreastCancerResultImplCopyWith<_$UploadBreastCancerResultImpl>
+      get copyWith => __$$UploadBreastCancerResultImplCopyWithImpl<
+          _$UploadBreastCancerResultImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() uploadImageLoading,
+    required TResult Function(BoneFracturesModel data)
+        uploadBonefracturesResult,
+    required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
+    required TResult Function(String networkExceptions) uploadImageError,
+    required TResult Function() getDoctorLoading,
+    required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
+    required TResult Function(String networkExceptions) getDoctorError,
+    required TResult Function() getNurseLoading,
+    required TResult Function(GetDoctorOrNurse data) getNurseSuccess,
+    required TResult Function(String networkExceptions) getNurseError,
+    required TResult Function() getDoctorInfoLoading,
+    required TResult Function(GetNurseOrDoctorInfo data) getDoctorInfoSuccess,
+    required TResult Function(String networkExceptions) getDoctorInfoError,
+    required TResult Function() getNurseInfoLoading,
+    required TResult Function(GetNurseOrDoctorInfo data) getNurseInfoSuccess,
+    required TResult Function(String networkExceptions) getNurseInfoError,
+    required TResult Function() addRatingLoading,
+    required TResult Function() addRatingSuccess,
+    required TResult Function(String networkExceptions) addRatingError,
+    required TResult Function() getTopDoctorsLoading,
+    required TResult Function(List<TopDoctorsModel> model) getTopDoctorsSuccess,
+    required TResult Function(String networkExceptions) getTopDoctorsError,
+  }) {
+    return uploadBreastCancerResult(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? uploadImageLoading,
+    TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
+    TResult? Function(String networkExceptions)? uploadImageError,
+    TResult? Function()? getDoctorLoading,
+    TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult? Function(String networkExceptions)? getDoctorError,
+    TResult? Function()? getNurseLoading,
+    TResult? Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult? Function(String networkExceptions)? getNurseError,
+    TResult? Function()? getDoctorInfoLoading,
+    TResult? Function(GetNurseOrDoctorInfo data)? getDoctorInfoSuccess,
+    TResult? Function(String networkExceptions)? getDoctorInfoError,
+    TResult? Function()? getNurseInfoLoading,
+    TResult? Function(GetNurseOrDoctorInfo data)? getNurseInfoSuccess,
+    TResult? Function(String networkExceptions)? getNurseInfoError,
+    TResult? Function()? addRatingLoading,
+    TResult? Function()? addRatingSuccess,
+    TResult? Function(String networkExceptions)? addRatingError,
+    TResult? Function()? getTopDoctorsLoading,
+    TResult? Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult? Function(String networkExceptions)? getTopDoctorsError,
+  }) {
+    return uploadBreastCancerResult?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? uploadImageLoading,
+    TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
+    TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
+    TResult Function(String networkExceptions)? uploadImageError,
+    TResult Function()? getDoctorLoading,
+    TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
+    TResult Function(String networkExceptions)? getDoctorError,
+    TResult Function()? getNurseLoading,
+    TResult Function(GetDoctorOrNurse data)? getNurseSuccess,
+    TResult Function(String networkExceptions)? getNurseError,
+    TResult Function()? getDoctorInfoLoading,
+    TResult Function(GetNurseOrDoctorInfo data)? getDoctorInfoSuccess,
+    TResult Function(String networkExceptions)? getDoctorInfoError,
+    TResult Function()? getNurseInfoLoading,
+    TResult Function(GetNurseOrDoctorInfo data)? getNurseInfoSuccess,
+    TResult Function(String networkExceptions)? getNurseInfoError,
+    TResult Function()? addRatingLoading,
+    TResult Function()? addRatingSuccess,
+    TResult Function(String networkExceptions)? addRatingError,
+    TResult Function()? getTopDoctorsLoading,
+    TResult Function(List<TopDoctorsModel> model)? getTopDoctorsSuccess,
+    TResult Function(String networkExceptions)? getTopDoctorsError,
+    required TResult orElse(),
+  }) {
+    if (uploadBreastCancerResult != null) {
+      return uploadBreastCancerResult(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_UploadBonefracturesLoading value)
+        uploadImageLoading,
+    required TResult Function(_UploadBonefracturesResult value)
+        uploadBonefracturesResult,
+    required TResult Function(_UploadBrainTumorResult value)
+        uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
+    required TResult Function(_UploadBonefracturesError value) uploadImageError,
+    required TResult Function(_GetDoctorLoading value) getDoctorLoading,
+    required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
+    required TResult Function(_GetDoctorError value) getDoctorError,
+    required TResult Function(_GetNurseLoading value) getNurseLoading,
+    required TResult Function(_GetNurseSuccess value) getNurseSuccess,
+    required TResult Function(_GetNurseError value) getNurseError,
+    required TResult Function(_GetDoctorInfoLoading value) getDoctorInfoLoading,
+    required TResult Function(_GetDoctorInfoSuccess value) getDoctorInfoSuccess,
+    required TResult Function(_GetDoctorInfoError value) getDoctorInfoError,
+    required TResult Function(_GetNurseInfoLoading value) getNurseInfoLoading,
+    required TResult Function(_GetNurseInfoSuccess value) getNurseInfoSuccess,
+    required TResult Function(_GetNurseInfoError value) getNurseInfoError,
+    required TResult Function(_AddRatingLoading value) addRatingLoading,
+    required TResult Function(_AddRatingSuccess value) addRatingSuccess,
+    required TResult Function(_AddRatingError value) addRatingError,
+    required TResult Function(_GetTopDoctorsLoading value) getTopDoctorsLoading,
+    required TResult Function(_GetTopDoctorsSuccess value) getTopDoctorsSuccess,
+    required TResult Function(_GetTopDoctorsError value) getTopDoctorsError,
+  }) {
+    return uploadBreastCancerResult(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult? Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
+    TResult? Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult? Function(_GetDoctorError value)? getDoctorError,
+    TResult? Function(_GetNurseLoading value)? getNurseLoading,
+    TResult? Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult? Function(_GetNurseError value)? getNurseError,
+    TResult? Function(_GetDoctorInfoLoading value)? getDoctorInfoLoading,
+    TResult? Function(_GetDoctorInfoSuccess value)? getDoctorInfoSuccess,
+    TResult? Function(_GetDoctorInfoError value)? getDoctorInfoError,
+    TResult? Function(_GetNurseInfoLoading value)? getNurseInfoLoading,
+    TResult? Function(_GetNurseInfoSuccess value)? getNurseInfoSuccess,
+    TResult? Function(_GetNurseInfoError value)? getNurseInfoError,
+    TResult? Function(_AddRatingLoading value)? addRatingLoading,
+    TResult? Function(_AddRatingSuccess value)? addRatingSuccess,
+    TResult? Function(_AddRatingError value)? addRatingError,
+    TResult? Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult? Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult? Function(_GetTopDoctorsError value)? getTopDoctorsError,
+  }) {
+    return uploadBreastCancerResult?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_UploadBonefracturesLoading value)? uploadImageLoading,
+    TResult Function(_UploadBonefracturesResult value)?
+        uploadBonefracturesResult,
+    TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
+    TResult Function(_UploadBonefracturesError value)? uploadImageError,
+    TResult Function(_GetDoctorLoading value)? getDoctorLoading,
+    TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
+    TResult Function(_GetDoctorError value)? getDoctorError,
+    TResult Function(_GetNurseLoading value)? getNurseLoading,
+    TResult Function(_GetNurseSuccess value)? getNurseSuccess,
+    TResult Function(_GetNurseError value)? getNurseError,
+    TResult Function(_GetDoctorInfoLoading value)? getDoctorInfoLoading,
+    TResult Function(_GetDoctorInfoSuccess value)? getDoctorInfoSuccess,
+    TResult Function(_GetDoctorInfoError value)? getDoctorInfoError,
+    TResult Function(_GetNurseInfoLoading value)? getNurseInfoLoading,
+    TResult Function(_GetNurseInfoSuccess value)? getNurseInfoSuccess,
+    TResult Function(_GetNurseInfoError value)? getNurseInfoError,
+    TResult Function(_AddRatingLoading value)? addRatingLoading,
+    TResult Function(_AddRatingSuccess value)? addRatingSuccess,
+    TResult Function(_AddRatingError value)? addRatingError,
+    TResult Function(_GetTopDoctorsLoading value)? getTopDoctorsLoading,
+    TResult Function(_GetTopDoctorsSuccess value)? getTopDoctorsSuccess,
+    TResult Function(_GetTopDoctorsError value)? getTopDoctorsError,
+    required TResult orElse(),
+  }) {
+    if (uploadBreastCancerResult != null) {
+      return uploadBreastCancerResult(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UploadBreastCancerResult implements HomeState {
+  const factory _UploadBreastCancerResult(final BreastCancerModel data) =
+      _$UploadBreastCancerResultImpl;
+
+  BreastCancerModel get data;
+  @JsonKey(ignore: true)
+  _$$UploadBreastCancerResultImplCopyWith<_$UploadBreastCancerResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1288,6 +1605,7 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -1318,6 +1636,7 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -1348,6 +1667,7 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -1385,6 +1705,8 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -1416,6 +1738,8 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -1447,6 +1771,7 @@ class _$UploadBonefracturesErrorImpl implements _UploadBonefracturesError {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -1528,6 +1853,7 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -1558,6 +1884,7 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -1588,6 +1915,7 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -1625,6 +1953,8 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -1656,6 +1986,8 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -1687,6 +2019,7 @@ class _$GetDoctorLoadingImpl implements _GetDoctorLoading {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -1789,6 +2122,7 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -1819,6 +2153,7 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -1849,6 +2184,7 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -1886,6 +2222,8 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -1917,6 +2255,8 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -1948,6 +2288,7 @@ class _$GetDoctorSuccessImpl implements _GetDoctorSuccess {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -2057,6 +2398,7 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -2087,6 +2429,7 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -2117,6 +2460,7 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -2154,6 +2498,8 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -2185,6 +2531,8 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -2216,6 +2564,7 @@ class _$GetDoctorErrorImpl implements _GetDoctorError {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -2297,6 +2646,7 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -2327,6 +2677,7 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -2357,6 +2708,7 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -2394,6 +2746,8 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -2425,6 +2779,8 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -2456,6 +2812,7 @@ class _$GetNurseLoadingImpl implements _GetNurseLoading {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -2558,6 +2915,7 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -2588,6 +2946,7 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -2618,6 +2977,7 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -2655,6 +3015,8 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -2686,6 +3048,8 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -2717,6 +3081,7 @@ class _$GetNurseSuccessImpl implements _GetNurseSuccess {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -2825,6 +3190,7 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -2855,6 +3221,7 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -2885,6 +3252,7 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -2922,6 +3290,8 @@ class _$GetNurseErrorImpl implements _GetNurseError {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -2953,6 +3323,8 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -2984,6 +3356,7 @@ class _$GetNurseErrorImpl implements _GetNurseError {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -3066,6 +3439,7 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -3096,6 +3470,7 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -3126,6 +3501,7 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -3163,6 +3539,8 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -3194,6 +3572,8 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -3225,6 +3605,7 @@ class _$GetDoctorInfoLoadingImpl implements _GetDoctorInfoLoading {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -3328,6 +3709,7 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -3358,6 +3740,7 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -3388,6 +3771,7 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -3425,6 +3809,8 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -3456,6 +3842,8 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -3487,6 +3875,7 @@ class _$GetDoctorInfoSuccessImpl implements _GetDoctorInfoSuccess {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -3596,6 +3985,7 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -3626,6 +4016,7 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -3656,6 +4047,7 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -3693,6 +4085,8 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -3724,6 +4118,8 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -3755,6 +4151,7 @@ class _$GetDoctorInfoErrorImpl implements _GetDoctorInfoError {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -3837,6 +4234,7 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -3867,6 +4265,7 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -3897,6 +4296,7 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -3934,6 +4334,8 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -3965,6 +4367,8 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -3996,6 +4400,7 @@ class _$GetNurseInfoLoadingImpl implements _GetNurseInfoLoading {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -4098,6 +4503,7 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -4128,6 +4534,7 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -4158,6 +4565,7 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -4195,6 +4603,8 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -4226,6 +4636,8 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -4257,6 +4669,7 @@ class _$GetNurseInfoSuccessImpl implements _GetNurseInfoSuccess {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -4366,6 +4779,7 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -4396,6 +4810,7 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -4426,6 +4841,7 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -4463,6 +4879,8 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -4494,6 +4912,8 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -4525,6 +4945,7 @@ class _$GetNurseInfoErrorImpl implements _GetNurseInfoError {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -4606,6 +5027,7 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -4636,6 +5058,7 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -4666,6 +5089,7 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -4703,6 +5127,8 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -4734,6 +5160,8 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -4765,6 +5193,7 @@ class _$AddRatingLoadingImpl implements _AddRatingLoading {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -4840,6 +5269,7 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -4870,6 +5300,7 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -4900,6 +5331,7 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -4937,6 +5369,8 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -4968,6 +5402,8 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -4999,6 +5435,7 @@ class _$AddRatingSuccessImpl implements _AddRatingSuccess {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -5102,6 +5539,7 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -5132,6 +5570,7 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -5162,6 +5601,7 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -5199,6 +5639,8 @@ class _$AddRatingErrorImpl implements _AddRatingError {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -5230,6 +5672,8 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -5261,6 +5705,7 @@ class _$AddRatingErrorImpl implements _AddRatingError {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -5343,6 +5788,7 @@ class _$GetTopDoctorsLoadingImpl implements _GetTopDoctorsLoading {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -5373,6 +5819,7 @@ class _$GetTopDoctorsLoadingImpl implements _GetTopDoctorsLoading {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -5403,6 +5850,7 @@ class _$GetTopDoctorsLoadingImpl implements _GetTopDoctorsLoading {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -5440,6 +5888,8 @@ class _$GetTopDoctorsLoadingImpl implements _GetTopDoctorsLoading {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -5471,6 +5921,8 @@ class _$GetTopDoctorsLoadingImpl implements _GetTopDoctorsLoading {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -5502,6 +5954,7 @@ class _$GetTopDoctorsLoadingImpl implements _GetTopDoctorsLoading {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -5612,6 +6065,7 @@ class _$GetTopDoctorsSuccessImpl implements _GetTopDoctorsSuccess {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -5642,6 +6096,7 @@ class _$GetTopDoctorsSuccessImpl implements _GetTopDoctorsSuccess {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -5672,6 +6127,7 @@ class _$GetTopDoctorsSuccessImpl implements _GetTopDoctorsSuccess {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -5709,6 +6165,8 @@ class _$GetTopDoctorsSuccessImpl implements _GetTopDoctorsSuccess {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -5740,6 +6198,8 @@ class _$GetTopDoctorsSuccessImpl implements _GetTopDoctorsSuccess {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -5771,6 +6231,7 @@ class _$GetTopDoctorsSuccessImpl implements _GetTopDoctorsSuccess {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -5880,6 +6341,7 @@ class _$GetTopDoctorsErrorImpl implements _GetTopDoctorsError {
     required TResult Function(BoneFracturesModel data)
         uploadBonefracturesResult,
     required TResult Function(BrainTumorModel data) uploadBrainTumorResult,
+    required TResult Function(BreastCancerModel data) uploadBreastCancerResult,
     required TResult Function(String networkExceptions) uploadImageError,
     required TResult Function() getDoctorLoading,
     required TResult Function(GetDoctorOrNurse data) getDoctorSuccess,
@@ -5910,6 +6372,7 @@ class _$GetTopDoctorsErrorImpl implements _GetTopDoctorsError {
     TResult? Function()? uploadImageLoading,
     TResult? Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult? Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult? Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult? Function(String networkExceptions)? uploadImageError,
     TResult? Function()? getDoctorLoading,
     TResult? Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -5940,6 +6403,7 @@ class _$GetTopDoctorsErrorImpl implements _GetTopDoctorsError {
     TResult Function()? uploadImageLoading,
     TResult Function(BoneFracturesModel data)? uploadBonefracturesResult,
     TResult Function(BrainTumorModel data)? uploadBrainTumorResult,
+    TResult Function(BreastCancerModel data)? uploadBreastCancerResult,
     TResult Function(String networkExceptions)? uploadImageError,
     TResult Function()? getDoctorLoading,
     TResult Function(GetDoctorOrNurse data)? getDoctorSuccess,
@@ -5977,6 +6441,8 @@ class _$GetTopDoctorsErrorImpl implements _GetTopDoctorsError {
         uploadBonefracturesResult,
     required TResult Function(_UploadBrainTumorResult value)
         uploadBrainTumorResult,
+    required TResult Function(_UploadBreastCancerResult value)
+        uploadBreastCancerResult,
     required TResult Function(_UploadBonefracturesError value) uploadImageError,
     required TResult Function(_GetDoctorLoading value) getDoctorLoading,
     required TResult Function(_GetDoctorSuccess value) getDoctorSuccess,
@@ -6008,6 +6474,8 @@ class _$GetTopDoctorsErrorImpl implements _GetTopDoctorsError {
     TResult? Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult? Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult? Function(_UploadBreastCancerResult value)?
+        uploadBreastCancerResult,
     TResult? Function(_UploadBonefracturesError value)? uploadImageError,
     TResult? Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult? Function(_GetDoctorSuccess value)? getDoctorSuccess,
@@ -6039,6 +6507,7 @@ class _$GetTopDoctorsErrorImpl implements _GetTopDoctorsError {
     TResult Function(_UploadBonefracturesResult value)?
         uploadBonefracturesResult,
     TResult Function(_UploadBrainTumorResult value)? uploadBrainTumorResult,
+    TResult Function(_UploadBreastCancerResult value)? uploadBreastCancerResult,
     TResult Function(_UploadBonefracturesError value)? uploadImageError,
     TResult Function(_GetDoctorLoading value)? getDoctorLoading,
     TResult Function(_GetDoctorSuccess value)? getDoctorSuccess,
